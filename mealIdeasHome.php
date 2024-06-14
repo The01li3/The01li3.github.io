@@ -1,5 +1,4 @@
-
-<!DOCTYPE html>
+<DOCTYPE!=HTML>
 <html>
 	<head>
 		<meta name="description" content="">
@@ -11,8 +10,7 @@
 		<script src="Foodjs.js" type="text/javascript"></script>
 		<title>Food 4 Students</title>
         <?php require_once "templates/header"; ?>
-		<div id="HeaderDiv">
-			
+		<div id="HeaderDiv">			
 		</div>
 	</head>
 	<body>
