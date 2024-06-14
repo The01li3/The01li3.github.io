@@ -1,0 +1,20 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="description" content="">
+		<meta name="keywords" content="">
+		<meta name="author" content="Oliver Marshall">
+		<meta charset="UTF-8">
+		<link type="text/css" href="Foodcss.css" rel="stylesheet"/>
+		<link rel="shortcut icon" href="favicon.ico"/>
+		<script src="Foodjs.js" type="text/javascript"></script>
+		<title>Food 4 Students</title>
+        <?php require_once "templates/header"; ?>
+		<div id="HeaderDiv">
+			
+		</div>
+	</head>
+	<body>
+    </body>
+</html>
