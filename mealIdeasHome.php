@@ -16,5 +16,6 @@
 		</div>
 	</head>
 	<body>
+		<?php require_once "templates/body.php"; ?>
     </body>
 </html>
