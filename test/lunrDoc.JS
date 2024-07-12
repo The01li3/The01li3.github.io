@@ -18,9 +18,7 @@ var documents = [{
     }, this)
   })
   
-  idx.search("bright")
-  
-  
-  document.getElementById("dLunr").innerHTML = idx.search("bright");
-  
-  
+ console.log(idx.search("interfaces")[0]);
+ 
+
+ document.getElementById("dLunr").innerHTML = idx.search("interfaces")[0]["ref"];
