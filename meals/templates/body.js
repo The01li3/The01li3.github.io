@@ -9,8 +9,8 @@ header = `
         </div>
     </div>
     <div id="search-div" class="col-3 justify-content-end my-auto">
-        <form id="search-inline" class="input-group">
-            <input type="search" id="site-search" class="form-control form-control-sm" placeholder="Search"/>
+        <form id="search-inline" class="input-group" onsubmit="fnSearch(event)">
+            <input type="search" id="site-search" name="searchValue" class="form-control form-control-sm" placeholder="Search"/>
             <button type="submit" class="btn btn-outline-search"><i class="bi bi-search"></i></button>            
         </form>
     </div>    
