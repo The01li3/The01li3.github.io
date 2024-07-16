@@ -6,9 +6,8 @@
     --font-primary:Verdana, Geneva, Tahoma, sans-serif;
 
     --logo-background:rgb(63, 63, 63);
-    --font-logo::'Times New Roman', Times, serif;
+    --font-logo:'Times New Roman', Times, serif;
     --logo-text-colour:rgb(0,128,128);
-    --font-primary:Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .bodyClass {    
@@ -22,21 +21,53 @@
 	height:100px;
 	background:var(--header-wrap);
 	font-size:50pt;
-
+    top:0px;
+    position: -webkit-sticky;
+    position: sticky;
 }
 #headwrap>p{
-    text-align: center;
     font-family:var(--font-primary);
     color: var(--text-primary);
+    text-wrap: nowrap;
 }
 #logo{
     height:100px;
-    width:100px;
+    width: 100px;
     background:var(--logo-background);
     border-radius: 10px;
 }
 #logo>p{
     font-family:var(--font-logo);
     color:var(--logo-text-colour);
-    text-align:center;
+}
+
+.btn-outline-search{
+    color:var(--text-primary);
+    background-color:var(--background-colour);
+    border-color:var(--text-primary);
+}
+
+#search-inline{
+    width:300px;
+}
+
+#site-search{
+    background-color:var(--text-primary);
+}
+
+h1{
+    font-family:var(--font-primary);
+    font-family:var(--font-primary);
+    font-size: 30pt;
+    text-decoration: underline;
+}
+h2{
+    font-family:var(--font-primary);
+    font-family:var(--font-primary);
+    font-size: 20pt;
+    text-decoration: underline;
+}
+
+.inline{
+    display: inline-block;
 }
