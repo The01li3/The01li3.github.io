@@ -1,17 +1,42 @@
-/* Place your CSS styles in this file */
+/*Preset Colours*/
+:root{
+    --background-colour:rgb(48, 48, 47);
+    --header-wrap:rgb(0,128,128);
+    --text-primary:rgb(211,211,211);
+    --font-primary:Verdana, Geneva, Tahoma, sans-serif;
 
-h1 {
-    text-align: left;
-    font-family: "Source Sans Pro", sans-serif;
-    font-weight: normal;
+    --logo-background:rgb(63, 63, 63);
+    --font-logo::'Times New Roman', Times, serif;
+    --logo-text-colour:rgb(0,128,128);
+    --font-primary:Verdana, Geneva, Tahoma, sans-serif;
 }
 
-h2 {
-    text-align: left;
-    font-family: "Source Sans Pro", sans-serif;
-    font-weight: lighter;
+.bodyClass {    
+    background-color:var(--background-colour);
+    background-size: cover;
+    font-family:var(--font-primary);
+    color: var(--text-primary);
 }
 
-.small-input{
-    width: 60px;
+#headerBanner{
+	height:100px;
+	background:var(--header-wrap);
+	font-size:50pt;
+
+}
+#headwrap>p{
+    text-align: center;
+    font-family:var(--font-primary);
+    color: var(--text-primary);
+}
+#logo{
+    height:100px;
+    width:100px;
+    background:var(--logo-background);
+    border-radius: 10px;
+}
+#logo>p{
+    font-family:var(--font-logo);
+    color:var(--logo-text-colour);
+    text-align:center;
 }
