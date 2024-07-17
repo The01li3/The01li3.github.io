@@ -1,29 +1,42 @@
-const recipesSearch = [
+var varrRecipes = [
 	{
-		id: "crepePankes.html",
-		title: "Pankes",
-		description:
-			"Dessert, sugar, flour, bicarb, egg, oil",
+		"id":"crepePancakes.html",
+		"title":"Pancakes",
+		"description":"pancake, dessert, vegetarian",
+		"ingredients":"milk, flour, sugar, flour, egg, oil, lemon, butter",
+		"utensils":"frying pan",
 	},
 	{
-		id: "2",
-		title: "What is Java?",
-		description:
-			"Java is a cross-platform object-oriented programming language which at first developed by the Sun Microsystems.",
+		"id":"americanPancakes.html",
+		"title":"American Pancakes",
+		"description":"American, pancake, dessert, vegetarian",
+		"ingredients":"milk, flour, baking powder, sugar, flour, egg, oil, butter, salt, pecans, maple syrup",
+		"utensils":"frying pan, cast iron",
 	},
 	{
-		id: "3",
-		title: "What is React?",
-		description:
+		"id": "3Three",
+		"title": "What is React?",
+		"description":
 			"React is a popular JavaScript library which heavily used to build single-page applications.",
-	},
-]
+	}]
 
-var idx = lunr(function () {
-    this.ref('name')
-    this.field('text')
+var vRecipesIndex = lunr(function () {
+	this.ref("id")
+    this.field('title')
+    this.field('description')
+	this.field('ingredients')
+	this.field('utensils')
   
-    recipesSearch.forEach(function (doc) {
+    varrRecipes.forEach(function (doc) {
       this.add(doc)
     }, this)
-  })
+  });
+
+function fnSearch(event) {
+    vResult = vRecipesIndex.search(event.target.elements.searchValue.value);
+	event.preventDefault();
+	
+	varrResult = vResult.map((item) => {
+		return varrRecipes.find((vRecipe) => item.ref === vRecipe.id)
+	})
+}

@@ -9,16 +9,18 @@ var documents = [{
     "text": "A modern JavaScript utility library delivering modularity, performance & extras."
   }]
   
-  var idx = lunr(function () {
-    this.ref('name')
-    this.field('text')
+var idx = lunr(function () {
+  this.ref('name')
+  this.field('text')
+
+  documents.forEach(function (doc) {
+    this.add(doc)
+  }, this)
+})
   
-    documents.forEach(function (doc) {
-      this.add(doc)
-    }, this)
-  })
-  
- console.log(idx.search("interfaces")[0]);
+ console.log(idx);
  
 
- document.getElementById("dLunr").innerHTML = idx.search("interfaces")[0]["ref"];
+ document.getElementById("dLunr").innerHTML = idx.search("solr")[0]["ref"];
+
+ console.log(idx);
