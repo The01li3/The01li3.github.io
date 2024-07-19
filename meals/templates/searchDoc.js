@@ -35,8 +35,11 @@ var vRecipesIndex = lunr(function () {
 function fnSearch(event) {
     vResult = vRecipesIndex.search(event.target.elements.searchValue.value);
 	event.preventDefault();
-	
-	varrResult = vResult.map((item) => {
-		return varrRecipes.find((vRecipe) => item.ref === vRecipe.id)
-	})
+
+	varrResult = vResult.map(function(item) {
+		return varrRecipes.find(function(vRecipe) {
+			return item.ref === vRecipe.id;
+		});
+	});
+	console.log(varrResult);
 }

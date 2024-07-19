@@ -47,27 +47,17 @@
     border-color:var(--text-primary);
 }
 
-#search-inline{
-    width:300px;
-}
-
 #site-search{
     background-color:var(--text-primary);
 }
 
 h1{
     font-family:var(--font-primary);
-    font-family:var(--font-primary);
     font-size: 30pt;
     text-decoration: underline;
 }
 h2{
     font-family:var(--font-primary);
-    font-family:var(--font-primary);
     font-size: 20pt;
     text-decoration: underline;
-}
-
-.inline{
-    display: inline-block;
 }
