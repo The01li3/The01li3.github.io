@@ -2,22 +2,16 @@ var varrRecipes = [
 	{
 		"id":"crepePancakes.html",
 		"title":"Pancakes",
-		"description":"pancake, dessert, vegetarian",
-		"ingredients":"milk, flour, sugar, flour, egg, oil, lemon, butter",
-		"utensils":"frying pan",
+		"description":" pancake, dessert, vegetarian",
+		"ingredients":[ "milk", "flour", "sugar", "flour", "egg", "oil", "lemon", "butter"],
+		"utensils":" frying pan",
 	},
 	{
 		"id":"americanPancakes.html",
 		"title":"American Pancakes",
-		"description":"American, pancake, dessert, vegetarian",
-		"ingredients":"milk, flour, baking powder, sugar, flour, egg, oil, butter, salt, pecans, maple syrup",
-		"utensils":"frying pan, cast iron",
-	},
-	{
-		"id": "3Three",
-		"title": "What is React?",
-		"description":
-			"React is a popular JavaScript library which heavily used to build single-page applications.",
+		"description":" American, pancake, dessert, vegetarian",
+		"ingredients":[ "milk", "flour", "baking powder", "sugar", "flour", "egg", "oil", "butter", "salt", "pecans", "maple syrup"],
+		"utensils":" frying pan, cast iron",
 	}]
 
 var vRecipesIndex = lunr(function () {
@@ -32,14 +26,28 @@ var vRecipesIndex = lunr(function () {
     }, this)
   });
 
-function fnSearch(event) {
-    vResult = vRecipesIndex.search(event.target.elements.searchValue.value);
-	event.preventDefault();
+var vSearchResultsTemplate = Handlebars.compile(`
+	<hr>
+	{{#each this}}
+<a href = "{{id}}"><h2>{{title}}</h2></a>
+<p>Ingredients: {{helperSortAlpha ingredients}}</p>
+<hr>
+{{/each}}`);
+
+Handlebars.registerHelper('helperSortAlpha', function (pSortArray) {	
+	return pSortArray.sort().join(', ');
+});
+
+
+function fnSearch(vSearchParam) {
+	vSearchlist = "";
+    vResult = vRecipesIndex.search(vSearchParam);	
 
 	varrResult = vResult.map(function(item) {
 		return varrRecipes.find(function(vRecipe) {
 			return item.ref === vRecipe.id;
 		});
 	});
-	console.log(varrResult);
+	document.getElementById("resultList").innerHTML = vSearchResultsTemplate(varrResult);
+	document.getElementById("resultsHeader").innerHTML = 'Results - "' + vSearchParam + '"';
 }

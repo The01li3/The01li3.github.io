@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<script src="templates/meta.js"></script>	
-		<title>Home Meals</title>
+		<title>The01li3's Recipes</title>
 	</head>
 	<body class = "bodyClass">
 		<div id="headerBanner" class="row g-0 justify-content-center">
@@ -14,27 +14,27 @@
 				<p>Everything in there should be converted to grams/ml/equiv trying to get away from cups, which means recipes will be slightly edited from its original source.</p>
 				<p>This also means that everything in here should be using ingredients that are accessible to UK, with the naming convention following, bicarb, creams etc.</p>
 				<p>A few quick recipes are as below that get used more frequently:</p>
-				<div class="container">
+				<div class="container g-0">
 					<div class="row g-0">
 						<div class="col-sm">
 							<a href="crepePancakes.html">Pancakes</a>
 						</div>
 						<div class="col-sm">
-							<a href="crepePancakes.html">Pancakes</a>
+							<a href="americanPancakes.html">American Pancakes</a>
 						</div>
 						<div class="col-sm">
-							<a href="crepePancakes.html">Pancakes</a>
+							<a href="castIronNaan.html">Cast Iron Naan</a>
 						</div>					
 					</div>
 					<div class="row g-0">
 						<div class="col-sm">
-							<a href="crepePancakes.html">Pancakes</a>
+							<a href="classicRamen.html">Ramen</a>
 						</div>
 						<div class="col-sm">
-							<a href="crepePancakes.html">Pancakes</a>
+							<a href="coconutRice.html">Coconut Rice</a>
 						</div>
 						<div class="col-sm">
-							<a href="crepePancakes.html">Pancakes</a>
+							<a href="buffaloSauce.html">Buffalo Sauce</a>
 						</div>
 					</div>
 				</div>
@@ -43,5 +43,9 @@
 		<div id="footer"></div>	
 		<script src="templates/footer.js"></script>	
 		<script src="templates/searchDoc.js"></script>
+		<script>
+			const shopId =  new URLSearchParams(window.location.search).get('searchValue');
+			console.log(shopId);
+		</Script>
     </body>
 </html>

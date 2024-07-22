@@ -9,12 +9,20 @@ header = `
                 <p>The01li3's Recipes</p>
             </div>
             <div id="search-div" class="col my-auto">
-                <form class="input-group" onsubmit="fnSearch(event)">
-                    <input type="search" id="site-search" name="searchValue" class="form-control form-control-sm" placeholder="Search"/>
-                    <button type="submit" class="btn btn-outline-search"><i class="bi bi-search"></i></button>            
+                <form class="input-group" onsubmit="fnGotoSearch(event)">
+                    <input type="search" id="site-search" name="searchValue" class="form-control form-control-sm" list = "search-results" autocomplete="off" placeholder="Search"/>
+                    <button type="submit" class="btn btn-outline-search"><i class="bi bi-search"></i></button>     
+                    <datalist id="search-results">
+                    </datalist>      
                 </form>
             </div> 
         </div>
     </div>
 </div>`
 document.getElementById('headerBanner').innerHTML = header;
+
+function fnGotoSearch(){
+    var vSearchParam = event.target.elements.searchValue.value;
+    window.location.href = "searchResults.html?searchValue=" + vSearchParam;
+    event.preventDefault();
+}
