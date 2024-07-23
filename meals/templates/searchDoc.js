@@ -3,16 +3,16 @@ var varrRecipes = [
 		"id":"crepePancakes.html",
 		"title":"Pancakes",
 		"description":" pancake, dessert, vegetarian",
-		"ingredients":[ "milk", "plain flour", "sugar", "egg", "oil", "lemon", "butter"],
-		"utensils":" frying pan",
+		"ingredients":["milk", "plain flour", "sugar", "egg", "oil", "lemon", "butter"],
+		"utensils":"",
 	},
 	{
 		"id":"americanPancakes.html",
 		"title":"American Pancakes",
 		"description":" American, pancake, dessert, vegetarian",
-		"ingredients":[ "milk", "plain flour", "baking powder", "sugar", "egg", "oil", "butter", "salt", "pecans", "maple syrup"],
-		"utensils":" frying pan, cast iron",
-	}]
+		"ingredients":["milk", "plain flour", "baking powder", "sugar", "egg", "oil", "butter", "salt", "pecans", "maple syrup"],
+		"utensils":"cast iron",
+	}];
 
 var vRecipesIndex = lunr(function () {
 	this.ref("id")

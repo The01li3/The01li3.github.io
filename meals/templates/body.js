@@ -2,11 +2,9 @@ header = `
 <div class="col col-8">
     <div class="container">
         <div class="row flex-nowrap justify-content-start">
-            <a href = "mealIdeasHome.html" class="col g-0 col-1">
-                <div id="logo">
-                    <p class="text-center">T</p>        
-                </div>
-            </a>
+            <div id="logo" onclick="location.href='mealIdeasHome.html';" class="col g-0 col-1">
+                <p class="text-center">T</p>        
+            </div>
             <div id="headwrap" class="col d-none d-xxl-block col-8">
                 <p>The01li3's Recipes</p>
             </div>

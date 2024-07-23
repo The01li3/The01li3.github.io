@@ -99,3 +99,7 @@ a:hover{
     color:var(--text-highlight);
     text-decoration: none;
 }
+#bodyDiv a{
+    font-family:var(--font-primary);
+    font-size: 12pt;
+}
