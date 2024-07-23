@@ -27,8 +27,7 @@
     position: -webkit-sticky;
     position: sticky;
 }
-#bodyDiv{
-	height:50px;
+#titleBanner{
 	background:var(--subheader-wrap);
 }
 #headwrap>p{
@@ -62,9 +61,6 @@
 .form-check-input:checked{
     background-color: var(--header-wrap);
     border: var(--text-primary);
-}
-.form-check-input:focus{
-    box-shadow: none;
 }
 #site-search{
     background-color:var(--text-primary);
