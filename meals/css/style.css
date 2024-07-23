@@ -12,13 +12,12 @@
     --logo-text-colour:rgb(0,128,128);
 }
 
-.bodyClass {    
+.bodyClass{    
     background-color:var(--background-colour);
     background-size: cover;
     font-family:var(--font-primary);
     color: var(--text-primary);
 }
-
 #headerBanner{
 	height:100px;
 	background:var(--header-wrap);
@@ -66,14 +65,14 @@
     background-color:var(--text-primary);
 }
 
-ul {
+ul{
     list-style-type: none;
     padding-left: 0px;
 }  
 
 h1{
     font-family:var(--font-primary);
-    font-size: 30pt;
+    font-size: 25pt;
 }
 h2{
     font-family:var(--font-primary);
@@ -82,7 +81,11 @@ h2{
 h3{
     font-family:var(--font-primary);
     font-size: 12pt;
-    font-weight: bold;
+    font-weight:bold;
+}
+b{
+    font-family:var(--font-primary);
+    font-weight: 1000; 
 }
 #bodyDiv p{
     font-family:var(--font-primary); 

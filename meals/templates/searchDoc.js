@@ -3,14 +3,14 @@ var varrRecipes = [
 		"id":"crepePancakes.html",
 		"title":"Pancakes",
 		"description":" pancake, dessert, vegetarian",
-		"ingredients":[ "milk", "flour", "sugar", "flour", "egg", "oil", "lemon", "butter"],
+		"ingredients":[ "milk", "plain flour", "sugar", "egg", "oil", "lemon", "butter"],
 		"utensils":" frying pan",
 	},
 	{
 		"id":"americanPancakes.html",
 		"title":"American Pancakes",
 		"description":" American, pancake, dessert, vegetarian",
-		"ingredients":[ "milk", "flour", "baking powder", "sugar", "flour", "egg", "oil", "butter", "salt", "pecans", "maple syrup"],
+		"ingredients":[ "milk", "plain flour", "baking powder", "sugar", "egg", "oil", "butter", "salt", "pecans", "maple syrup"],
 		"utensils":" frying pan, cast iron",
 	}]
 
