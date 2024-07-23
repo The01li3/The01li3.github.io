@@ -89,7 +89,7 @@ var varrRecipes = [
 		"description":"pancake, dessert, vegetarian",
 		"ingredients":["milk", "plain flour", "sugar", "egg", "oil", "lemon", "butter"],
 		"utensils":""
-	}
+	},
 	{
 		"id":"garlicAndGingerCurry",
 		"title":"Garlic And Ginger Curry",
