@@ -25,6 +25,7 @@
     top:0px;
     position: -webkit-sticky;
     position: sticky;
+    z-index: 9;
 }
 #titleBanner{
 	background:var(--subheader-wrap);
@@ -102,4 +103,8 @@ a:hover{
 #bodyDiv a{
     font-family:var(--font-primary);
     font-size: 12pt;
+}
+hr{
+    z-index:auto;
+    color: var(--header-wrap);
 }
