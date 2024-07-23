@@ -7,77 +7,77 @@ var varrRecipes = [
 		"utensils":"cast iron"
 	},
 	{
-		"id":"bananaCake",
+		"id":"bananaCake.html",
 		"title":"Banana Cake",
 		"description":"1,2",
 		"ingredients":["1", "2", "3", "4", "5", "6", "7"],
 		"utensils":"Loose Bottom Cake Tin"
 	},
 	{
-		"id":"buffaloCauliflowerCasserole",
+		"id":"buffaloCauliflowerCasserole.html",
 		"title":"Buffalo Cauliflower Casserole",
 		"description":"1,2",
 		"ingredients":["1", "2", "3", "4", "5", "6", "7"],
 		"utensils":"Casserole Dish"
 	},
 	{
-		"id":"buffaloRanchPasta",
+		"id":"buffaloRanchPasta.html",
 		"title":"Buffalo Ranch Pasta",
 		"description":"1,2",
 		"ingredients":["1", "2", "3", "4", "5", "6", "7"],
 		"utensils":""
 	},
 	{
-		"id":"buffaloSauce",
+		"id":"buffaloSauce.html",
 		"title":"Buffalo Sauce",
 		"description":"1,2",
 		"ingredients":["1", "2", "3", "4", "5", "6", "7"],
 		"utensils":""
 	},
 	{
-		"id":"carrotCake",
+		"id":"carrotCake.html",
 		"title":"Carrot Cake",
 		"description":"1,2",
 		"ingredients":["1", "2", "3", "4", "5", "6", "7"],
 		"utensils":"Loose Bottom Cake Tin"
 	},
 	{
-		"id":"castIronNaan",
+		"id":"castIronNaan.html",
 		"title":"Cast Iron Naan",
 		"description":"1,2",
 		"ingredients":["1", "2", "3", "4", "5", "6", "7"],
 		"utensils":"Cast Iron"
 	},
 	{
-		"id":"chanaMasala",
+		"id":"chanaMasala.html",
 		"title":"Chana Masala",
 		"description":"1,2",
 		"ingredients":["1", "2", "3", "4", "5", "6", "7"],
 		"utensils":"Slow Cooker"
 	},
 	{
-		"id":"cheeseAndMarmiteSwirls",
+		"id":"cheeseAndMarmiteSwirls.html",
 		"title":"Cheese And Marmite Swirls",
 		"description":"1,2",
 		"ingredients":["1", "2", "3", "4", "5", "6", "7"],
 		"utensils":""
 	},
 	{
-		"id":"chickenAlfredo",
+		"id":"chickenAlfredo.html",
 		"title":"Chicken Alfredo",
 		"description":"1,2",
 		"ingredients":["1", "2", "3", "4", "5", "6", "7"],
 		"utensils":""
 	},
 	{
-		"id":"coconutRice",
+		"id":"coconutRice.html",
 		"title":"Coconut Rice",
 		"description":"1,2",
 		"ingredients":["1", "2", "3", "4", "5", "6", "7"],
 		"utensils":""
 	},
 	{
-		"id":"creamCheeseFrosting",
+		"id":"creamCheeseFrosting.html",
 		"title":"Cream Cheese Frosting",
 		"description":"1,2",
 		"ingredients":["1", "2", "3", "4", "5", "6", "7"],
@@ -91,196 +91,196 @@ var varrRecipes = [
 		"utensils":""
 	},
 	{
-		"id":"garlicAndGingerCurry",
+		"id":"garlicAndGingerCurry.html",
 		"title":"Garlic And Ginger Curry",
 		"description":"1,2",
 		"ingredients":["1", "2", "3", "4", "5", "6", "7"],
 		"utensils":""
 	},
 	{
-		"id":"greekStyleBeans",
+		"id":"greekStyleBeans.html",
 		"title":"Greek Style Beans",
 		"description":"1,2",
 		"ingredients":["1", "2", "3", "4", "5", "6", "7"],
 		"utensils":"Casserole Dish"
 	},
 	{
-		"id":"hoisinCashewTofu",
+		"id":"hoisinCashewTofu.html",
 		"title":"Hoisin Cashew Tofu",
 		"description":"1,2",
 		"ingredients":["1", "2", "3", "4", "5", "6", "7"],
 		"utensils":""
 	},
 	{
-		"id":"kasespatzle",
+		"id":"kasespatzle.html",
 		"title":"Kasespatzle",
 		"description":"1,2",
 		"ingredients":["1", "2", "3", "4", "5", "6", "7"],
 		"utensils":""
 	},
 	{
-		"id":"lemonPosset",
+		"id":"lemonPosset.html",
 		"title":"Lemon Posset",
 		"description":"1,2",
 		"ingredients":["1", "2", "3", "4", "5", "6", "7"],
 		"utensils":"Ramekin"
 	},
 	{
-		"id":"lemonStirFry",
+		"id":"lemonStirFry.html",
 		"title":"Lemon Stir Fry",
 		"description":"1,2",
 		"ingredients":["1", "2", "3", "4", "5", "6", "7"],
 		"utensils":""
 	},
 	{
-		"id":"meadBasics",
+		"id":"meadBasics.html",
 		"title":"Mead Basics",
 		"description":"1,2",
 		"ingredients":["1", "2", "3", "4", "5", "6", "7"],
 		"utensils":"…TBD"
 	},
 	{
-		"id":"misoSoup",
+		"id":"misoSoup.html",
 		"title":"Miso Soup",
 		"description":"1,2",
 		"ingredients":["1", "2", "3", "4", "5", "6", "7"],
 		"utensils":""
 	},
 	{
-		"id":"nachoCasserole",
+		"id":"nachoCasserole.html",
 		"title":"Nacho Casserole",
 		"description":"1,2",
 		"ingredients":["1", "2", "3", "4", "5", "6", "7"],
 		"utensils":"Casserole Dish"
 	},
 	{
-		"id":"noKneadFocaccia",
+		"id":"noKneadFocaccia.html",
 		"title":"No Knead Focaccia",
 		"description":"1,2",
 		"ingredients":["1", "2", "3", "4", "5", "6", "7"],
 		"utensils":"Cast Iron"
 	},
 	{
-		"id":"pecanTassies",
+		"id":"pecanTassies.html",
 		"title":"Pecan Tassies",
 		"description":"1,2",
 		"ingredients":["1", "2", "3", "4", "5", "6", "7"],
 		"utensils":"Mini Muffin Tray, Stamper, Rolling Pin"
 	},
 	{
-		"id":"pineappleColeslaw",
+		"id":"pineappleColeslaw.html",
 		"title":"Pineapple Coleslaw",
 		"description":"1,2",
 		"ingredients":["1", "2", "3", "4", "5", "6", "7"],
 		"utensils":""
 	},
 	{
-		"id":"ramenBase",
+		"id":"ramenBase.html",
 		"title":"Ramen Base",
 		"description":"1,2",
 		"ingredients":["1", "2", "3", "4", "5", "6", "7"],
 		"utensils":""
 	},
 	{
-		"id":"risottoBasics",
+		"id":"risottoBasics.html",
 		"title":"Risotto Basics",
 		"description":"1,2",
 		"ingredients":["1", "2", "3", "4", "5", "6", "7"],
 		"utensils":""
 	},
 	{
-		"id":"satay",
+		"id":"satay.html",
 		"title":"Satay",
 		"description":"1,2",
 		"ingredients":["1", "2", "3", "4", "5", "6", "7"],
 		"utensils":""
 	},
 	{
-		"id":"slowCookedButterChicken",
+		"id":"slowCookedButterChicken.html",
 		"title":"Slow Cooked Butter Chicken",
 		"description":"1,2",
 		"ingredients":["1", "2", "3", "4", "5", "6", "7"],
 		"utensils":"Slow Cooker"
 	},
 	{
-		"id":"slowCookedVegetarianRedThaiCurry",
+		"id":"slowCookedVegetarianRedThaiCurry.html",
 		"title":"Slow Cooked Vegetarian Red Thai Curry",
 		"description":"1,2",
 		"ingredients":["1", "2", "3", "4", "5", "6", "7"],
 		"utensils":"Slow Cooker"
 	},
 	{
-		"id":"spicedAppleCake",
+		"id":"spicedAppleCake.html",
 		"title":"Spiced Apple Cake",
 		"description":"1,2",
 		"ingredients":["1", "2", "3", "4", "5", "6", "7"],
 		"utensils":"Square Cake Tin"
 	},
 	{
-		"id":"spinacheRicottaCannelloni",
+		"id":"spinacheRicottaCannelloni.html",
 		"title":"Spinache Ricotta Cannelloni",
 		"description":"1,2",
 		"ingredients":["1", "2", "3", "4", "5", "6", "7"],
 		"utensils":"Piping Bag"
 	},
 	{
-		"id":"springRolls",
+		"id":"springRolls.html",
 		"title":"Spring Rolls",
 		"description":"1,2",
 		"ingredients":["1", "2", "3", "4", "5", "6", "7"],
 		"utensils":""
 	},
 	{
-		"id":"stickyLemonTofu",
+		"id":"stickyLemonTofu.html",
 		"title":"Sticky Lemon Tofu",
 		"description":"1,2",
 		"ingredients":["1", "2", "3", "4", "5", "6", "7"],
 		"utensils":""
 	},
 	{
-		"id":"stickyMangoRice",
+		"id":"stickyMangoRice.html",
 		"title":"Sticky Mango Rice",
 		"description":"1,2",
 		"ingredients":["1", "2", "3", "4", "5", "6", "7"],
 		"utensils":""
 	},
 	{
-		"id":"sushiBasics",
+		"id":"sushiBasics.html",
 		"title":"Sushi Basics",
 		"description":"1,2",
 		"ingredients":["1", "2", "3", "4", "5", "6", "7"],
 		"utensils":"Rolling Mat"
 	},
 	{
-		"id":"tamarindFishCurry",
+		"id":"tamarindFishCurry.html",
 		"title":"Tamarind Fish Curry",
 		"description":"1,2",
 		"ingredients":["1", "2", "3", "4", "5", "6", "7"],
 		"utensils":""
 	},
 	{
-		"id":"tempehTacos",
+		"id":"tempehTacos.html",
 		"title":"Tempeh Tacos",
 		"description":"1,2",
 		"ingredients":["1", "2", "3", "4", "5", "6", "7"],
 		"utensils":""
 	},
 	{
-		"id":"tikkaMasalaSalmon",
+		"id":"tikkaMasalaSalmon.html",
 		"title":"Tikka Masala Salmon",
 		"description":"1,2",
 		"ingredients":["1", "2", "3", "4", "5", "6", "7"],
 		"utensils":""
 	},
 	{
-		"id":"tiramisu",
+		"id":"tiramisu.html",
 		"title":"Tiramisu",
 		"description":"1,2",
 		"ingredients":["1", "2", "3", "4", "5", "6", "7"],
 		"utensils":""
 	},
 	{
-		"id":"uniBaguette",
+		"id":"uniBaguette.html",
 		"title":"Uni Baguette",
 		"description":"1,2",
 		"ingredients":["1", "2", "3", "4", "5", "6", "7"],
