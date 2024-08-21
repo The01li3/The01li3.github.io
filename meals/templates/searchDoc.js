@@ -2,7 +2,7 @@ var varrRecipes = [
 	{
 		"id":"americanPancakes.html",
 		"title":"American Pancakes",
-		"description":"American, pancake, dessert, vegetarian",
+		"description":"American, pancake, dessert, vegetarian, pan",
 		"ingredients":["milk", "plain flour", "baking powder", "sugar", "egg", "oil", "butter", "salt", "pecans", "maple syrup"],
 		"utensils":"cast iron"
 	},
@@ -86,7 +86,7 @@ var varrRecipes = [
 	{
 		"id":"crepePancakes.html",
 		"title":"Pancakes",
-		"description":"pancake, dessert, vegetarian",
+		"description":"pancake, dessert, vegetarian, pan",
 		"ingredients":["milk", "plain flour", "sugar", "egg", "oil", "lemon", "butter"],
 		"utensils":""
 	},
@@ -189,8 +189,8 @@ var varrRecipes = [
 		"utensils":""
 	},
 	{
-		"id":"satay.html",
-		"title":"Satay",
+		"id":"sataySauce.html",
+		"title":"Satay Sauce",
 		"description":"1,2",
 		"ingredients":["1", "2", "3", "4", "5", "6", "7"],
 		"utensils":""
