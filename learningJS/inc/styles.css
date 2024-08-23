@@ -13,3 +13,11 @@ h2 {
 .small-input{
     width: 60px;
 }
+
+.left-list{
+    font-size: 10pt;
+}
+
+a:link, a:visited{;
+    text-decoration: none;
+}

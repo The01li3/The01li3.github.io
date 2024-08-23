@@ -2,15 +2,35 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Examples</title>
+        <title>Intro</title>
         <link rel="stylesheet" href="inc/styles.css">
+        <script src="inc/meta.js"></script>	
+        <script src="inc/header.js"></script><!-- inline gets loaded top to bottom, inc gets loaded side by side with modern browsers, can be at the top.-->
+        <script src="inc/functions.js"></script>
+        <script src="js/intro.js"></script>
     </head>
-    <body>        
-        <div id="navHeader"></div>
-        <script src="inc/header.js"></script> 
-        <script src="inc/functions.js"></script> 
-        <div>
-            
+    <body class="row align-items-start">        
+        <div id="navHeader" class="col col-2">
+        </div> 
+        <div class="col col-10"> 
+            <h1>Mod One Examples</h1>
+            <h3>Where?</h3>
+            <p>Any inline JS can occur in a Script tag in the body, but functions should occur in the head.
+                JS is loaded top down, but can be smart-ish about it, incs are loaded inline, so can be in the head. Functions in include files make it more clear.</p>
+            <h3>HTML output</h3>
+            <p>Quotes, Resize, Show/Block, change text: </p>
+            <button id = "btnResize" type="button" onclick="modOnePossibilitiesPt1(this)">Initalise Mod One Pt1</button> <!--function called with "this" so dont need to get element by ID-->
+            <br>
+            <p>Variables and debugging:</p>
+            <button id = "btnMessage" type="button" onclick="modOnePossibilitiesPt2()">Initalise Mod One Pt2</button>
+            <h3>Syntax</h3>
+            <p>let/var to create <br>
+               single or double quotes for string <br>
+               +-*/ basic maths operators <br>
+               = to assign <br>
+               // for comments <br>
+               JS IS case sensitive
+            </p>
         </div>
     </body>
 </html>

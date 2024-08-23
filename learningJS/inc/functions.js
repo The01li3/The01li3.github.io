@@ -1,3 +1,4 @@
+/*Shared Functions*/
 function fnShowHide(pButton, pBody,){
     const vButtonArr = pButton.innerHTML.split(" ");
     var vButtonText = "";
