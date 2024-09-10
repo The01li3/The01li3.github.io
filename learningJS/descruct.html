@@ -1,18 +1,41 @@
 <!doctype html>
 <html>
     <head>
-        <meta charset="utf-8">
-        <title>Examples</title>
-        <link rel="stylesheet" href="inc/styles.css">
+        <title>Destructuring</title>
         <script src="inc/meta.js"></script>	
-    </head>
-    <body>        
-        <div id="navHeader">
-        </div> 
-        <div> 
-
-        </div>
-        <script src="inc/header.js"></script>
+        <script src="inc/header.js"></script><!-- inline gets loaded top to bottom, inc gets loaded side by side with modern browsers, can be at the top.-->
         <script src="inc/functions.js"></script>
+    </head>
+    <body class="row align-items-start">        
+        <div id="navHeader" class="col col-2">
+        </div> 
+        <div class="col col-9">  
+            <h1>Destructuring</h1>
+            <h2>Objects</h2>
+            <p>Can make objects properties into variables, give them an alias, and add new variables</p>
+            <pre>const person = {
+    firstName = "bob",
+    lastName = "bobberson"
+};
+
+let {firstName : first, lastName : last, country = "Nunya"} = person;</pre>
+            <hr>
+            <h2>Strings</h2>
+            <p>Strings get the characters.</p>
+            <pre>let vName = "Oliver";
+let [c1,c2,c3,c4] = name; //c1 = O, c2 = l... etc.
+            </pre>
+            <hr>
+            <h2>Arrays</h2>
+            <p>Works in much the same way as strings, but with arrays. You can skip elements in the array, or pick positions. Can end with a <b>rest</b> property staring remaining in a new array</p>
+            <pre>let [array1, array2, array3,,,array6, ...somemore] = arrayX
+let {[0]:array1 ,[1]:array2} = arrayX;</pre>
+            <hr>
+            <h2>Swapping</h2>
+            <p>You can swap 2 variables, without the need for a 3rd temp variable.</p>
+            <pre>[firstName, lastName] = [lastName, firstName];</pre>
+        </div>
+        <div id="footer"></div>
+        <script src="inc/footer.js"></script>
     </body>
 </html>

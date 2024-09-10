@@ -1,18 +1,173 @@
 <!doctype html>
 <html>
     <head>
-        <meta charset="utf-8">
-        <title>Examples</title>
-        <link rel="stylesheet" href="inc/styles.css">
+        <title>Variables, Let, Const & Data Type</title>
         <script src="inc/meta.js"></script>	
-    </head>
-    <body>        
-        <div id="navHeader">
-        </div> 
-        <div> 
-
-        </div>
-        <script src="inc/header.js"></script>
+        <script src="inc/header.js"></script><!-- inline gets loaded top to bottom, inc gets loaded side by side with modern browsers, can be at the top.-->
         <script src="inc/functions.js"></script>
+        <script src="js/vari_let_cons_type.js"></script>
+    </head>
+    <body class="row align-items-start">        
+        <div id="navHeader" class="col col-2">
+        </div> 
+        <div class="col col-9">  
+            <h1>Variables, Let, Const & Data Types</h1>
+            <h2>Variables</h2>
+            <button id="btn-variable-eg" type="button" class="btn btn-show" onclick='fnShowHide(this,"variable-eg")' >Show Variable Examples</button>           
+            <div id="variable-eg" style="display:none">
+                <p><b>var</b> isnt really use anymore, stopped 2015, so use <b>let</b> where possible:</p>
+                <ol>
+                    <li>Always declare variables.</li>
+                    <li>Always use <b>const</b> if the value should not be changed.</li>
+                    <li>Always use <b>const</b> if the type should not be changed (Arrays and Objects).</li>
+                    <li>Only use <b>let</b> if you can't use <b>const</b>.</li>
+                    <li>Only use <b>var</b> if you MUST support old browsers.</li>
+                </ol>
+                <pre>const cantReassignMe = "Nope."; //used on objects to change properties, but not headings.
+let definedWithinScope;
+var imAnInt = 2,
+    imAChar = "2",
+    imCreatedUndefined,
+    imAChar; //redeclaring doesnt clear
+
+var $ = 1; //valid but not always used, mainly for library uses (jQuery etc)
+var _ = 2; //normally used for hidden variables</pre>
+                <hr>
+            </div>
+            <h2>Let</h2>
+            <button id="btn-let-eg" type="button" class="btn btn-show" onclick='fnShowHide(this,"let-eg")' >Show Let Examples</button>
+            <div id="let-eg" style="display:none">
+                <p><b>var</b> doesnt have a block scope so can be used anywhere.<br>
+                    <b>let</b> has a block scope, so only used within the brackets.<br>                
+                    <b>let</b> cannot be redeclared, but you can with <b>var</b>.
+                </p>
+                <table class="table table-striped">
+                    <thead class="table-light">
+                        <tr>
+                            <th scope="col"></th>
+                            <th scope="col">Scope</th>
+                            <th scope="col">Redeclare</th>
+                            <th scope="col">Reassign</th>
+                            <th scope="col">Hoisted</th>
+                            <th scope="col">Binds this</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">var</th>
+                            <td>No</td>
+                            <td>Yes</td>
+                            <td>Yes</td>
+                            <td>Yes</td>
+                            <td>Yes</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">let</th>
+                            <td>Yes</td>
+                            <td>No</td>
+                            <td>Yes</td>
+                            <td>No</td>
+                            <td>No</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">const</th>
+                            <td>Yes</td>
+                            <td>No</td>
+                            <td>No</td>
+                            <td>No</td>
+                            <td>No</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p>Variables with <b>var</b> are "hoisted" meaning they can be initalised anywhere and the code will "hoist" the declaration to the top.</p>
+                <hr>
+            </div>
+            <h2>Const</h2>
+            <button id="btn-const-eg" type="button" class="btn btn-show" onclick='fnShowHide(this,"const-eg")' >Show Const Examples</button>
+            <div id="const-eg" style="display:none">
+                <p><b>const</b> cannot be reassigned, and must be assigned when declared.<br>
+                    So <b>const</b> should be used for Arrays, Objects, Functions, RegExp.<br>
+                    <b>const</b> is not a constant, value, but a constant reference to a value. So can be used to change elements in an array/object.<br>
+                    See "let" for table on whats redeclarable etc.
+                </p>
+                <hr>
+            </div>
+            <h2>Data Type</h2>
+            <button id="btn-data-type-eg" type="button" class="btn btn-show" onclick='fnShowHide(this,"data-type-eg")' >Show Date Type Examples</button>
+            <div id="data-type-eg" style="display:none">
+                <h3>Overview</h3>
+                <p>Js has 8 datatypes</p>
+                <ul>
+                    <li>String "blue"</li>
+                    <li>Number 8.34</li>
+                    <li>Bigint 9999999999999999999999999</li>
+                    <li>Boolean TRUE </li>
+                    <li>Undefined</li>
+                    <li>Null</li>
+                    <li>Symbol</li>
+                    <li>Object</li>
+                </ul>
+                <hr> 
+                <h3>Strings</h3>
+                <p>Same as normal, to use quotes within quotes <b>" '' "</b> or <b>' "" '</b>.<br>
+                    <b>\</b> is the escape character so <b>\"Hello World\"</b>.<br>
+                    <b>\</b> can also be used to group multiplelines of text, but <b>+</b> is better.<br>
+                    Click <a href="strings.html">here</a> for more info.
+                </p>
+                <hr>
+                <h3>Numbers</h3> 
+                <p>One number type, you can use 123e5 type numbers.<br>
+                    They are 64bit, so precision can become an issue<br>
+                    Once too big, they need to be a <b>Bigint</b>.<br>
+                    Click <a href="numbers.html">here</a> for more info.
+                </p>
+                <hr>
+                <h3>Bigint</h3>
+                <p>Integers only have 15 digits precision, after that have to use a <b>BigInt</b><br>
+                    Can use n at the end of the number, or <b>BigInt()</b><br>
+                    <b>isSafeInteger()</b> can be used to see what type it might need to be<br>
+                    Click <a href="numbers.html">here</a> for more info.
+                </p>
+                <hr>
+                <h3>Boolean</h3>
+                <p>Normal Boolean() stuff, if it's filled in correctly (1,7,"Hello","false"), its <b>TRUE</b>, else its <b>FALSE</b>(0,-0,5/"bob",null).<br>
+                    You can use boolean objects... dont, it makes it slower, and more unpredictable.</p>
+                    Click <a href="booleans.html">here</a> for more info.</p>
+                <hr>
+                <h3>Arrays</h3>
+                <p>Arrays seem odd, defined with <b>const</b> so you cannot full change, but you can part change</p>
+                <pre>const vArray = ["Alice", "Bob", "Eve"]  
+const cars[0]= "Charlie"; cars[1]= "Dave"; cars[2]= "AnotherName";</pre>              
+                <p>^ this is all ok, and doesnt go agaisnt the <b>const</b>, however:</p>
+                <pre>vArray = ["Charlie", "Dave", "AnotherName"]</pre>
+                <p>Will error.</p>
+                <p>Can convert to string with <b>cars.toString()</b>.<br>
+                    And print with <b>document.getElementById("demo").innerHTML = cars;</b><br>
+                    Fairly standard .length and [0] etc, arrays use number pointer, objects use string.<br>
+                    You can store objects and functions in arrays <b>cars[0] = Date.Now()</b> etc.<br>
+                    Click <a href="arrays.html">here</a> for more info.
+                </p>
+                <hr>
+                <h3>Objects</h3>
+                <p>Objects created with <b>const</b> so the property doesnt change, but values can.<br>
+                    Can be accessed with object.property, or object["property"].
+                </p>
+                <p id="3ObjectAccess"></p>
+                <p>Object functions are accessed with <b>object.function()</b>.</p>
+                <p id="3ObjectFunction"></p>
+                <p>Click <a href="objects.html">here</a> for more info.</p>
+                <hr>
+                <h3>Misc</h3>
+                <p>Can use <b>typeof</b> to get the variable type.<br>
+                    Undefined is undefined, ="" is "", but type of string, null is null but object.
+                </p>
+                <hr>
+            </div>
+        </div>
+        <script>
+            widget_addLoadEvent(fnObjectFillIn);
+        </script>
+        <div id="footer"></div>
+        <script src="inc/footer.js"></script>
     </body>
 </html>

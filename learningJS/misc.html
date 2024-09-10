@@ -1,18 +1,226 @@
 <!doctype html>
 <html>
     <head>
-        <meta charset="utf-8">
-        <title>Examples</title>
-        <link rel="stylesheet" href="inc/styles.css">
+        <title>Miscellaneous</title>
         <script src="inc/meta.js"></script>	
-    </head>
-    <body>        
-        <div id="navHeader">
-        </div> 
-        <div> 
-
-        </div>
-        <script src="inc/header.js"></script>
+        <script src="inc/header.js"></script><!-- inline gets loaded top to bottom, inc gets loaded side by side with modern browsers, can be at the top.-->
         <script src="inc/functions.js"></script>
+        <script src="js/misc.js"></script>
+    </head>
+    <body class="row align-items-start">        
+        <div id="navHeader" class="col col-2">
+        </div> 
+        <div class="col col-9">  
+            <h1>Miscellaneous</h1>
+            <h2>Random</h2>
+            <p>Random has a number between 0 and 1, can otherwise state the values between 1 and 10 like: <b>Math.floor(Math.random() * 10) + 1;</b> where .floor rounds it down</p>
+            <label for = "iMin">Min</label>
+            <input id = "iMin" class = "small-input"/>
+            <label for = "iMax">Max</label>
+            <input id = "iMax" class = "small-input"/>
+            <button id = "iRandom" type=button onclick='document.getElementById("randomResult").innerHTML =fnRandom(iMin.value,iMax.value)'>Random</button>
+            <p id = "randomResult"></p>
+            <hr>
+            <h2>BitWise</h2>
+            <button id="btn-bitwise-eg" type="button" class="btn btn-show" onclick='fnShowHide(this,"bitwise-eg")' >Show BitWise Examples</button>           
+            <div id="bitwise-eg" style="display:none">
+                <p>I don't... Its bit comparing, cannot see a reason why but:</p>
+                <table class="table table-striped">
+                    <thead class="table-light">
+                        <tr>
+                            <th scope="col">Operator</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Description</th>
+                            <th scope="col">Same As</th>
+                            <th scope="col">Result</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td scope="row">&</td>
+                            <td>AND/td>
+                            <td>Sets each bit to 1 if both bits are 1</td>
+                            <td>0101 & 0001</td>
+                            <td>0001</td>
+                        </tr>        
+                    </tbody>
+                    <tbody>
+                        <tr>
+                            <td scope="row">|</td>
+                            <td>OR</td>
+                            <td>Sets each bit to 1 if one of two bits is 1</td>
+                            <td>0101 | 0001</td>
+                            <td>0101</td>
+                        </tr>        
+                    </tbody>
+                    <tbody>
+                        <tr>
+                            <td scope="row">^</td>
+                            <td>XOR</td>
+                            <td>Sets each bit to 1 if only one of two bits is 1</td>
+                            <td>0101 ^ 0001</td>
+                            <td>0100</td>
+                        </tr>        
+                    </tbody>
+                    <tbody>
+                        <tr>
+                            <td scope="row">~</td>
+                            <td>NOT</td>
+                            <td>Inverts all the bits</td>
+                            <td>~0101</td>
+                            <td>1010</td>
+                        </tr>        
+                    </tbody>
+                    <tbody>
+                        <tr>
+                            <td scope="row">&lt&lt</td>
+                            <td>Zero Fill Left Shift</td>
+                            <td>Shifts left by pushing zeros in from the right and let the leftmost bits fall off</td>
+                            <td>0101 &lt&lt 1</td>
+                            <td>1010</td>
+                        </tr>        
+                    </tbody>
+                    <tbody>
+                        <tr>
+                            <td scope="row">&gt&gt</td>
+                            <td>Signed Right Shift</td>
+                            <td>Shifts right by pushing copies of the leftmost bit in from the left, and let the rightmost bits fall off</td>
+                            <td>0101 &gt&gt 1</td>
+                            <td>0010</td>
+                        </tr>        
+                    </tbody>
+                    <tbody>
+                        <tr>
+                            <td scope="row">&gt&gt&gt</td>
+                            <td>Zero Fill Right Shift</td>
+                            <td>Shifts right by pushing zeros in from the left, and let the rightmost bits fall off</td>
+                            <td>0101 &gt&gt&gt 1</td>
+                            <td>0010</td>
+                        </tr>        
+                    </tbody>
+                </table>
+                <hr>
+            </div>            
+            <h2>Regular Expressions</h2>
+            <button id="btn-regexp-eg" type="button" class="btn btn-show" onclick='fnShowHide(this,"regexp-eg")' >Show RegExp Examples</button>           
+            <div id="regexp-eg" style="display:none">
+                <p>Can be used to search for text (think /n etc in notpad) with different modifiers.<br>
+                    i is used for case insensitive for example:</p>
+                <pre>x.search(/bob/i);</pre>
+                <p>My name is Bob, not bob in the sea. Just Bob. Not boob. 123456</p>
+                <table class="table table-striped">
+                    <thead class="table-light">
+                        <tr>
+                            <th scope="col">Expression</th>
+                            <th scope="col">Desc</th>
+                            <th scope="col">Example</th>
+                            <th scope="col">Output</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td scope="row">i</td>
+                            <td>Perform case-insensitive matching</td>
+                            <td>x.match(/JUST/i);</td>
+                            <td>just</td>
+                        </tr>  
+                        <tr>
+                            <td scope="row">g</td>
+                            <td>Perform a global match (find all)</td>
+                            <td>x.match(/Bob/gi);</td>
+                            <td>Bob,bob,Bob</td>
+                        </tr> 
+                        <tr>
+                            <td scope="row">m</td>
+                            <td>Perform multiline matching</td>
+                            <td>x.match(/Bob/m);</td>
+                            <td>Bob</td>
+                        </tr>  
+                        <tr>
+                            <td scope="row">[abc]</td>
+                            <td>Find any of the characters between the brackets</td>
+                            <td>x.match(/[o]/g);</td>
+                            <td>o,o,o,o,o,o,o</td>
+                        </tr> 
+                        <tr>
+                            <td scope="row">[0-9]</td>
+                            <td>Find any of the digits between the brackets</td>
+                            <td>x.match(/[1-2]/g);</td>
+                            <td>1,2</td>
+                        </tr> 
+                        <tr>
+                            <td scope="row">(x|y)</td>
+                            <td>Find any of the alternatives separated with |</td>
+                            <td>x.match(/(bob|my)/gi);</td>
+                            <td>My,Bob,bob,Bob</td>
+                        </tr> 
+                        <tr>
+                            <td scope="row">\d</td>
+                            <td>Find a Digit</td>
+                            <td>x.match(/\d/g);</td>
+                            <td>1,2,3,4,5,6</td>
+                        </tr> 
+                        <tr>
+                            <td scope="row">\s</td>
+                            <td>Find a whitespace character</td>
+                            <td>x.match(/\s/g);</td>
+                            <td>, , , , , , , , , , , </td>
+                        </tr> 
+                        <tr>
+                            <td scope="row">\b</td>
+                            <td>Find a match at the beginning of a word like this: \bWORD, or at the end of a word like this: WORD\b</td>
+                            <td>x.match(/\bju/gi);</td>
+                            <td>Ju</td>
+                        </tr> 
+                        <tr>
+                            <td scope="row">\uxxxx</td>
+                            <td>Find the Unicode character specified by the hexadecimal number xxxx</td>
+                            <td>x.match(/\u0042/gi);</td>
+                            <td>B,b,b,b,B,b,b</td>
+                        </tr> 
+                        <tr>
+                            <td scope="row">n+</td>
+                            <td>Matches any string that contains at least one n</td>
+                            <td>x.match(/e+/gi);</td>
+                            <td>e,e,e</td>
+                        </tr> 
+                        <tr>
+                            <td scope="row">n*</td>
+                            <td>Matches any string that contains zero or more occurrences of n, search for all "b" followed by one or more "o"</td>
+                            <td>x.match(/bo*/g);</td>
+                            <td>b,bo,b,b,boo,b</td>
+                        </tr> 
+                        <tr>
+                            <td scope="row">n?</td>
+                            <td>Matches any string that contains zero or one occurrences of n</td>
+                            <td>x.match(/bo?/g);</td>
+                            <td>b,bo,b,b,bo,b</td>
+                        </tr>       
+                    </tbody>
+                </table>
+                <p>Can use RegExp Methods:</p>
+                <pre>/e/i.test("The best things in life are free!"); //will return true, since there is an e</pre>
+                <p>Can also use <b>exec</b> to return the value as an object.</p>
+                <hr>
+            </div>
+            <h2>JSON</h2>
+            <p><b>J</b>ava<b>S</b>cript <b>O</b>ject <b>N</b>otation. <br>
+                Dealt with JSON before, its the normal return of API calls, basically an array of objects.
+            </p>
+            <pre>"employees":[{
+        "firstName":"John", 
+        "lastName":"Doe"
+    },{
+        "firstName":"Anna",
+        "lastName":"Smith"
+    },{
+        "firstName":"Peter",
+        "lastName":"Jones"
+    }]</pre>
+        <p>Can then convert a JSON into an object with <b>obj = JSON.parse(x);</b></p>
+        <pre>obj.employees[1].firstName + " " + obj.employees[1].lastName; //Anna Smith</pre>
+        </div>
+        <div id="footer"></div>
+        <script src="inc/footer.js"></script>
     </body>
 </html>

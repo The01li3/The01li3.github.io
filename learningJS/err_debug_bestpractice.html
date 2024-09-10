@@ -1,18 +1,42 @@
 <!doctype html>
 <html>
     <head>
-        <meta charset="utf-8">
-        <title>Examples</title>
-        <link rel="stylesheet" href="inc/styles.css">
+        <title>Errors, Debugging, Best Practice</title>
         <script src="inc/meta.js"></script>	
-    </head>
-    <body>        
-        <div id="navHeader">
-        </div> 
-        <div> 
-
-        </div>
-        <script src="inc/header.js"></script>
+        <script src="inc/header.js"></script><!-- inline gets loaded top to bottom, inc gets loaded side by side with modern browsers, can be at the top.-->
         <script src="inc/functions.js"></script>
+    </head>
+    <body class="row align-items-start">        
+        <div id="navHeader" class="col col-2">
+        </div> 
+        <div class="col col-9">  
+            <h1>Errors, Debugging, Best Practice</h1>
+            <h2>Errors</h2>
+            <p>Can use a <b>try... catch...</b> finally block.<br>
+                <b>try</b> will run the code inside it.<br>
+                <b>catch</b> will run if the try fails with either a system error message or a <b>throw</b> message.<br>
+                <b>finally</b> gets run regardless of the try/catch result.
+            </p>
+            <p>In <b>catch(e)</b> the e is the error object, it consists of a name, and a message, display it, console.log it, whatever, its fairly useful to see what went wrong.</p>
+            <h2>Debugging</h2>
+            <p>F12 really helpful, can use it to break at certain points, then do a stepover to see whats causing the error.<br>
+                <b>Console.log()</b> will also likely get used a lot to see certain variables, and what XYZ happens.<br>
+                Theres also a <b>debugger;</b> command, that acts the same way as putting in a break point in the debugger.
+            </p>
+            <h2>Strict</h2>
+            <p><b>"use strict;</b> will make the code run in strict mode.<br>
+                It can also be used inside a function for block scoping.<br>
+                Only works if at the begging of the script or function.<br>
+                Makes it so that the code is less lenient on bad syntax, need to declare variables, less likely to mistype a variable, cannot delete a variable etc.
+            </p>
+            <h2>Styling</h2>
+            <p>Normally use Hungarian notation in camelCase:<br>
+                vVariable, bBool, cCount, arrArray... etc.
+            </p>
+            <p>Spaces tend to appear around operators <b>1 + 1 = 2</b> and after commas <b>name = ["Alice", "Bob", "Eve"]</b></p>
+            <p>W3Schools says to use 2 spaces instead of tabs based off the fact editors can interpret tabs differently... I've always just used tabs.</p>
+        </div>
+        <div id="footer"></div>
+        <script src="inc/footer.js"></script>
     </body>
 </html>

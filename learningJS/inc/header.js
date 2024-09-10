@@ -1,7 +1,7 @@
 var arrModNames = [
     ["Introduction","intro.html"],
     ["Variables, Let, Const & Data Types","vari_let_cons_type.html"],
-    ["Booleans","bools.html"],
+    ["Booleans","booleans.html"],
     ["Numbers","numbers.html"],
     ["Operators, Assignment, Arithmetic & Math","op_assi_arith_math.html"],
     ["Strings","strings.html"],

@@ -1,18 +1,141 @@
 <!doctype html>
 <html>
     <head>
-        <meta charset="utf-8">
-        <title>Examples</title>
-        <link rel="stylesheet" href="inc/styles.css">
+        <title>Numbers</title>
         <script src="inc/meta.js"></script>	
-    </head>
-    <body>        
-        <div id="navHeader">
-        </div> 
-        <div> 
-
-        </div>
-        <script src="inc/header.js"></script>
+        <script src="inc/header.js"></script><!-- inline gets loaded top to bottom, inc gets loaded side by side with modern browsers, can be at the top.-->
         <script src="inc/functions.js"></script>
+        <script src="js/numbers.js"></script>
+    </head>
+    <body class="row align-items-start">        
+        <div id="navHeader" class="col col-2">
+        </div> 
+        <div class="col col-9">  
+            <h1>Numbers</h1>
+            <h2>Numbers</h2>
+            <button id="btn-number-eg" type="button" class="btn btn-show" onclick='fnShowHide(this,"number-eg")' >Show Number Examples</button>           
+            <div id="number-eg" style="display:none">
+                <p>One number type, can be written with or without decimals, you can use 123e5 type numbers.<br>
+                    They are 64bit, so precision can become an issue:
+                </p>
+                <pre>0.2 + 0.1 = <span id="PrecisionIssue"></span></pre>
+                <p><b>+</b> behave a little odd when some numbers are strings, code gets read left to right so the below can happen:</p>
+                <p id="variablex"></p>            
+                <p>However JS will try to convert to numberic with <b>* / -</b>.</p>
+                <pre>"6" * "2" = <span id = "ConvertToNumberic"></span></pre>
+                <p>NaN Not a Number can check with <b>isNaN()</b>.<br>
+                    Infinity exists if the number is outside the scope or /0 (should really be undefined.) -Infinity can also exist.<br>
+                    Numbers can be created as objects... dont, it just makes it slower, JS object comparing always returns false.<br>
+                    Number conversion can be odd, but its base10 by default.<br>
+                </p>
+                <hr>
+            </div>
+            <h2>BigInt</h2>
+            <button id="btn-bigint-eg" type="button" class="btn btn-show" onclick='fnShowHide(this,"bigint-eg")' >Show BigInt Examples</button>           
+            <div id="bigint-eg" style="display:none">
+                <p>Integers only have 15 digits precision, after that have to use a <b>BigInt</b></p>
+                <pre>typeof(BigInt(1234567890123456789012345))   //bigint
+typeof(1234567890123456789012345n)          //bigint
+typeof(1234567890123456789012345)           //number</pre>
+                <p><b>Number.isSafeInteger(x)</b> can be used to see what type it might need to be.<br>
+                    Can use the normal operators  you can use with numbers, but have to be with other <b>BigInts</b><br>  
+                    <b>BigInt</b> cannot have decimal points.
+                </p>
+                <hr>
+            </div>
+            <h2>Number Methods</h2>
+            <button id="btn-method-eg" type="button" class="btn btn-show" onclick='fnShowHide(this,"method-eg")' >Show # Method Examples</button>           
+            <div id="method-eg" style="display:none">
+                <p>Quick glance at some methods used with numbers</p>
+                <table class="table table-striped">
+                    <thead class="table-light">
+                        <tr>
+                            <th scope="col">Method</th>
+                            <th scope="col">Desc</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td scope="row">toString()</td>
+                            <td>Returns a number as a string</td>
+                        </tr>
+                        <tr>
+                            <td scope="row">toExponential()</td>
+                            <td>Returns a number written in exponential notation</td>
+                        </tr>
+                        <tr>
+                            <td scope="row">toFixed()</td>
+                            <td>Returns a number written with a number of decimals</td>
+                        </tr>
+                        <tr>
+                            <td scope="row">toPrecision()</td>
+                            <td>Returns a number written with a specified length</td>
+                        </tr>
+                        <tr>
+                            <td scope="row">valueOf()</td>
+                            <td>Returns a number as a number</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p>Number methods can be found <a href="https://www.w3schools.com/js/js_number_methods.asp">here</a>.<br>
+                    <b>Number()</b> will return a number, works with dates for milliseconds too. Has to be able to be number, i.e. "10 33" is invalid.<br>
+                    <b>parseInt()</b> and <b>parseFloat()</b> will return Int and Float, taking the first one, i.e. "10 66" will be "10".<br>
+                    <b>Number.IsInteger</b> vs <b>Number.IsSafeIntger</b>, "safe" will fit inside a number, so a little more precise than not "safe".
+                </p>
+                <hr>
+            </div>
+            <h2>Number Properties</h2>
+            <button id="btn-properties-eg" type="button" class="btn btn-show" onclick='fnShowHide(this,"properties-eg")' >Show # Property Examples</button>           
+            <div id="properties-eg" style="display:none">
+                <p>Not going to be used all that much, but for future reference</p>
+                <table class="table table-striped">
+                    <thead class="table-light">
+                        <tr>
+                            <th scope="col">Property</th>
+                            <th scope="col">Desc</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td scope="row">Number.EPSILON</td>
+                            <td>The difference between 1 and the smallest number > 1</td>
+                        </tr>
+                        <tr>
+                            <td scope="row">Number.MAX_VALUE</td>
+                            <td>The largest number possible in JavaScript</td>
+                        </tr>
+                        <tr>
+                            <td scope="row">Number.MIN_VALUE</td>
+                            <td>The smallest number possible in JavaScript</td>
+                        </tr>
+                        <tr>
+                            <td scope="row">Number.MAX_SAFE_INTEGER</td>
+                            <td>The maximum safe integer (2^53 - 1)</td>
+                        </tr>
+                        <tr>
+                            <td scope="row">Number.MIN_SAFE_INTEGER</td>
+                            <td>The minimum safe integer -(2^53 - 1)</td>
+                        </tr>
+                        <tr>
+                            <td scope="row">Number.POSITIVE_INFINITY</td>
+                            <td>Infinity (returned on overflow)</td>
+                        </tr>
+                        <tr>
+                            <td scope="row">Number.NEGATIVE_INFINITY</td>
+                            <td>Negative infinity (returned on overflow)</td>
+                        </tr>
+                        <tr>
+                            <td scope="row">Number.NaN</td>
+                            <td>A "Not-a-Number" value</td>
+                        </tr>
+                    </tbody>
+                </table>                
+            </div>
+        </div>
+        <script>
+            widget_addLoadEvent(fnNumbersFillIn);
+        </script>
+        <div id="footer"></div>
+        <script src="inc/footer.js"></script>
     </body>
 </html>

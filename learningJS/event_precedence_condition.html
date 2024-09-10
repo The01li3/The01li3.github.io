@@ -1,18 +1,64 @@
 <!doctype html>
 <html>
     <head>
-        <meta charset="utf-8">
-        <title>Examples</title>
-        <link rel="stylesheet" href="inc/styles.css">
+        <title>Events, Precedence & Conditionals</title>
         <script src="inc/meta.js"></script>	
-    </head>
-    <body>        
-        <div id="navHeader">
-        </div> 
-        <div> 
-
-        </div>
-        <script src="inc/header.js"></script>
+        <script src="inc/header.js"></script><!-- inline gets loaded top to bottom, inc gets loaded side by side with modern browsers, can be at the top.-->
         <script src="inc/functions.js"></script>
+    </head>
+    <body class="row align-items-start">        
+        <div id="navHeader" class="col col-2">
+        </div> 
+        <div class="col col-9">  
+            <h1>Events, Precedence & Conditionals</h1>
+            <h2>Events</h2>
+            <p>Important events:</p>
+            <ul>
+                <li>onchange</li>
+                <li>onclick</li>
+                <li>onmouseover</li>
+                <li>onmouseout</li>
+                <li>onkeydown</li>
+                <li>onload</li>
+            </ul>
+            <p>But a full list can be <a href="https://www.w3schools.com/jsref/dom_obj_event.asp">here</a></p>
+            <hr>
+            <h2>Precedence</h2>
+            <p>Use brackets, makes it more clear.<br>
+                Functions are executed before the result can be used.
+            </p>
+            <hr>
+            <h2>Comparisons</h2>
+            <p>Remember to convert before comparing.<br> 
+                Normal comparisons, can be checked <a href = "https://www.w3schools.com/js/js_comparisons.asp">here</a> <br>
+                ? and : can be used as an "else" type of situation <b>variablename = (condition) ? value1:value2 </b><br>
+            </p>     
+            <p>if, else, elseif, switch, all self explanitory.</p> 
+            <pre>if (time &lt 10) {
+    greeting = "Good morning";
+} else if (time &lt 20) {
+    greeting = "Good day";
+} else {
+    greeting = "Good evening";
+}</pre>
+            <p>Same as a normal case statement, uses === scrict comparison.</p>
+            <pre>switch (variable) {
+default:
+    message = "Not A,B,C,D"
+    break; //Doesnt have to be last
+case A:
+    message = "A";
+    break;
+case B: 
+    message = "B";
+    break;
+case C:
+case D:
+    message = "C or D"; //can share case blocks, if this or this
+    // doesnt need break if last
+}</pre>
+        </div>
+        <div id="footer"></div>
+        <script src="inc/footer.js"></script>
     </body>
 </html>

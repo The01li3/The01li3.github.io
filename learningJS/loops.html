@@ -1,18 +1,91 @@
 <!doctype html>
 <html>
     <head>
-        <meta charset="utf-8">
-        <title>Examples</title>
-        <link rel="stylesheet" href="inc/styles.css">
+        <title>Loops</title>
         <script src="inc/meta.js"></script>	
-    </head>
-    <body>        
-        <div id="navHeader">
-        </div> 
-        <div> 
-
-        </div>
-        <script src="inc/header.js"></script>
+        <script src="inc/header.js"></script><!-- inline gets loaded top to bottom, inc gets loaded side by side with modern browsers, can be at the top.-->
         <script src="inc/functions.js"></script>
+    </head>
+    <body class="row align-items-start">        
+        <div id="navHeader" class="col col-2">
+        </div> 
+        <div class="col col-9">  
+            <h1>Loops</h1>
+            <h2>For Loop</h2>
+            <p>Fairly standard:</p>
+            <pre>for (let i = 0; i < x.length; i++) {
+    text += x[i] + "<br>";
+} </pre>
+            <p>Use let to keep it inside the block.</p>
+            <h3>Expression 1</h3>
+            <p>(One Time Run; Condition For The Block; Executed Everytime AFTER Block).<br>
+                In theory you could have the "One Time Run" to contain multiple expressions.<br>
+                Can also omit expression 1 completely with just a blank then ; which could be useful if the loop parameter is defined previously.
+            </p>
+            <h3>Expression 2</h3>
+            <p>Can be left out, just make sure the loop always ends in a break to avoid recurrsion and browser crashing.</p>
+            <h3>Expression 3</h3>
+            <p>Also optional, could increment in the block, could increment multiple amounts etc.</p>
+            <hr>
+            <h2>For In</h2>
+            <p>Can use a few loops for looping through arrays.</p>
+            <pre>for (let i in x) {
+    text += x[i];
+}</pre>
+            <p>The <b>in</b> knows to loop over the object, and will return a the key of i everytime.</p>
+            <p>But itll likely be better to use a <b>x.forEach(myFunction)</b> call to call a function for every iteration.</p>
+            <hr>
+            <h2>For Of</h2>
+            <pre>for (let x of cars) {
+    text += x;
+}</pre>
+            <p>Similar to the for in, but instead of giving a pointer to the value, it gives the value:</p>
+            <p>for...in</p>
+            <pre>text += x[i]</pre>
+            <p>for...of</p>
+            <pre>text += x</pre>
+            <hr>
+            <h2>While</h2>
+            <p>Loops the below, while the condition is true.</p>
+            <pre>while (i $lt 10){
+    text = x[i];
+    i++
+}</pre>
+            <p>Do While works the same way, but itll always run through it once before getting to the check.<br>
+                So works a similar way to the for, but the conditions in the for brackets are normally placed inside the loop.<br>
+            </p>
+            <hr>
+            <h2>Break</h2>
+            <p>Break will "jump out" of the current loop.<br>
+                Continue will "jump over" to the next iteration of the loop.<br>
+                Can also use a "label" to break out of a specific block of code, if that block has been labelled.<br>
+            </p>
+            <hr>
+            <h2>Iterables</h2>
+            <p>Good example to use a <b>for...of</b> loop to demonstrate.<br>
+                Itll iterate over x in different ways depending on what x is.<br>
+                Strings get each character looped.<br>
+                Arrays get each element looped.<br>
+                Maps get each set looped.<br>
+                Home made iterables:
+            </p>
+            <pre>function myNumbers() {
+    let n = 0;
+    return {
+        next: function() {
+            n += 10;
+            return {value:n, done:false};
+        }
+    };
+}
+
+// Create Iterable
+const n = myNumbers();
+n.next(); // Returns 10
+n.next(); // Returns 20
+n.next(); // Returns 30</pre>
+        </div>
+        <div id="footer"></div>
+        <script src="inc/footer.js"></script>
     </body>
 </html>

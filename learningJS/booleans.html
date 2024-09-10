@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Booleans</title>
+        <script src="inc/meta.js"></script>	
+        <script src="inc/header.js"></script><!-- inline gets loaded top to bottom, inc gets loaded side by side with modern browsers, can be at the top.-->
+        <script src="inc/functions.js"></script>
+    </head>
+    <body class="row align-items-start">        
+        <div id="navHeader" class="col col-2">
+        </div> 
+        <div class="col col-9"> 
+            <h1>Booleans</h1>
+            <p>As expected, TRUE/FAlSE<br>
+                Normal <b>Boolean()</b> stuff, if it's filled in correctly (1,7,"Hello","false"), its <b>TRUE</b>, else its <b>FALSE</b>(0,-0,5/"bob",null).<br>
+                Everything without a value is considered false, empty string, null, undefined, NaN.<br>
+                Dont try and create boolean objects, its never needed, and make things slow down and can make things incorrect as comparing 2 JS arrays always returns false</br>
+                Normal comparisons to get true/false back, can be checked <a href = "https://www.w3schools.com/js/js_comparisons.asp">here</a>.<br>
+                ? and : can be used as an "else" type of situation <b>variablename = (condition) ? value1:value2</b>.<br>
+                Remember to convert before comparing.
+            </p>            
+        </div>
+        <div id="footer"></div>
+        <script src="inc/footer.js"></script>
+    </body>
+</html>

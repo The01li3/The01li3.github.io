@@ -1,18 +1,75 @@
 <!doctype html>
 <html>
     <head>
-        <meta charset="utf-8">
-        <title>Examples</title>
-        <link rel="stylesheet" href="inc/styles.css">
+        <title>Scope, Hoisting & this Keyword</title>
         <script src="inc/meta.js"></script>	
-    </head>
-    <body>        
-        <div id="navHeader">
-        </div> 
-        <div> 
-
-        </div>
-        <script src="inc/header.js"></script>
+        <script src="inc/header.js"></script><!-- inline gets loaded top to bottom, inc gets loaded side by side with modern browsers, can be at the top.-->
         <script src="inc/functions.js"></script>
+    </head>
+    <body class="row align-items-start">        
+        <div id="navHeader" class="col col-2">
+        </div> 
+        <div class="col col-9">  
+            <h1>Scope, Hoisting & this Keyword</h1>
+            <h2>Scope</h2>
+            <p>Global, Block or Function scopes.<br>
+                Both const and let are block scoped, var is not block scoped, but try not to use.<br>
+                Assigning a value to a variable that has not been declared automatical,ly makes that variable global.<br>
+                Variables start when declared, and close either in their block, their function, or when global when the tab is closed.
+            </p>
+            <hr>
+            <h2>Hoisting</h2>
+            <p>Variables can be declared after they have been used because of hoisiting.<br>
+                All declarations get moved to the top of the scope in which they have been created.<br>
+                If assigned at declaring, the assigning doesnt also get moved.
+            </p>
+            <p>Let and const get hoisted, but not initialized. Honestly just hoist them yourself, it makes code more readable.</p>
+            <p>For the most part, ignore JS's behaviour here and declare variables at the top, its just better</p>
+            <hr>
+            <h2>this</h2>
+            <p>this, refers to an object, you cannot change the value of this, it a keyword.</p>
+            <h3>Object Method</h3>
+            <p>Refers to the objects values.</p>
+            <pre>const person = {
+    firstName: "John",
+    lastName: "Doe",
+    id: 5566,
+    fullName : function() {
+        return this.firstName + " " + this.lastName; //person.firstname...
+    }
+};
+</pre>
+            <h3>Alone</h3>
+            <p>Alone, this refers to the global object.</p>
+            <pre>let x = this; //[object Window]</pre>
+            <h3>Function</h3>
+            <p>In a non strict function, this refers to the global object.</p>
+            <pre>function myFunction() {
+    return this;
+}</pre>
+            <h3>Event Handlers</h3>
+            <p>In HTML event handlers, this refers to the HTML element that received the event:</p>
+            <pre>&ltbutton id="btn-properties-eg" type="button" class="btn btn-show" onclick='fnShowHide(this,"properties-eg")' &gtShow # Property Examples&lt/button%gt</pre>
+            <h3>Call and Apply</h3>
+            <p>Both allow you to call a function using different parameters.<br>
+                Call is comma, Apply is an array.<br>
+                The difference is that apply lets you invoke the function with arguments as an array; call requires the parameters be listed explicitly.
+            </p> 
+            <pre>function Product(name, price) {
+    this.name = name;
+    this.price = price;
+}
+
+function Food(name, price) {
+    Product.call(this, name, price);
+    this.category = 'food';
+}
+
+console.log(new Food('cheese', 5).name); // Expected output: "cheese"</pre>
+            <pre>const numbers = [5, 6, 2, 3, 7];
+const max = Math.max.apply(null, numbers);</pre>
+        </div>
+        <div id="footer"></div>
+        <script src="inc/footer.js"></script>
     </body>
 </html>

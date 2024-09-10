@@ -1,18 +1,161 @@
 <!doctype html>
 <html>
     <head>
-        <meta charset="utf-8">
-        <title>Examples</title>
-        <link rel="stylesheet" href="inc/styles.css">
+        <title>Maps & Sets</title>
         <script src="inc/meta.js"></script>	
-    </head>
-    <body>        
-        <div id="navHeader">
-        </div> 
-        <div> 
-
-        </div>
-        <script src="inc/header.js"></script>
+        <script src="inc/header.js"></script><!-- inline gets loaded top to bottom, inc gets loaded side by side with modern browsers, can be at the top.-->
         <script src="inc/functions.js"></script>
+    </head>
+    <body class="row align-items-start">        
+        <div id="navHeader" class="col col-2">
+        </div> 
+        <div class="col col-9">  
+            <h1>Maps & Sets</h1>
+            <h2>Sets</h2>
+            <p>Sets are a collection of unique values, think array, but none the same.<br>
+                They will return "objects" when <b>typeof</b> is used.<br>
+                They have no keys, just a list.<br>
+                Create with:
+            </p>
+            <pre>const s = new Set([x,y,z])</pre>
+            <p>Use a <b>for...or</b> loop to go through them all.
+            </p>
+            <table class="table table-striped">
+                <thead class="table-light">
+                    <tr>
+                        <th scope="col">Method</th>
+                        <th scope="col">Desc</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td scope="row">s.add(x)</td>
+                        <td>Adds a value to the set</td>
+                    </tr> 
+                    <tr>
+                        <td scope="row">s.has(x)</td>
+                        <td>Checks if a value exists</td>
+                    </tr>   
+                    <tr>
+                        <td scope="row">s.foreach(myFunction)</td>
+                        <td>Loops through the set calling myFunction every time.</td>
+                    </tr>  
+                    <tr>
+                        <td scope="row">s.entries</td>
+                        <td>Returns an Iterator with the [value,value] pairs from a set</td>
+                    </tr>  
+                    <tr>
+                        <td scope="row">s.clear</td>
+                        <td>Empties the set</td>
+                    </tr>
+                    <tr>
+                        <td scope="row">s.values() s.keys()</td>
+                        <td>Returns an Iterator with the values in a Set</td>
+                    </tr>
+                    <tr>
+                        <td scope="row">s.delete</td>
+                        <td>Deletes an element from the set</td>
+                    </tr>
+                    <tr>
+                        <td scope="row">s.size</td>
+                        <td>Returns the number of elements</td>
+                    </tr>
+                </tbody>
+            </table>
+            <hr>
+            <h2>Maps</h2>
+            <p>Maps hold key-value pairs, the key can be any datatype.<br>
+                They will return "objects" when <b>typeof</b> is used.<br>
+                Create with:
+            </p>
+            <pre>const m = new Map([x,a],[y,b],[z,c])</pre>
+            <p>Use a <b>for...or</b> loop to go through them all.
+            </p>
+            <table class="table table-striped">
+                <thead class="table-light">
+                    <tr>
+                        <th scope="col">Method</th>
+                        <th scope="col">Desc</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td scope="row">m.set(x,a)</td>
+                        <td>Adds a value to the map</td>
+                    </tr> 
+                    <tr>
+                        <td scope="row">m.get(x)</td>
+                        <td>Gets the value, with a key of x</td>
+                    </tr>   
+                    <tr>
+                        <td scope="row">m.has(x)</td>
+                        <td>Checks if the map has x as a key</td>
+                    </tr>  
+                    <tr>
+                        <td scope="row">m.forEach(myFunction)</td>
+                        <td>Loops through the map calling myFunction every time.</td>
+                    </tr>  
+                    <tr>
+                        <td scope="row">m.clear</td>
+                        <td>Empties the map</td>
+                    </tr>
+                    <tr>
+                        <td scope="row">m.entries()</td>
+                        <td>Returns an Iterator with the [value,value] pairs from a map</td>
+                    </tr>
+                    <tr>
+                        <td scope="row">m.delete()</td>
+                        <td>Deletes an element from the map</td>
+                    </tr>
+                    <tr>
+                        <td scope="row">m.keys()</td>
+                        <td>Returns an iterator object with the keys in a map:</td>
+                    </tr>
+                    <tr>
+                        <td scope="row">m.size</td>
+                        <td>Returns the number of elements</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>You can use objects as keys, to then make finding it use a value</p>
+            <pre>const apples = {name: 'Apples'};
+const fruits = new Map();
+fruits.set(apples, 500);
+fruits.get(apples); //not fruits.get("apples"); this is undefined.</pre>
+            <hr>
+            <h2>Differences</h2>
+            <table class="table table-striped">
+                <thead class="table-light">
+                    <tr>
+                        <th scope="col">Object</th>
+                        <th scope="col">Maps</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td scope="row">Not directly iterable</td>
+                        <td>Directly iterable</td>
+                    </tr>   
+                    <tr>
+                        <td scope="row">Do not have a size property</td>
+                        <td>Have a size property</td>
+                    </tr>
+                    <tr>
+                        <td scope="row">Keys must be Strings (or Symbols)</td>
+                        <td>Keys can be any datatype</td>
+                    </tr>
+                    <tr>
+                        <td scope="row">Keys are not well ordered</td>
+                        <td>Keys are ordered by insertion</td>
+                    </tr>
+                    <tr>
+                        <td scope="row">Have default keys</td>
+                        <td>Do not have default keys</td>
+                    </tr>     
+                </tbody>
+            </table>
+        </div>
+        <div id="footer"></div>
+        <script src="inc/footer.js"></script>
     </body>
 </html>

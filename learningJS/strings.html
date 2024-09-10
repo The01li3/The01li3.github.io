@@ -1,18 +1,130 @@
 <!doctype html>
 <html>
     <head>
-        <meta charset="utf-8">
-        <title>Examples</title>
-        <link rel="stylesheet" href="inc/styles.css">
+        <title>Strings</title>
         <script src="inc/meta.js"></script>	
-    </head>
-    <body>        
-        <div id="navHeader">
-        </div> 
-        <div> 
-
-        </div>
-        <script src="inc/header.js"></script>
+        <script src="inc/header.js"></script><!-- inline gets loaded top to bottom, inc gets loaded side by side with modern browsers, can be at the top.-->
         <script src="inc/functions.js"></script>
+        <script src="js/strings.js"></script>
+    </head>
+    <body class="row align-items-start">        
+        <div id="navHeader" class="col col-2">
+        </div> 
+        <div class="col col-9">
+            <h1>Strings</h1>
+            <h2>Basics</h2> 
+            <p>Same as normal, to use quotes within quotes " '' " or ' "" '.<br>
+                \ is the escape character so \" Hello World\".<br>
+                + to break up multiple lines of text.<br>
+                Again, dont use single strings as object "new" slow it down, isnt needed.
+            </p>
+            <hr>
+            <h2>Methods</h2>
+            <button id="btn-string-method-eg" type="button" class="btn btn-show" onclick='fnShowHide(this,"string-method-eg")' >Show String Method Examples</button>           
+            <div id="string-method-eg" style="display:none">
+                <p>Not likely to use a lot, so some basics:</p>
+                <table class="table table-striped">
+                    <thead class="table-light">
+                        <tr>
+                            <th scope="col">Method</th>
+                            <th scope="col">Desc</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td scope="row">x.length</td>
+                            <td>Length of string X</td>
+                        </tr>
+                        <tr>
+                            <td scope="row">x.at(i)</td>
+                            <td>Get the ith+1 character of x</td>
+                        </tr>
+                        <tr>
+                            <td scope="row">x.slice(i, j)</td>
+                            <td>Get string characters from i to j, "j" can be empty to show the rest</td>
+                        </tr>
+                        <tr>
+                            <td scope="row">x.subtring(i, j)</td>
+                            <td>If empty, treated as 0</td>
+                        </tr>
+                        <tr>
+                            <td scope="row">x.substr(i, j)</td>
+                            <td>Same as above but j is count amount of characters</td>
+                        </tr>
+                        <tr>
+                            <td scope="row">x.toUpperCase()</td>
+                            <td>All of x to upper case</td>
+                        </tr>
+                        <tr>
+                            <td scope="row">x.toLowerCase()</td>
+                            <td>All of x to lower case</td>
+                        </tr>
+                        <tr>
+                            <td scope="row">x.trim()</td>
+                            <td>Removes white space</td>
+                        </tr>
+                        <tr>
+                            <td scope="row">x.replace("a","b")</td>
+                            <td>Replaces A with B, case sensitive unless you use /a/i</td>
+                        </tr>
+                        <tr>
+                            <td scope="row">x.replaceAll("a","b")</td>
+                            <td>Replaces all A with B, case sensitive unless you use /a/i</td>
+                        </tr>
+                        <tr>
+                            <td scope="row">x.split(",")</td>
+                            <td>Splits into an array based off ","</td>
+                        </tr>                        
+                    </tbody>
+                </table>
+                <hr>
+            </div>
+            <h2>String Searching</h2>
+            <button id="btn-string-search-eg" type="button" class="btn btn-show" onclick='fnShowHide(this,"string-search-eg")' >Show String Search Examples</button>           
+            <div id="string-search-eg" style="display:none">
+                <p>Not likely to use a lot, so some basics for "bob likes to bob in the sea" (check console log for more details):</p>
+                <ul>
+                    <li>x.indexOf("bob") - 0</li>
+                    <li>x.lastIndexOf("bob") - 13</li>
+                    <li>x.search("bob") - 0</li>
+                    <li>x.match("bob") - ["bob"]</li>
+                    <li>x.matchAll("bob") - bob,bob</li>
+                    <li>x.includes("bob") - true</li>
+                    <li>x.startsWith("bob") - true</li>
+                    <li>x.endsWith("bob") - false</li>
+                </ul>
+                <hr>
+            </div>
+            <h2>Template Literals</h2>
+            <button id="btn-literals-eg" type="button" class="btn btn-show" onclick='fnShowHide(this,"literals-eg")' >Show Template literals Examples</button>           
+            <div id="literals-eg" style="display:none">
+                <p>Can use backticks to use both quotes `It's name is "Fido"`<br>
+                    ${...} with backticks ` means you can use it without "+" e.g:
+                </p>
+                    <pre>let firstName = "John";
+let lastName = "Doe";
+let text = `Welcome ${firstName} ${lastName}!`;</pre>
+                    <p>vs</p>
+                    <pre>let firstName = "John";
+let lastName = "Doe";
+let text = "Welcome" + firstName + lastName + "!";</pre>
+                <p>In the first example "text" becomes a "Template Literal", and the variables are using "Interpolation", works well for HTML input. Particularly looping content, lists, tables etc. e.g.</p>
+                <pre>let header = "Templates Literals";
+let tags = ["template literals", "javascript", "es6"];
+
+let html = `&lth2&gt${header}&lt/h2&gt&ltul&gt`;
+for (const x of tags) {
+    html += `&ltli&gt${x}&lt/li&gt`;
+}
+html += `&lt/ul&gt`;
+                </pre>
+                <hr>
+            </div>
+        </div>
+        <script>
+            widget_addLoadEvent(fnNumbersFillIn);
+        </script>
+        <div id="footer"></div>
+        <script src="inc/footer.js"></script>
     </body>
 </html>

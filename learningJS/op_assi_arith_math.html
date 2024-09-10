@@ -1,18 +1,85 @@
 <!doctype html>
 <html>
     <head>
-        <meta charset="utf-8">
-        <title>Examples</title>
-        <link rel="stylesheet" href="inc/styles.css">
+        <title>Operators, Assignment, Arithmetic & Math</title>
         <script src="inc/meta.js"></script>	
-    </head>
-    <body>        
-        <div id="navHeader">
-        </div> 
-        <div> 
-
-        </div>
-        <script src="inc/header.js"></script>
+        <script src="inc/header.js"></script><!-- inline gets loaded top to bottom, inc gets loaded side by side with modern browsers, can be at the top.-->
         <script src="inc/functions.js"></script>
+    </head>
+    <body class="row align-items-start">        
+        <div id="navHeader" class="col col-2">
+        </div> 
+        <div class="col col-9">  
+            <h1>Operators, Assignment, Arithmetic & Math</h1>
+            <h2>Operators</h2>            
+            <p>Fairly standard: +, -, *, **(Exponentiation), /, %, ++, --</p>
+            <hr>
+            <h2>Assignments</h2>
+            <button id="btn-assignments-eg" type="button" class="btn btn-show" onclick='fnShowHide(this,"assignments-eg")' >Show Assignments Examples</button>           
+            <div id="assignments-eg" style="display:none">
+                <p>There are the normal JS operators, bitwise, shift and logical assignments (shorthand += etc.).</p>
+                <h3>JS</h3>
+                <p>Same as the normal operators: =, +=, -=, *=, /=, %=, **= <br>
+                    Then just being the same as =, x+y, x-y... etc.
+                </p>
+                <h3>Shift</h3>
+                <p> Uses binary to shift the values over: &lt&lt=, &gt&gt=, &gt&gt&gt= <br>
+                    So 4 = 1 &lt&lt 2 as 00000001 moved over 2 is 00000100 
+                </p>
+                <h3>Bitwise</h3>
+                <p>I dont really get these but: &=, ^=, |=</p>
+                <h3>Logical</h3>
+                <p>if X then Y &&=, ||=, ??=<br>
+                &&= if first value is TRUE, then second value is assigned<br>
+                ||= if first value is FALSE, then second value is assigned<br>
+                ??= if first value is undefined or null, then second value is assigned<br></p>
+                <hr>
+            </div>
+            <h2>Arithmetic</h2>
+            <p>Normal stuff, use brackets to make it clear.</p>
+            <hr>
+            <h2>Math</h2>
+            <p>Not likely to need too many of these, so most notably:</p>
+            <table class="table table-striped">
+                <thead class="table-light">
+                    <tr>
+                        <th scope="col">Object</th>
+                        <th scope="col">Desc</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td scope="row">Math.round(x)</td>
+                        <td>Rounds to nearest int</td>
+                    </tr>
+                    <tr>
+                        <td scope="row">Math.ceil(x)</td>
+                        <td>Rounds up to nearest int</td>
+                    </tr>
+                    <tr>
+                        <td scope="row">Math.floor(x)</td>
+                        <td>Rounds down to nearest int</td>
+                    </tr>
+                    <tr>
+                        <td scope="row">Math.abs(x)</td>
+                        <td>Returns absolute</td>
+                    </tr>
+                    <tr>
+                        <td scope="row">Math.min(x,y,z)</td>
+                        <td>Returns min from a list</td>
+                    </tr>
+                    <tr>
+                        <td scope="row">Math.max(x,y,z)</td>
+                        <td>Returns max from a list</td>
+                    </tr>
+                    <tr>
+                        <td scope="row">Math.random()</td>
+                        <td>Returns a random number between 0 and 1 <a href="misc.html">More Info</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div id="footer"></div>
+        <script src="inc/footer.js"></script>
     </body>
 </html>

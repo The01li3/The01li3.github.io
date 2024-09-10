@@ -1,18 +1,43 @@
 <!doctype html>
 <html>
     <head>
-        <meta charset="utf-8">
-        <title>Examples</title>
-        <link rel="stylesheet" href="inc/styles.css">
+        <title>Dates</title>
         <script src="inc/meta.js"></script>	
-    </head>
-    <body>        
-        <div id="navHeader">
-        </div> 
-        <div> 
-
-        </div>
-        <script src="inc/header.js"></script>
+        <script src="inc/header.js"></script><!-- inline gets loaded top to bottom, inc gets loaded side by side with modern browsers, can be at the top.-->
         <script src="inc/functions.js"></script>
+    </head>
+    <body class="row align-items-start">        
+        <div id="navHeader" class="col col-2">
+        </div> 
+        <div class="col col-9">  
+            <h1>Dates</h1>
+            <h2>Basics</h2>
+            <p>
+                Created with <b>d = new Date()</b>, different parameters can be added for days, months seconds etc.
+                Can display with <b>d.toString() d.toDateString()</b> or <b>d.toISOString()</b>
+            </p>
+            <hr>
+            <h2>Formats</h2>
+            <p>Pretty much just exists 3 formats, ISO, short and long.<br>
+                Always try and use full date and times, 0's included e.g. 2024/03/11 
+            </p>
+            <hr>
+            <h2>Methods</h2>
+            <p>Luckily fairly self explanitory, dont use <b>getYear()</b> its old and only returns 2 digit year.</p>
+            <ul>
+                <li>x.getFullYear()</li>
+                <li>x.getMonth()</li>
+                <li>x.getDate()</li>
+                <li>x.getDay()</li>
+                <li>x.getHours()</li>
+                <li>x.getMinutes()</li>
+                <li>x.getSeconds()</li>
+                <li>x.getMilliseconds()</li>
+                <li>x.getTime()</li>
+            </ul>
+            <p>Can use the same methods but "set" to set the parameters in the variable</p>
+        </div>
+        <div id="footer"></div>
+        <script src="inc/footer.js"></script>
     </body>
 </html>

@@ -1,18 +1,50 @@
 <!doctype html>
 <html>
     <head>
-        <meta charset="utf-8">
-        <title>Examples</title>
-        <link rel="stylesheet" href="inc/styles.css">
+        <title>Types</title>
         <script src="inc/meta.js"></script>	
+        <script src="inc/header.js"></script><!-- inline gets loaded top to bottom, inc gets loaded side by side with modern browsers, can be at the top.-->
+        <script src="inc/functions.js"></script>
     </head>
-    <body>        
-        <div id="navHeader">
+    <body class="row align-items-start">        
+        <div id="navHeader" class="col col-2">
         </div> 
-        <div> 
+        <div class="col col-9">  
+            <h1>Types</h1>
+            <h2>Typeof</h2>
+            <p>Main Data Types:</p>
+            <ul>
+                <li>string</li>
+                <li>number</li>
+                <li>boolean</li>
+                <li>bigint</li>
+                <li>symbol</li>
+                <li>null</li>
+                <li>undefined</li>
+                <li>function</li>
+            </ul>
+            <p>To see if something is an array, <b>typeof</b> cannot be used as it'll just return an object.<br>
+                Instead <b>Array.isArray(x)</b> needs to be used.<br>
+                <b>x. instanceof y</b> will return true or false if x is an instance of y i.e. <b>(myDateVariable instanceof Date)</b> could return true.<br>
+                <b>.constructor</b> will returns the contructor function used to create said variable <b>false.constructor = function Boolean() { [native code] }</b>
+            </p>
+            <hr>
+            <h2>Conversion</h2>
+            <ul>
+                <li>Number(x)</li>
+                <li>parseFloat(x)</li>
+                <li>parseInt(x)</li>
+                <li>x + y</li>
+                <li>String(x)</li>
+                <li>x.toString()</li>
+                <li>x.toExponential()</li>
+                <li>x.toFixed()</li>
+                <li>x.toPrecision</li>
+                <li>getTime()</li>
+            </ul>
 
         </div>
-        <script src="inc/header.js"></script>
-        <script src="inc/functions.js"></script>
+        <div id="footer"></div>
+        <script src="inc/footer.js"></script>
     </body>
 </html>

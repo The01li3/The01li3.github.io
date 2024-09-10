@@ -1,18 +1,232 @@
 <!doctype html>
 <html>
     <head>
-        <meta charset="utf-8">
-        <title>Examples</title>
-        <link rel="stylesheet" href="inc/styles.css">
+        <title>Arrays</title>
         <script src="inc/meta.js"></script>	
-    </head>
-    <body>        
-        <div id="navHeader">
-        </div> 
-        <div> 
-
-        </div>
-        <script src="inc/header.js"></script>
+        <script src="inc/header.js"></script><!-- inline gets loaded top to bottom, inc gets loaded side by side with modern browsers, can be at the top.-->
         <script src="inc/functions.js"></script>
+        <script src="js/arrays.js"></script>
+    </head>
+    <body class="row align-items-start">        
+        <div id="navHeader" class="col col-2">
+        </div> 
+        <div class="col col-9">  
+            <h1>Arrays</h1>
+            <h2>Intro</h2>
+            <button id="btn-basics-eg" type="button" class="btn btn-show" onclick='fnShowHide(this,"basics-eg")' >Show Array Basics Examples</button>           
+            <div id="basics-eg" style="display:none">
+                <p>Basic arrays, create with [a,b,c]<br>
+                    Access with <b>x[0] - x[x.length - 1];</b><br>
+                    Arrays are just objects, and can store objects.<br>
+                    Can display to screen with <b>x.toString</b>.<br>
+                    2 ways to loop through:
+                </p>
+                <pre>for (let i = 0; i &lt x.length; i++) {
+    text += "&ltli&gt" + x[i] + "&lt/li&gt";
+}</pre>
+                <p>Or:</p>
+                <pre>fruits.forEach(myFunction);
+function myFunction(value) {
+    text += "&ltli&gt" + value + "&lt/li&gt";
+}</pre>
+                <p><b>x.push()</b> or <b>x[x.length] = </b> will add to end.<br>
+                    But you can add things to empty values to create undefined holes.<br>
+                    If you try to make an array use named indexes, itll convert it to an object.<br>
+                    Stay away from <b>new Array();</b> as it can cause confusion.<br>
+                    <b>Array.isArray(x);</b> will do a check to see if its an array, as typeOf will return object
+                </p>
+                <p>You can put object in arrays:</p>
+                <pre><code>let x = "";
+const myObj = {
+    name: "John",
+    age: 30,
+    cars: [
+    {name:"Ford", models:["Fiesta", "Focus", "Mustang"]},
+    {name:"BMW", models:["320", "X3", "X5"]},
+    {name:"Fiat", models:["500", "Panda"]}
+    ]
+};
+
+for (let i in myObj.cars) {
+    x += "&lth2&gt" + myObj.cars[i].name + "&lt/h2&gt";
+    for (let j in myObj.cars[i].models) {
+    x += myObj.cars[i].models[j] + "&ltbr&gt";
+    };
+}</code></pre>
+                <hr>
+            </div>
+            <h2>Array Methods</h2>
+            <button id="btn-array-methods-eg" type="button" class="btn btn-show" onclick='fnShowHide(this,"array-methods-eg")' >Show Array Methods Examples</button>           
+            <div id="array-methods-eg" style="display:none">
+                <p>Most used:</p>
+                <table class="table table-striped">
+                    <thead class="table-light">
+                        <tr>
+                            <th scope="col">Method</th>
+                            <th scope="col">Desc</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td scope="row">x.length</td>
+                            <td>Length/size of array X.</td>
+                        </tr>
+                        <tr>
+                            <td scope="row">x.toString()</td>
+                            <td>Array to string, comma separated.</td>
+                        </tr>
+                        <tr>
+                            <td scope="row">x.join(y)</td>
+                            <td>Does the same as to string, but specifies the delimiter.</td>
+                        </tr>
+                        <tr>
+                            <td scope="row">x.at(i)</td>
+                            <td>Same as x[i]</td>
+                        </tr>
+                        <tr>
+                            <td scope="row">x.pop()</td>
+                            <td>Removes the last element from an array, will return the value.</td>
+                        </tr>
+                        <tr>
+                            <td scope="row">x.push(y)</td>
+                            <td>Adds an item to the end of the array, will return the new length.</td>
+                        </tr>
+                        <tr>
+                            <td scope="row">x.shift()</td>
+                            <td>Same as pop, but the start, shifting along to fill the blank.</td>
+                        </tr>
+                        <tr>
+                            <td scope="row">x.unshift(y)</td>
+                            <td>Same as push, but at the start, unshifting items along.</td>
+                        </tr>
+                        <tr>
+                            <td scope="row">x.concat(y)</td>
+                            <td>Concats array x and array y, returning a new one. Can take multiple arguments.</td>
+                        </tr>
+                        <tr>
+                            <td scope="row">x.flat()</td>
+                            <td>Flattens multidimentional arrays.</td>
+                        </tr>
+                        <tr>
+                            <td scope="row">x.splice(&ltwhere&gt, &lthow many removed&gt, y)</td>
+                            <td>Adds items into the array. Which index it should go before, how many it should replace, rest are entries. </td>
+                        </tr> 
+                        <tr>
+                            <td scope="row">x.splice(2,1)</td>
+                            <td>2nd position, 1 parameter to be removed (will delete the 3rd item in the array, not returning a new one).</td>
+                        </tr> 
+                        <tr>
+                            <td scope="row">x.spliced()</td>
+                            <td>Same as above, but doesnt alter the old array, will create a new one.</td>
+                        </tr>  
+                        <tr>
+                            <td scope="row">x.slice(i)</td>
+                            <td>Removes an item from an array, creates a new array. See <b>splice</b> to not return a new array.</td>
+                        </tr>                     
+                    </tbody>
+                </table>
+                <p>Dont use <b>delete</b> on array elements, it leaves undefined holes.<br>
+                    Tries to use <b>x.toString</b> when a string is needed e.g. innerHTML
+                </p>
+            <hr>
+            </div>
+            <h2>Array Search</h2>
+            <button id="btn-array-search-eg" type="button" class="btn btn-show" onclick='fnShowHide(this,"array-search-eg")' >Show Array Search Examples</button>           
+            <div id="array-search-eg" style="display:none">
+                <p>Not likely to use a lot, so some basics for "[1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,0]" (check console log for more details):</p>
+                <ul>
+                    <li>x.indexOf(4) - 3</li>
+                    <li>x.indexOf(4,7) - 13</li>
+                    <li>x.lastIndexOf(4) - 13</li>
+                    <li>x.includes("seven") - false</li>
+                    <li>x.find(myFunction) function myFunction(value, index, array){return value > 7} - 8</li>
+                    <li>x.findIndex(myFunction) - 7</li>
+                </ul>
+                <hr>
+            </div>
+            <h2>Array Sort</h2>
+            <button id="btn-array-sort-eg" type="button" class="btn btn-show" onclick='fnShowHide(this,"array-sort-eg")' >Show Array Sort Examples</button>           
+            <div id="array-sort-eg" style="display:none">
+                <p>Not likely to use a lot, but basics will be <b>x.sort()</b> and <b>x.reverse()</b>.<br>
+                    Sort will do alphabetical, reverse just flips, so can use sort then reverse to do desc.<br>
+                    <b>x.toSorted()</b> makes a new array.
+                </p>
+                <p>Numberical sorting is a little more tricky with:</p>
+                <pre>const points = [40, 100, 1, 5, 25, 10];
+points.sort(function(a, b){return a - b});</pre>
+                <p>Which is a compare function.
+                    <b>sort()</b> function compares 2 values, sends both of these values to the compare function. <br>
+                    The function then returns a +ve, -ve or 0 value, which sort then uses to sort out the 2 values e.g. <br>
+                    Sort takes in the first 2 parameters.<br>
+                    It sends 40 and 100 to the sort function.<br>
+                    Compare function returns 40-100 (-60) a -ve value.<br>
+                    Sort function sorts 40 as a lower value than 100.<br>
+                </p>
+                <p>You can sort in a random order, not sure why you would want this, but its possible.<br>
+                    After sorting can use indexes to find the smallest and largest value.<br>
+                    Can also use <b>Math.min.apply(null,x)</b> or <b>Math.max.apply(null,points)</b> to avoid inefficient sorting.
+                    Can sort objects, not sure why you would want to:
+                </p>
+                <pre>cars.sort(function(a, b){return a.year - b.year});</pre>
+                <p>Or for sorting by string value:</p>
+                <pre>cars.sort(function(a, b){
+    let x = a.type.toLowerCase();   
+    let y = b.type.toLowerCase();
+    if (x < y) {return -1;}
+    if (x > y) {return 1;}
+    return 0;
+});</pre>
+                <hr>
+            </div>
+            <h2>Array Interation</h2>
+            <button id="btn-array-iteration-eg" type="button" class="btn btn-show" onclick='fnShowHide(this,"array-iteration-eg")' >Show Array Sort Examples</button>           
+            <div id="array-iteration-eg" style="display:none">
+                <table class="table table-striped">
+                    <thead class="table-light">
+                        <tr>
+                            <th scope="col">Method</th>
+                            <th scope="col">Desc</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td scope="row">x.forEach(myFunction)</td>
+                            <td>Will call the function for each array element, likely to be the most useful apart from for loops.</td>
+                        </tr> 
+                        <tr>
+                            <td scope="row">y = x.map(myFunction)</td>
+                            <td>Makes y the new array with the function return alterations.</td>
+                        </tr>
+                        <tr>
+                            <td scope="row">y = x.filter(myFunction)</td>
+                            <td>Makes y the new array with function return parameters.</td>
+                        </tr>
+                        <tr>
+                            <td scope="row">y = x.reduce(myFunction)</td>
+                            <td>Reduces x to a single value determined by the funtion.</td>
+                        </tr>
+                        <tr>
+                            <td scope="row">y = x.every(myFunction)</td>
+                            <td>y will be true or false to see if everything passed the function test.</td>
+                        </tr>
+                        <tr>
+                            <td scope="row">y = x.some(myFunction)</td>
+                            <td>y will be true or false to see if some passed the function test.</td>
+                        </tr>      
+                    </tbody>
+                </table>
+                <hr>
+            </div>
+            <h2>Array Const</h2>
+            <p>Common practice to declare an array with <b>Const</b>.<br>
+                This means you cannot change all of the array, but can still each element with <b>x[0]=""</b> or <b>x.push("")</b>.<br>
+                You can use var if you want to do a mass change, but it doesnt have block scope so could change something you dont want.
+            </p>
+        </div>
+        <script>
+            widget_addLoadEvent(fnArrSearch);
+        </script>
+        <div id="footer"></div>
+        <script src="inc/footer.js"></script>
     </body>
 </html>

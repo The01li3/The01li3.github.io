@@ -1,15 +1,15 @@
 /*Shared Functions*/
-function fnShowHide(pButton, pBody,){
+function fnShowHide(pButton, pDiv,){
     const vButtonArr = pButton.innerHTML.split(" ");
     var vButtonText = "";
     for (let i = 1; i < vButtonArr.length; i++) {
         vButtonText += vButtonArr[i] + " ";
     }
-    if (document.getElementById(pBody).style.display == "block"){
-        document.getElementById(pBody).style.display = "none";
+    if (document.getElementById(pDiv).style.display == "block"){
+        document.getElementById(pDiv).style.display = "none";
         pButton.innerHTML = "Show " + vButtonText;
     } else {
-        document.getElementById(pBody).style.display = "block";
+        document.getElementById(pDiv).style.display = "block";
         pButton.innerHTML = "Hide " + vButtonText;
     }
 }
