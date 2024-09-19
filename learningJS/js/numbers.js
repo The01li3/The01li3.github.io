@@ -8,5 +8,5 @@ function fnNumbersFillIn(){
 
     document.getElementById("PrecisionIssue").innerHTML = 0.2 + 0.1;
 
-    document.getElementById("ConvertToNumberic").innerHTML = "6" * "2";
+    document.getElementById("ConvertToNumeric").innerHTML = "6" * "2";
 }

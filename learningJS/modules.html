@@ -1,18 +1,38 @@
 <!doctype html>
 <html>
     <head>
-        <meta charset="utf-8">
-        <title>Examples</title>
-        <link rel="stylesheet" href="inc/styles.css">
+        <title>Modules</title>
         <script src="inc/meta.js"></script>	
+        <script src="inc/header.js"></script><!-- inline gets loaded top to bottom, inc gets loaded side by side with modern browsers, can be at the top.-->
+        <script src="inc/functions.js"></script>
     </head>
-    <body>        
-        <div id="navHeader">
+    <body class="row align-items-start">        
+        <div id="navHeader" class="col col-2">
         </div> 
-        <div> 
+        <div class="col col-9">  
+            <h1>Modules</h1>
+            <p>Modules allow you to break up the code into separate files</p>
+            <pre>&ltscript type="module"&gt
+    import { name, age } from "./person.js";
+&lt/script&gt </pre>
+            <p>Can then have another file with the export of the variables like so:</p>
+            <pre>const name = "Jesse";
+const age = 40;
+
+export {name, age};</pre>
+            <p>You can also have just default exports from files that would work:</p>
+            <pre>import message from "./message.js";</pre>
+            <p>Where the export file would look like:</p>
+            <pre>const message = () =&gt {
+    const name = "Jesse";
+    const age = 40;
+    return name + ' is ' + age + 'years old.';
+};
+
+export default message;</pre>
 
         </div>
-        <script src="inc/header.js"></script>
-        <script src="inc/functions.js"></script>
+        <div id="footer"></div>
+        <script src="inc/footer.js"></script>
     </body>
 </html>

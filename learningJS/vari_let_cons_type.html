@@ -15,7 +15,7 @@
             <h2>Variables</h2>
             <button id="btn-variable-eg" type="button" class="btn btn-show" onclick='fnShowHide(this,"variable-eg")' >Show Variable Examples</button>           
             <div id="variable-eg" style="display:none">
-                <p><b>var</b> isnt really use anymore, stopped 2015, so use <b>let</b> where possible:</p>
+                <p><b>var</b> isn't really use any more, stopped 2015, so use <b>let</b> where possible:</p>
                 <ol>
                     <li>Always declare variables.</li>
                     <li>Always use <b>const</b> if the value should not be changed.</li>
@@ -28,7 +28,7 @@ let definedWithinScope;
 var imAnInt = 2,
     imAChar = "2",
     imCreatedUndefined,
-    imAChar; //redeclaring doesnt clear
+    imAChar; //redeclaring doesn't clear
 
 var $ = 1; //valid but not always used, mainly for library uses (jQuery etc)
 var _ = 2; //normally used for hidden variables</pre>
@@ -37,7 +37,7 @@ var _ = 2; //normally used for hidden variables</pre>
             <h2>Let</h2>
             <button id="btn-let-eg" type="button" class="btn btn-show" onclick='fnShowHide(this,"let-eg")' >Show Let Examples</button>
             <div id="let-eg" style="display:none">
-                <p><b>var</b> doesnt have a block scope so can be used anywhere.<br>
+                <p><b>var</b> doesn't have a block scope so can be used anywhere.<br>
                     <b>let</b> has a block scope, so only used within the brackets.<br>                
                     <b>let</b> cannot be redeclared, but you can with <b>var</b>.
                 </p>
@@ -79,7 +79,7 @@ var _ = 2; //normally used for hidden variables</pre>
                         </tr>
                     </tbody>
                 </table>
-                <p>Variables with <b>var</b> are "hoisted" meaning they can be initalised anywhere and the code will "hoist" the declaration to the top.</p>
+                <p>Variables with <b>var</b> are "hoisted" meaning they can be initialised anywhere and the code will "hoist" the declaration to the top.</p>
                 <hr>
             </div>
             <h2>Const</h2>
@@ -88,7 +88,7 @@ var _ = 2; //normally used for hidden variables</pre>
                 <p><b>const</b> cannot be reassigned, and must be assigned when declared.<br>
                     So <b>const</b> should be used for Arrays, Objects, Functions, RegExp.<br>
                     <b>const</b> is not a constant, value, but a constant reference to a value. So can be used to change elements in an array/object.<br>
-                    See "let" for table on whats redeclarable etc.
+                    See "let" for table on whats re-declarable etc.
                 </p>
                 <hr>
             </div>
@@ -111,7 +111,7 @@ var _ = 2; //normally used for hidden variables</pre>
                 <h3>Strings</h3>
                 <p>Same as normal, to use quotes within quotes <b>" '' "</b> or <b>' "" '</b>.<br>
                     <b>\</b> is the escape character so <b>\"Hello World\"</b>.<br>
-                    <b>\</b> can also be used to group multiplelines of text, but <b>+</b> is better.<br>
+                    <b>\</b> can also be used to group multiple lines of text, but <b>+</b> is better.<br>
                     Click <a href="strings.html">here</a> for more info.
                 </p>
                 <hr>
@@ -131,14 +131,14 @@ var _ = 2; //normally used for hidden variables</pre>
                 <hr>
                 <h3>Boolean</h3>
                 <p>Normal Boolean() stuff, if it's filled in correctly (1,7,"Hello","false"), its <b>TRUE</b>, else its <b>FALSE</b>(0,-0,5/"bob",null).<br>
-                    You can use boolean objects... dont, it makes it slower, and more unpredictable.</p>
+                    You can use boolean objects... don't, it makes it slower, and more unpredictable.</p>
                     Click <a href="booleans.html">here</a> for more info.</p>
                 <hr>
                 <h3>Arrays</h3>
                 <p>Arrays seem odd, defined with <b>const</b> so you cannot full change, but you can part change</p>
                 <pre>const vArray = ["Alice", "Bob", "Eve"]  
 const cars[0]= "Charlie"; cars[1]= "Dave"; cars[2]= "AnotherName";</pre>              
-                <p>^ this is all ok, and doesnt go agaisnt the <b>const</b>, however:</p>
+                <p>^ this is all ok, and doesn't go against the <b>const</b>, however:</p>
                 <pre>vArray = ["Charlie", "Dave", "AnotherName"]</pre>
                 <p>Will error.</p>
                 <p>Can convert to string with <b>cars.toString()</b>.<br>
@@ -149,7 +149,7 @@ const cars[0]= "Charlie"; cars[1]= "Dave"; cars[2]= "AnotherName";</pre>
                 </p>
                 <hr>
                 <h3>Objects</h3>
-                <p>Objects created with <b>const</b> so the property doesnt change, but values can.<br>
+                <p>Objects created with <b>const</b> so the property doesn't change, but values can.<br>
                     Can be accessed with object.property, or object["property"].
                 </p>
                 <p id="3ObjectAccess"></p>

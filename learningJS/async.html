@@ -1,18 +1,27 @@
 <!doctype html>
 <html>
     <head>
-        <meta charset="utf-8">
-        <title>Examples</title>
-        <link rel="stylesheet" href="inc/styles.css">
+        <title>Async</title>
         <script src="inc/meta.js"></script>	
-    </head>
-    <body>        
-        <div id="navHeader">
-        </div> 
-        <div> 
-
-        </div>
-        <script src="inc/header.js"></script>
+        <script src="inc/header.js"></script><!-- inline gets loaded top to bottom, inc gets loaded side by side with modern browsers, can be at the top.-->
         <script src="inc/functions.js"></script>
+    </head>
+    <body class="row align-items-start">        
+        <div id="navHeader" class="col col-2">
+        </div> 
+        <div class="col col-9">  
+            <h1>Async</h1>
+            <h2>Callbacks</h2>
+            <p>A callback is a function passed as an argument to another function.<br>
+                In order to make things line up the way you like you could:<br>
+                Order the functions in the right order, but one might not finish before the other.<br>
+                Call a function at the end of another function, but you might want different functions called at any one time.<br>
+                Now callbacks come in, you can provide a function as an input parameter that the function can call, allowing for the initial function call to provide the necessary function.      
+            </p>
+            <pre>myFunction(param1, param2, myCallBack);</pre>
+            <p>Good example was when the <b>myCallBack</b> might want to output the reply to console, or screen, or various widgets etc.</p>
+        </div>
+        <div id="footer"></div>
+        <script src="inc/footer.js"></script>
     </body>
 </html>

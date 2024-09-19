@@ -31,7 +31,7 @@ function myFunction(value) {
 }</pre>
                 <p><b>x.push()</b> or <b>x[x.length] = </b> will add to end.<br>
                     But you can add things to empty values to create undefined holes.<br>
-                    If you try to make an array use named indexes, itll convert it to an object.<br>
+                    If you try to make an array use named indexes, it'll convert it to an object.<br>
                     Stay away from <b>new Array();</b> as it can cause confusion.<br>
                     <b>Array.isArray(x);</b> will do a check to see if its an array, as typeOf will return object
                 </p>
@@ -105,7 +105,7 @@ for (let i in myObj.cars) {
                         </tr>
                         <tr>
                             <td scope="row">x.flat()</td>
-                            <td>Flattens multidimentional arrays.</td>
+                            <td>Flattens multidimensional arrays.</td>
                         </tr>
                         <tr>
                             <td scope="row">x.splice(&ltwhere&gt, &lthow many removed&gt, y)</td>
@@ -117,7 +117,7 @@ for (let i in myObj.cars) {
                         </tr> 
                         <tr>
                             <td scope="row">x.spliced()</td>
-                            <td>Same as above, but doesnt alter the old array, will create a new one.</td>
+                            <td>Same as above, but doesn't alter the old array, will create a new one.</td>
                         </tr>  
                         <tr>
                             <td scope="row">x.slice(i)</td>
@@ -125,7 +125,7 @@ for (let i in myObj.cars) {
                         </tr>                     
                     </tbody>
                 </table>
-                <p>Dont use <b>delete</b> on array elements, it leaves undefined holes.<br>
+                <p>Don't use <b>delete</b> on array elements, it leaves undefined holes.<br>
                     Tries to use <b>x.toString</b> when a string is needed e.g. innerHTML
                 </p>
             <hr>
@@ -151,7 +151,7 @@ for (let i in myObj.cars) {
                     Sort will do alphabetical, reverse just flips, so can use sort then reverse to do desc.<br>
                     <b>x.toSorted()</b> makes a new array.
                 </p>
-                <p>Numberical sorting is a little more tricky with:</p>
+                <p>Numerical sorting is a little more tricky with:</p>
                 <pre>const points = [40, 100, 1, 5, 25, 10];
 points.sort(function(a, b){return a - b});</pre>
                 <p>Which is a compare function.
@@ -178,7 +178,7 @@ points.sort(function(a, b){return a - b});</pre>
 });</pre>
                 <hr>
             </div>
-            <h2>Array Interation</h2>
+            <h2>Array Iteration</h2>
             <button id="btn-array-iteration-eg" type="button" class="btn btn-show" onclick='fnShowHide(this,"array-iteration-eg")' >Show Array Sort Examples</button>           
             <div id="array-iteration-eg" style="display:none">
                 <table class="table table-striped">
@@ -220,7 +220,7 @@ points.sort(function(a, b){return a - b});</pre>
             <h2>Array Const</h2>
             <p>Common practice to declare an array with <b>Const</b>.<br>
                 This means you cannot change all of the array, but can still each element with <b>x[0]=""</b> or <b>x.push("")</b>.<br>
-                You can use var if you want to do a mass change, but it doesnt have block scope so could change something you dont want.
+                You can use var if you want to do a mass change, but it doesn't have block scope so could change something you don't want.
             </p>
         </div>
         <script>

@@ -1,18 +1,136 @@
 <!doctype html>
 <html>
     <head>
-        <meta charset="utf-8">
-        <title>Examples</title>
-        <link rel="stylesheet" href="inc/styles.css">
+        <title>Functions</title>
         <script src="inc/meta.js"></script>	
+        <script src="inc/header.js"></script><!-- inline gets loaded top to bottom, inc gets loaded side by side with modern browsers, can be at the top.-->
+        <script src="inc/functions.js"></script>
+        <script src="js/functions.js"></script>
     </head>
-    <body>        
-        <div id="navHeader">
+    <body class="row align-items-start">        
+        <div id="navHeader" class="col col-2">
         </div> 
-        <div> 
+        <div class="col col-9">  
+            <h1>Functions</h1>
+            <h2>Intro</h2>
+            <p>As normal, call a function, it has input parameters, it'll stop on <b>return</b> with whatever was being returned.<br>
+                () will call a function, if you don't use them it returns the actual function:
+            </p>
+            <p>With brackets <b>toCelsius(77);</b></p>
+            <pre id="invoked"></pre>
+            <p>VS no brackets <b>toCelsius;</b></p>
+            <pre id="nInvoked"></pre>
+            <h2>Declarations</h2>
+            <button id="btn-declarations-eg" type="button" class="btn btn-show" onclick='fnShowHide(this,"declarations-eg")' >Show Declarations Examples</button>
+            <div id="declarations-eg" style="display:none">
+                <p>Can create functions normally with the previous example.<br>
+                    Can also create them and assign them to a variable.
+                </p>
+                <pre>const x = function (a, b) {return a * b};</pre>
+                <p>Where you can then use <b>x(4,3)</b> rather than needing to using the function name, can call the variable.</p>
+                <p>JS functions will get hoisted, so they can be called before they are used.<br>
+                    Functions can be made "self invoking", meaning they will be declared, and called if the function ends with ();
+                </p>
+                <pre>(function () {
+    console.log("Hello!!");  // I will invoke myself
+})();</pre>
+                <hr>
+            </div>
+            <h2>Parameters</h2>
+            <button id="btn-parameters-eg" type="button" class="btn btn-show" onclick='fnShowHide(this,"parameters-eg")' >Show Parameters Examples</button>
+            <div id="parameters-eg" style="display:none">
+                <p>You can give the function parameter as normal <b>function(a,b)</b>.<br> 
+                    But you can also give them default parameters for when it hasn't been filled in on the call <b>function(a=1,b=3)</b>.<br>
+                    <b>...args</b> will let you accept an indefinite number of arguments as an array:
+                </p>
+                <pre>function sum(...args) {
+    let sum = 0;
+    for (let arg of args) sum += arg;
+    return sum;
+}
+
+let x = sum(4, 9, 16, 25, 29, 100, 66, 77);</pre>
+                <p>Can also use the <b>arguments</b> object in the function and it'll just contain the arguments when the function was called</p>
+                <hr>
+            </div>
+
+            <h2>Call, Apply & Bind</h2>
+            <button id="btn-cab-eg" type="button" class="btn btn-show" onclick='fnShowHide(this,"cab-eg")' >Show Call, Apply & Bind Examples</button>
+            <div id="cab-eg" style="display:none">
+                <p>Ok, so we dont really use these much, but basic description and differences:
+                    Use .bind() when you want that function to later be called with a certain context, useful in events. 
+                    Use .call() or .apply() when you want to invoke the function immediately, and modify the context.
+                    Call uses commas (passing the arguments individually), Apply uses arrays(passes arguments as an array.). 
+                    Using the following Object as reference for all:
+                    <pre>const person = {
+    name: 'Alice',
+    greet: function(greeting, punctuation) {
+        console.log(greeting + ', ' + this.name + punctuation);
+    }
+};</pre>
+                </p>
+                <h3>Call</h3>
+                <p><b>func.call(thisArg, arg1, arg2, ...)</b><br>
+                    <b>thisArg</b> can be an object reference. Then uses a comma list for the other arguments, and invokes immediately.<br>
+                </p>
+                <pre>person.greet.call({name: 'Bob'}, 'Hello', '!');  // Output: Hello, Bob!</pre>
+                <h3>Apply</h3>
+                <p><b>func.apply(thisArg, [argsArray])</b><br>
+                    <b>thisArg</b> can be an object reference. Then uses an array for the other arguments, and invokes immediately.<br>                    
+                </p>
+                <pre>person.greet.apply({name: 'Charlie'}, ['Hi', '?']);  // Output: Hi, Charlie?</pre>
+                <h3>Bind</h3>
+                <p><b>func.bind(thisArg, arg1, arg2, ...)</b><br>
+                    <b>thisArg</b> can be an object reference. Only returns the function result when it is invoked, using the original args where possible.                     
+                </p>
+                <pre>const greetDan = person.greet.bind({name: 'Dan'}, 'Hey','*');
+                    const greetBob = person.greet.bind({name: 'Bob'}, 'Hey');
+                    greetDan("gfdg");  // Output: Hey, Dan*
+                    greetBob("gfdg");  // Output: Hey, Bobgfdg
+                </pre>
+                <hr>
+            </div>
+
+
+            <h2>Arrow Functions</h2>
+            <button id="btn-arrow-eg" type="button" class="btn btn-show" onclick='fnShowHide(this,"arrow-eg")' >Show Arrow Functions Examples</button>
+            <div id="arrow-eg" style="display:none">
+                <p>Arrow functions allow for shorter function syntax.<br>
+                    They don't need the <b>function</b> keyword. The <b>return</b> and the curly brackets, can also be lost, but only on single statement functions.<br>
+                    They are NOT hoisted, so they need to be declared before they are used.<br>
+                    They do not have their own <b>this</b>, so are not well suited for defining object methods.<br>
+                    They get defined with <b>const</b>.<br>
+                    To write them, take a normal function, remove the word <b>function</b> and place the =&gt arrow between the argument and the opening body brace.
+                </p>
+                <p>For a function call with input parameters and to be called later:</p>
+                <pre>// Old function
+function toCelsius(fahrenheit) {
+    return (5/9) * (fahrenheit-32);
+}               
+                    
+// Arrow function
+const toCelsius = fahrenheit => (5 / 9) * (fahrenheit - 32);
+//for some reason, more braces helps me understand it more:
+const toCelsius = ((fahrenheit) => {return (5 / 9) * (fahrenheit - 32)});
+
+// Example of calling the function
+let fahrenheit = 100;
+let celsius = toCelsius(fahrenheit);
+console.log(fahrenheit + "°F is equal to" + celsius + "°C");
+</pre>
+                <p>Constant, toCelsius = "a function".<br>
+                    "a function" is ((input parameters for the up coming function) =&gt {do things in function, don't use "this"});
+                </p>
+                <hr>
+
+            </div>
+
 
         </div>
-        <script src="inc/header.js"></script>
-        <script src="inc/functions.js"></script>
+        <script>
+            widget_addLoadEvent(fnOnLoad)
+        </script>
+        <div id="footer"></div>
+        <script src="inc/footer.js"></script>
     </body>
 </html>

@@ -14,14 +14,14 @@
             <h2>Scope</h2>
             <p>Global, Block or Function scopes.<br>
                 Both const and let are block scoped, var is not block scoped, but try not to use.<br>
-                Assigning a value to a variable that has not been declared automatical,ly makes that variable global.<br>
+                Assigning a value to a variable that has not been declared automatically makes that variable global.<br>
                 Variables start when declared, and close either in their block, their function, or when global when the tab is closed.
             </p>
             <hr>
             <h2>Hoisting</h2>
-            <p>Variables can be declared after they have been used because of hoisiting.<br>
+            <p>Variables can be declared after they have been used because of hoisting.<br>
                 All declarations get moved to the top of the scope in which they have been created.<br>
-                If assigned at declaring, the assigning doesnt also get moved.
+                If assigned at declaring, the assigning doesn't also get moved.
             </p>
             <p>Let and const get hoisted, but not initialized. Honestly just hoist them yourself, it makes code more readable.</p>
             <p>For the most part, ignore JS's behaviour here and declare variables at the top, its just better</p>
@@ -35,7 +35,7 @@
     lastName: "Doe",
     id: 5566,
     fullName : function() {
-        return this.firstName + " " + this.lastName; //person.firstname...
+        return this.firstName + " " + this.lastName; //person.firstName...
     }
 };
 </pre>

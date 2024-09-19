@@ -18,23 +18,65 @@
                 <b>finally</b> gets run regardless of the try/catch result.
             </p>
             <p>In <b>catch(e)</b> the e is the error object, it consists of a name, and a message, display it, console.log it, whatever, its fairly useful to see what went wrong.</p>
+            <hr>
             <h2>Debugging</h2>
-            <p>F12 really helpful, can use it to break at certain points, then do a stepover to see whats causing the error.<br>
+            <p>F12 really helpful, can use it to break at certain points, then do a step-over to see whats causing the error.<br>
                 <b>Console.log()</b> will also likely get used a lot to see certain variables, and what XYZ happens.<br>
-                Theres also a <b>debugger;</b> command, that acts the same way as putting in a break point in the debugger.
+                There's also a <b>debugger;</b> command, that acts the same way as putting in a break point in the debugger.
             </p>
+            <hr>
             <h2>Strict</h2>
             <p><b>"use strict;</b> will make the code run in strict mode.<br>
                 It can also be used inside a function for block scoping.<br>
                 Only works if at the begging of the script or function.<br>
                 Makes it so that the code is less lenient on bad syntax, need to declare variables, less likely to mistype a variable, cannot delete a variable etc.
             </p>
+            <hr>
             <h2>Styling</h2>
             <p>Normally use Hungarian notation in camelCase:<br>
-                vVariable, bBool, cCount, arrArray... etc.
+                vVariable, bBool, cCount, arrArray... etc.<br>
+                Apart from global variables that are often full caps, with an underscore <b>INVOICETYPE_INVOICE</b><br>
+                css and html classes with hyphens <b>btn-primary-eg</b>
             </p>
             <p>Spaces tend to appear around operators <b>1 + 1 = 2</b> and after commas <b>name = ["Alice", "Bob", "Eve"]</b></p>
             <p>W3Schools says to use 2 spaces instead of tabs based off the fact editors can interpret tabs differently... I've always just used tabs.</p>
+            <p>Use lowercase file names, servers can look at them different so consistent is lowercase.</p>
+            <h2>Best Practice</h2>
+            <p>Try to avoid using global variables.<br>
+                Declare variables, preferably as high up as possible.<br>
+                Initialise variables where possible, helps recognise what the variable type is.<br>
+                Objects and arrays declared with <b>const</b>.<br>
+                Dont use <b>new Object();</b> just declare them as empty "", 0, [], {}... etc.<br>
+                === where possible, saves something like <b>0=="" OR 1==true //true</b> and leading to complications.<br>
+                Function undefined variables can break it, can assign default values: <b>myFunction(a=1, b=1){}</b> to fill in if the variable is undefined.<br>
+                Switches end with defaults in case there's a case statement missing for XYZ value.
+            </p>
+            <hr>
+            <h2>Common Mistakes</h2>
+            <p>== is comparison = is assign. <b>if (x = 10)</b> will be true.<br>
+                Switch statements use ===.<br>
+                + ... can be strings or numbers.<br>
+                floats are odd 0.1 + 0.2 = 0.30000000000000004.<br>
+                \ to break up js string variables.<br>
+                Undefined is not null.<br>
+                JS starts at 0.
+            </p>
+            <hr>
+            <h2>Performance</h2>
+            <p>Try to avoid assign statements in a for loop to make the loop faster:</p>
+            <pre>let l = arr.length;
+for (let i = 0; i &lt l; i++) {}</pre>
+            <p>Searching for HTML can also be slow so the below is better:</p>
+            <pre>const obj = document.getElementById("demo");
+obj.innerHTML = "Hello";</pre>
+            <p>However adversely, don't create variable when you can get away without</p>
+            <pre>let fullName = firstName + " " + lastName;
+document.getElementById("demo").innerHTML = fullName;
+
+document.getElementById("demo").innerHTML = firstName + " " + lastName;</pre>
+            <hr>
+            <h2>Reserved Words</h2>
+            <p>Some words you cannot use, use Hungarian notation and you'll be fine.</p>
         </div>
         <div id="footer"></div>
         <script src="inc/footer.js"></script>

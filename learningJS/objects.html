@@ -1,18 +1,166 @@
 <!doctype html>
 <html>
     <head>
-        <meta charset="utf-8">
-        <title>Examples</title>
-        <link rel="stylesheet" href="inc/styles.css">
+        <title>Objects</title>
         <script src="inc/meta.js"></script>	
+        <script src="inc/header.js"></script><!-- inline gets loaded top to bottom, inc gets loaded side by side with modern browsers, can be at the top.-->
+        <script src="inc/functions.js"></script>
     </head>
-    <body>        
-        <div id="navHeader">
+    <body class="row align-items-start">        
+        <div id="navHeader" class="col col-2">
         </div> 
-        <div> 
+        <div class="col col-9"> 
+            <h1>Objects</h1> 
+            <h2>Intro</h2>
+            <button id="btn-intro-eg" type="button" class="btn btn-show" onclick='fnShowHide(this,"intro-eg")' >Show Intro Examples</button>
+            <div id="intro-eg" style="display:none">
+                <p>Object properties, are the value keys stored inside the object <b>car.name = "fiat";</b><br>
+                    Object methods are defined with brackets <b>car.start();</b><br>
+                    They are defined with {} and can have values added later (functions need prototype to be added to the main section), or they can have values assigned at the start:
+                </p>
+                <pre>const car = {type:"Fiat",  //at start
+    model:"500", 
+    color:"white",
+    fullName: function(){
+        return this.type + " " + this.model;
+    }
+}; 
+
+const car = {}; //added later
+car.type = "Fiat";
+car.model = "500";
+car.color = "white";
+car.prototype.fullName = function(){
+    return this.type + " " + this.model;
+}</pre>
+                <p>Can access these properties with either <b>car.type</b>, <b>car["type"]</b> or <b>car[x]</b> useful for accessing dynamically.<br>
+                    Objects can store functions such as "fullName" above.<br>
+                    Objects are mutable, so <b>const x = car;</b> will make x BE car, not a copy of, a direct line to.
+                </p>                
+                <hr>
+            </div>
+            <h2>Definition</h2>
+            <button id="btn-definition-eg" type="button" class="btn btn-show" onclick='fnShowHide(this,"definition-eg")' >Show Definition Examples</button>
+            <div id="definition-eg" style="display:none">
+                <p>Defined with {}, you can then add properties if need be, can also define it with properties as above, or can use contructor functions:</p>
+                <pre>function Person(first, last, age, eye) {
+    this.firstName = first;
+    this.lastName = last;
+    this.age = age;
+    this.eyeColor = eye;
+}
+
+const myMother = new Person("Alice", "Doe", "47", "green");
+const myFather = new Person("John", "Doe", 50, "blue");</pre>
+                <hr>
+                <p>If a function needs to be added to Person, rather than each object of Mother or Father, you need the <b>prototype</b> constructor.</p>
+            </div>
+            <h2>Properties</h2>
+            <button id="btn-properties-eg" type="button" class="btn btn-show" onclick='fnShowHide(this,"properties-eg")' >Show Properties Examples</button>
+            <div id="properties-eg" style="display:none">
+                <p>Can access properties with <b>.x</b>, <b>["x"]</b> or <b>[variable]</b>.<br>
+                    New properties can be added the same way with =.<br>
+                    <b>delete</b> ... will delete property and value, make it undefined.<br>
+                    You can contain objects in objects with the same {} notation, then accessed with <b>x.y.z;</b> etc. as above.<br>
+                </p>
+                <p>There are some properties that have a longform, if you want to change characteristics.</p><br>
+                <p><b>Object.defineProperty(person,"age",{value:"47"});</b> would be the same as <b>person.age = "47";</b>.<br>
+                    But this means you can <b>Object.defineProperty(person, "age", {writable:false});</b> to make it read-only.<br>
+                </p>
+                <p><b>Object.getOwnPropertyNames(object);</b> and <b>Object.keys(person);</b> will produce a list of all/enumerable properties respectively.</p>
+                <p><b>Object.defineProperty()</b> can be used to add Getters and Setters.</p>
+                <p>You can Get and Set... Set seems to have an input value, get doesn't, only difference I can see, just use functions.</p>
+                <hr>
+            </div>
+            <h2>Methods</h2>
+            <button id="btn-methods-eg" type="button" class="btn btn-show" onclick='fnShowHide(this,"methods-eg")' >Show Methods Examples</button>
+            <div id="methods-eg" style="display:none">
+                <p>Objects methods are actions performed on the objects.<br>
+                    They have a function, stored as a property value.<br>
+                    You can use <b>this</b> in the function to refer to the objects properties.<br>
+                    These functions can then be accessed with the property name, and (); same as standard function calls.<br>
+                    If you try to access the property without the brackets it'll return the function, not the data.
+                </p>
+                <p><b>Object.assign(object1, object2)</b> will overwrite object1, with object 2 for any matching properties, or add mismatching ones.<br>
+                    <b>Object.entries(object1)</b> will output a comma separated list of keys and values. <b>for (let [fruit, value] of Object.entries(fruits))</b> being a good way to loop and use the key and value in the loop.<br>
+                    <b>Object.values(object1)</b> works the same way, but only the values.<br>
+                    However can also use <b>for (let x in person)</b> and loop <b>person[x]</b> for just the values.
+                </p>
+                <hr>
+            </div>
+            <h2>Displaying</h2>
+            <button id="btn-display-eg" type="button" class="btn btn-show" onclick='fnShowHide(this,"display-eg")' >Show Displaying Examples</button>
+            <div id="display-eg" style="display:none">
+                <p>Unable to just output an object as is, it needs some for of displaying mechanic.<br>
+                    This means you can either access it by property name, in a loop, with <b>Object.values();</b> or <b>JSON.stringify();</b>.
+                </p>
+                <hr>
+            </div>
+            <h2>Get/Set</h2>
+            <button id="btn-getset-eg" type="button" class="btn btn-show" onclick='fnShowHide(this,"getset-eg")' >Show Get/Set Examples</button>
+            <div id="getset-eg" style="display:none">
+                <p>Getters and setters allow you to define Object Accessors.<br>
+                    They can be used:</p>
+                    <ul>
+                        <li>To make the syntax more simple</li>
+                        <li>Allow equal syntax for properties and methods person. (fullName vs person.fullName())</li>
+                        <li>Secure better data quality (allows for toUpperCase in the get, but person.fullName().toUpperCase() would be fine)</li>
+                    </ul>   
+                <p>Its honestly a little odd, putting it in a function seems to make more sense to me, can have all the toUpperCase whatever's in the function, it just means you can remove the ()'s</p>
+                <hr>
+            </div>
+            <h2>Prototype</h2>
+            <button id="btn-prototype-eg" type="button" class="btn btn-show" onclick='fnShowHide(this,"prototype-eg")' >Show Prototype Examples</button>
+            <div id="prototype-eg" style="display:none">
+                <p>Prototype is the name of the initial object rather than whats being created:</p>
+                <pre>function Person(first, last, age, eyeColor) { //prototype
+    this.firstName = first;
+    this.lastName = last;
+    this.age = age;
+    this.eyeColor = eyeColor;
+}
+
+const myFather = new Person("John", "Doe", 50, "blue");// objects
+const myMother = new Person("Sally", "Rally", 48, "green");</pre>
+                <p>So wanting to add "nationality" to this object you either have to use <b>person.prototype.nationality</b> or just add it to the initial declaration.<br>
+                    Just don't edit JS's prototypes, only your own.
+                </p>
+                <hr>
+            </div>
+            <h2>Protection</h2>
+            <button id="btn-protection-eg" type="button" class="btn btn-show" onclick='fnShowHide(this,"protection-eg")' >Show Protection Examples</button>
+            <div id="protection-eg" style="display:none">
+                <p><b>const</b> is the best way to try and protect an object/array to stop reassigning.<br>
+                    However there are a few object protection methods too.    
+                </p>
+                <p>Examples with "car" as the object</p>
+                <table class="table table-striped">
+                    <thead class="table-light">
+                        <tr>
+                            <th scope="col">Method</th>
+                            <th scope="col">Desc</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td scope="row">Object.preventExtensions(car);</td>
+                            <td>Prevents adding any more properties to the object</td>
+                        </tr>
+                        <tr>
+                            <td scope="row">Object.seal(car)</td>
+                            <td>Prevents additions or deletions of properties</td>
+                        </tr>
+                        <tr>
+                            <td scope="row">Object.freeze(car)</td>
+                            <td>Prevents any changes to the object</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <hr>
+            </div>
 
         </div>
-        <script src="inc/header.js"></script>
-        <script src="inc/functions.js"></script>
+        <div id="footer"></div>
+        <script src="inc/footer.js"></script>
     </body>
 </html>

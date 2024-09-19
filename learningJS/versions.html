@@ -1,18 +1,19 @@
 <!doctype html>
 <html>
     <head>
-        <meta charset="utf-8">
-        <title>Examples</title>
-        <link rel="stylesheet" href="inc/styles.css">
+        <title>Versions</title>
         <script src="inc/meta.js"></script>	
-    </head>
-    <body>        
-        <div id="navHeader">
-        </div> 
-        <div> 
-
-        </div>
-        <script src="inc/header.js"></script>
+        <script src="inc/header.js"></script><!-- inline gets loaded top to bottom, inc gets loaded side by side with modern browsers, can be at the top.-->
         <script src="inc/functions.js"></script>
+    </head>
+    <body class="row align-items-start">        
+        <div id="navHeader" class="col col-2">
+        </div> 
+        <div class="col col-9">  
+            <h1>Versions</h1>
+            <p>There has been versions... not putting all the changes in here. No idea why this is even a module, but it is!</p>
+        </div>
+        <div id="footer"></div>
+        <script src="inc/footer.js"></script>
     </body>
 </html>

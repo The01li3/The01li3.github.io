@@ -1,18 +1,88 @@
 <!doctype html>
 <html>
     <head>
-        <meta charset="utf-8">
-        <title>Examples</title>
-        <link rel="stylesheet" href="inc/styles.css">
+        <title>Classes</title>
         <script src="inc/meta.js"></script>	
+        <script src="inc/header.js"></script><!-- inline gets loaded top to bottom, inc gets loaded side by side with modern browsers, can be at the top.-->
+        <script src="inc/functions.js"></script>
     </head>
-    <body>        
-        <div id="navHeader">
+    <body class="row align-items-start">        
+        <div id="navHeader" class="col col-2">
         </div> 
-        <div> 
+        <div class="col col-9">  
+            <h1>Classes</h1>
+            <h2>Intro</h2>
+            <button id="btn-intro-eg" type="button" class="btn btn-show" onclick='fnShowHide(this,"intro-eg")' >Show Intro Examples</button>
+            <div id="intro-eg" style="display:none">
+                <p>Classes are templates for JS objects.<br>
+                    Use <b>class</b> to create the class.<br>
+                    Then also need to have a <b>constructor</b> within the class:<br>
+                </p>
+                <pre>class Car {
+    constructor(name, year) {
+        this.name = name;
+        this.year = year;                
+    }
+    age() {
+        const date = new Date();
+        return date.getFullYear() - this.year;
+    }
+    static hello(x) {
+        return "Hello " + x.name;
+    }
+}</pre>
+                <p>You can then create objects with the class:</p>
+                <pre>const vCar1 = new Car("Renault", "2006");</pre>
+                <p>This will make <b>vCar1.name</b>, <b>vCar1.year</b> and <b>vCar1.age()</b> able to be used.<br>
+                    You can use Getters and Setters as in objects if need be.<br>
+                    Class declarations are not hoisted, so declare BEFORE use.  
+                    You can use <b>static</b> in constructors meaning you cannot access them through the object, but just directly.
+                </p>
+                <pre>Car.hello(); //Would return "Hello" if there was no x input parameter
+                    vCar1.hello(); //Will raise an error
+                    Car.hello(vCar1);//Will return "Hello Renault"
+                </pre>
+                <hr>
+            </div>
+            <h2>Inheritance</h2>
+            <button id="btn-inheritance-eg" type="button" class="btn btn-show" onclick='fnShowHide(this,"inheritance-eg")' >Show Inheritance Examples</button>
+            <div id="inheritance-eg" style="display:none">
+                <p>To use class inheritance you can use <b>extends</b>, a class created with class inheritance inherits the methods from another class (think progress "LIKE").<br>
+                    You can then give it a constructor of <b>super(propertyName)</b> or <b>super.propertyName</b> to access the inherited classes methods.
+                </p>
+                <pre>class Foo {
+constructor(name) {
+    this.name = name;
+}
+
+getNameSeparator() {
+    return '-';
+}
+}
+
+class FooBar extends Foo {
+constructor(name, index) {
+    super(name);
+    this.index = index;
+}
+
+getFullName() {
+    return this.name + super.getNameSeparator() + this.index;
+}
+}
+
+const firstFooBar = new FooBar('foo', 1);
+
+console.log(firstFooBar.name);
+// Expected output: "foo"
+
+console.log(firstFooBar.getFullName());
+// Expected output: "foo-1"</pre>
+                <hr>
+            </div>
 
         </div>
-        <script src="inc/header.js"></script>
-        <script src="inc/functions.js"></script>
+        <div id="footer"></div>
+        <script src="inc/footer.js"></script>
     </body>
 </html>

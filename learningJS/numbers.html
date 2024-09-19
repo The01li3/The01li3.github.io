@@ -21,8 +21,8 @@
                 <pre>0.2 + 0.1 = <span id="PrecisionIssue"></span></pre>
                 <p><b>+</b> behave a little odd when some numbers are strings, code gets read left to right so the below can happen:</p>
                 <p id="variablex"></p>            
-                <p>However JS will try to convert to numberic with <b>* / -</b>.</p>
-                <pre>"6" * "2" = <span id = "ConvertToNumberic"></span></pre>
+                <p>However JS will try to convert to numeric with <b>* / -</b>.</p>
+                <pre>"6" * "2" = <span id = "ConvertToNumeric"></span></pre>
                 <p>NaN Not a Number can check with <b>isNaN()</b>.<br>
                     Infinity exists if the number is outside the scope or /0 (should really be undefined.) -Infinity can also exist.<br>
                     Numbers can be created as objects... dont, it just makes it slower, JS object comparing always returns false.<br>
@@ -80,7 +80,7 @@ typeof(1234567890123456789012345)           //number</pre>
                 <p>Number methods can be found <a href="https://www.w3schools.com/js/js_number_methods.asp">here</a>.<br>
                     <b>Number()</b> will return a number, works with dates for milliseconds too. Has to be able to be number, i.e. "10 33" is invalid.<br>
                     <b>parseInt()</b> and <b>parseFloat()</b> will return Int and Float, taking the first one, i.e. "10 66" will be "10".<br>
-                    <b>Number.IsInteger</b> vs <b>Number.IsSafeIntger</b>, "safe" will fit inside a number, so a little more precise than not "safe".
+                    <b>Number.IsInteger</b> vs <b>Number.IsSafeInteger</b>, "safe" will fit inside a number, so a little more precise than not "safe".
                 </p>
                 <hr>
             </div>
