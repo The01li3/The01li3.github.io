@@ -1,18 +1,77 @@
 <!doctype html>
 <html>
     <head>
-        <meta charset="utf-8">
-        <title>Examples</title>
-        <link rel="stylesheet" href="inc/styles.css">
+        <title>API</title>
         <script src="inc/meta.js"></script>	
+        <script src="inc/header.js"></script><!-- inline gets loaded top to bottom, inc gets loaded side by side with modern browsers, can be at the top.-->
+        <script src="inc/functions.js"></script>
     </head>
-    <body>        
-        <div id="navHeader">
+    <body class="row align-items-start">        
+        <div id="navHeader" class="col col-2">
         </div> 
-        <div> 
+        <div class="col col-9">  
+            <h1>API</h1>
+            <h2>Intro</h2>
+            <p><b>A</b>pplication <b>P</b>rogramming <b>I</b>nterface.<br>
+                Browsers will have some built in like <b>navigator.geolocation</b>.<br>
+                Third party APIS are available too, but have to download the code.
+            </p>
+            <hr>
+            <h2>Examples</h2>
+            <h3>Forms</h3>
+            <p><b>checkValidity();</b> will check for inputs to make sure they match the restrictions in the input tags.<br>
+                Can then use <b>validationMessage</b> to see why it might have failed.<br>
+                validity property has it's own properties so you can set custom messages for each fail.
+            </p>
+            <h3>History</h3>
+            <p><b>window.history.back();</b> and <b>window.history.go(-1);</b> will go back a page, can use forward too, and any valid number with go().<br>
+                <b>window.history.length</b> will show how many URLS are in the history list.
+            </p>
+            <h3>Storage</h3>
+            <p><b>localStorage.setItem(name, value);</b> and <b>localStorage.getItem("name");</b> will store some information locally.<br>
+                This data will be stored until the browser is cleared, probably don't use it!<br>
+                <b>sessionStorage</b> can instead store it in the session.<br>
+            </p>
+            <h3>Workers</h3>
+            <p>Web workers will run in the background of a browser without affecting the performance of the page.<br>
+                Made with a web worker file, definition, function, and function call.
+            </p>
+<pre>let i = 0;
+
+function timedCount() {
+    i ++;
+    postMessage(i);
+    setTimeout("timedCount()",500);
+}
+
+timedCount();</pre>
+            <p>Can then check to see if the worker already exists, and if not, it creates the object, then runs the code in the file.</p>
+<pre>if (typeof(w) == "undefined") {
+    w = new Worker("demo_workers.js");
+}</pre>
+            <p>then add an "on message" even listener, so when the above posts a message, it displays it to screen</p>
+<pre>w.onmessage = function(event){
+    document.getElementById("result").innerHTML = event.data;
+}; </pre>
+            <p><b>w.terminate()</b> and <b>w = undefined</b> can then be used to stop it, and make it undefined so it can be used again.</p>
+            <h3>Fetch</h3>
+            <p>Putting this in here because its nice code, and can be simple with arrows:</p>
+<pre>let file = "fetch_info.txt"
+
+fetch(file)
+.then(myObject => myObject.text())
+.then(myText => myDisplay(myText));</pre>
+            <p>Or using functions:</p>
+<pre>getText("fetch_info.txt");
+
+async function getText(file) {
+    let myObject  = await fetch(file);
+    let myText  = await myObject.text();
+    myDisplay(myText );
+}</pre>
 
         </div>
-        <script src="inc/header.js"></script>
-        <script src="inc/functions.js"></script>
+        <div id="footer"></div>
+        <script src="inc/footer.js"></script>
     </body>
 </html>

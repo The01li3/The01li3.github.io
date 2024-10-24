@@ -1,18 +1,24 @@
 <!doctype html>
 <html>
     <head>
-        <meta charset="utf-8">
-        <title>Examples</title>
-        <link rel="stylesheet" href="inc/styles.css">
+        <title>Graphics</title>
         <script src="inc/meta.js"></script>	
-    </head>
-    <body>        
-        <div id="navHeader">
-        </div> 
-        <div> 
-
-        </div>
-        <script src="inc/header.js"></script>
+        <script src="inc/header.js"></script><!-- inline gets loaded top to bottom, inc gets loaded side by side with modern browsers, can be at the top.-->
         <script src="inc/functions.js"></script>
+    </head>
+    <body class="row align-items-start">        
+        <div id="navHeader" class="col col-2">
+        </div> 
+        <div class="col col-9">  
+            <h1>Graphics</h1>
+            <p>HTML Canvas, can do scatter, line, or combined. but dont look great.<br>
+                Plotly.js is a charting library that comes with over 40 chart types.<br>
+                Chart.js is an free JavaScript library for making HTML-based charts. It is one of the simplest visualization libraries for JavaScript, and comes with the many built-in chart types.<br>
+                Google Chart does simple line charts to complex hierarchical tree maps, the Google Chart gallery provides a large number of ready-to-use chart types.<br>
+                D3.js is a JavaScript library for manipulating HTML data. 
+            </p>  
+        </div>
+        <div id="footer"></div>
+        <script src="inc/footer.js"></script>
     </body>
 </html>

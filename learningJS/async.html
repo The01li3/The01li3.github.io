@@ -5,6 +5,7 @@
         <script src="inc/meta.js"></script>	
         <script src="inc/header.js"></script><!-- inline gets loaded top to bottom, inc gets loaded side by side with modern browsers, can be at the top.-->
         <script src="inc/functions.js"></script>
+        <script src="js/aysnc.js"></script>
     </head>
     <body class="row align-items-start">        
         <div id="navHeader" class="col col-2">
@@ -18,9 +19,117 @@
                 Call a function at the end of another function, but you might want different functions called at any one time.<br>
                 Now callbacks come in, you can provide a function as an input parameter that the function can call, allowing for the initial function call to provide the necessary function.      
             </p>
+            <hr>
             <pre>myFunction(param1, param2, myCallBack);</pre>
             <p>Good example was when the <b>myCallBack</b> might want to output the reply to console, or screen, or various widgets etc.</p>
+            <h2>Timeout</h2>
+            <p>You can use <b>setTimeout(function,milliseconds)</b> to execute that function after X amount of time.<br>
+                Its generally a bad idea to do this, and should force promises, on load, etc. as this will slow down screens.
+            </p>
+            <hr>
+            <h2>Promises</h2>
+            <button id="btn-promises-eg" type="button" class="btn btn-show" onclick='fnShowHide(this,"promises-eg")' >Show Promises Examples</button>
+            <div id="promises-eg" style="display:none">
+                <p>"Producing code" is code that can take some time to run.<br>
+                    "Consuming code" is code that needs to wait for the result of the producing code.<br>
+                    The Promise is an object that links these 2 together.
+                </p>
+                <p>Promises can be defined as an object, with a function call inside it, you can also call a function to return a promise. <br>
+                    Both examples below are valid.
+                </p>
+                <p>Called with <b>myPromise.then()</b> as a variable:</p>
+<pre>let myPromise = new Promise(function(myResolve, myReject) {
+    let x = 1;
+
+    if (x == 0) {
+        myResolve("OK");
+    } else if (x == 1){
+        myReject("im 1");
+    }
+});</pre>
+                <p>Called with <b>makeMyPromise().then()</b> as a function:</p>        
+<pre>function makeMyPromise(){
+    return new Promise(function(myResolve, myReject) {
+        let x = 1;
+
+        if (x == 0) {
+        myResolve("OK");
+        } else if (x == 1){
+        myReject("im 1");
+        }
+    });
+}</pre>    
+                <p>The promise can contain a <b>.then()</b>, if it does not, then the promise wont execute anything after it, functioning the same as a function.<br>
+                    The <b>then</b> method can take 2 arguments, (what do to on pass, what to do on error), which can be self declaring functions, so its able to use the value passed by the promise.
+                </p>
+                <pre>myPromise.then(
+    function(value) {console.log(value);}, //comma here being important.
+    function(error) {console.log(error);}
+);</pre>         
+                <p>If no failHandler is supplied, then the <b>.catch</b> will be run on fail instead.</p>
+                <pre>myPromise.then(successHandler).catch(function (err) {console.log(err)});</pre>
+                <p>However, the <b>.catch</b> can also be run if either the successHandler or the failHandler throw an error.</p>
+<pre>function fnMakeMyPromise(P_value){
+    return new Promise(function(myResolve, myReject) {
+        let x = P_value;
+
+        if (x == 0) {
+            myResolve("0K");
+        } else if (x == 1){
+            myReject("1K");
+        } else if (x == 2){
+            myReject("Not OK! 2k");
+        }
+    });
+}
+
+function fnSuccessHandler(result) {
+    console.log("Success " + result);
+}
+
+function fnFailHandler(error) {
+    if(error == "1K"){
+        console.log("Handled by fail function: " + error);
+    } else {
+        throw new Error("Throw " + error);
+    }
+}
+
+function fnPromiseStart() {
+    for(i=0; i&lt=3; i++) {
+        fnMakeMyPromise(i).then(fnSuccessHandler,fnFailHandler).catch(function (err) {
+            console.log("Im in the catch with error: " + err);
+        });       
+    }
+}</pre>       
+                <p>The above code will output the following, for 0-3.</p>
+                <ul>
+                    <li>0. Success 0K</li>
+                    <li>1. Handled by fail function: 1K</li>
+                    <li>2. Im in the catch with error: Error: Throw Not OK! 2k</li>
+                </ul>
+                <hr>
+            </div>
+            <h2>Async Await</h2>
+            <button id="btn-async-await-eg" type="button" class="btn btn-show" onclick='fnShowHide(this,"async-await-eg")' >Show Async Await Examples</button>
+            <div id="async-await-eg" style="display:none">
+                <p><b>async</b> before a function makes the function return a promise.<br>
+                    But it does mean than you cannot specify a fail handler, so ideally just use them as above laying it out clearly.
+                </p>
+                <p><b>await</b> can only be used inside an async function.<br>
+                    It will make the function pause the execution and wait for a resolved promise before it continues.<br>
+                    In the below example, a new sync function (promise) will be called, then wait until the "resolve" function is called before it display it to screen, similar to a "then".
+                </p>
+                <pre>async function myDisplay() {
+    let myPromise = new Promise(function(resolve, reject) {
+        resolve("I love You !!");
+    });
+    document.getElementById("demo").innerHTML = await myPromise;
+}</pre>
+                <hr>
+            </div>
         </div>
+        <script>widget_addLoadEvent(fnPromiseStart);</script>
         <div id="footer"></div>
         <script src="inc/footer.js"></script>
     </body>

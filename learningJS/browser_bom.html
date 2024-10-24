@@ -1,18 +1,115 @@
 <!doctype html>
 <html>
     <head>
-        <meta charset="utf-8">
-        <title>Examples</title>
-        <link rel="stylesheet" href="inc/styles.css">
+        <title>Browser BOM</title>
         <script src="inc/meta.js"></script>	
+        <script src="inc/header.js"></script><!-- inline gets loaded top to bottom, inc gets loaded side by side with modern browsers, can be at the top.-->
+        <script src="inc/functions.js"></script>
     </head>
-    <body>        
-        <div id="navHeader">
+    <body class="row align-items-start">        
+        <div id="navHeader" class="col col-2">
         </div> 
-        <div> 
+        <div class="col col-9">  
+            <h1>Browser BOM</h1>
+            <h2>Intro</h2>
+            <p><b>B</b>rowser <b>O</b>bject <b>M</b>odel, name of the collective group of methods and properties of BOM.<br>
+                Window object is something that's supported by all browsers. all functions, objects variable etc are part of the window object.<br>
+                Because it's and object this means it had properties:
+            </p>
+            <ul>
+                <li>window.innerWidth</li>
+                <li>window.innerHeight</li>
+            </ul>
+            <p>
+                It also has methods:
+            </p>
+            <ul>
+                <li>window.open/close()</li>
+                <li>window.moveTo()</li>
+                <li>window.resizeTo()</li>
+            </ul>
+            <hr>
+            <h2>Screen</h2>
+            <p><b>window.screen</b> object contains information about the users screen.</p>
+            <ul>
+                <li>screen.width //actual screens width.</li>
+                <li>screen.height // actual screens height.</li>
+                <li>screen.availWidth // available to show, removes taskbar etc</li>
+                <li>screen.availHeight // available to show, removes taskbar etc</li>
+                <li>screen.colorDepth // returns the number of bits used to display one color.</li>
+                <li>screen.pixelDepth //  returns the pixel depth of the screen.</li>
+            </ul>
+            <hr>
+            <h2>Location</h2>
+            <p><b>window.location</b> contains the current pages URL, and can direct somewhere else.<br>
+                Only really useful to direct with href as far as I can see, although some might be needed for security etc.
+            </p>
+            <hr>
+            <h2>History</h2>
+            <p><b>history.back()</b> and <b>history.forward()</b> is the same as clicking back and forward in the browser.</p>
+            <hr>
+            <h2>Navigator</h2>
+            <p>Will contain information about the browser.<br>
+                Not super useful, but possible to use to make sure XYZ in enabled, or make XYZ browser look different.
+            </p>
+            <hr>
+            <h2>Popups</h2>
+            <p>We have 3 types of popup available to us, with the ability to use \n for line breaks:</p>
+            <ul>
+                <li>alert("hello");</li>
+                <li>confirm("hello?"); //returns true/false depending on ok.cancel</li>
+                <li>let demo = prompt("hello?","DEFAULT TEXT") //demo will be null/"" if cancelled, or filled in.</li>
+            </ul>
+            <hr>
+            <h2>Timing</h2>
+            <p><b>setTimeout(function,milliseconds)</b>, will run that function after X milliseconds.<br>
+                <b>setInterval(function,milliseconds)</b>, will call that function continuously every X milliseconds until <b>clearInterval()</b> is called.<br>
+                While they can be used, promises are just better.
+            </p>
+            <hr>
+            <h2>Cookies</h2>
+            <p>Cookies are data, stored in small text files, on your computer.</p>
+            <pre>document.cookie = "username=John Doe; expires=Thu, 18 Dec 2013 12:00:00 UTC; path=/";</pre>
+            <p>Stores in pairs x=y with ; to separate them here we have a value, expiry date, and a path parameter, defaults to current page.
+                Cookies with the same value can be overwritten to change it, and to delete them, just set the date to the past.
+            </p>
+<pre>function setCookie(cname,cvalue,exdays) {
+    const d = new Date();
+    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    let expires = "expires=" + d.toUTCString();
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
+function getCookie(cname) {
+    let name = cname + "=";
+    let decodedCookie = decodeURIComponent(document.cookie);
+    let ca = decodedCookie.split(';');
+    for(let i = 0; i < ca.length; i++) {
+        let c = ca[i];
+        while (c.charAt(0) == ' ') {
+        c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+        return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+}
+
+function checkCookie() {
+    let user = getCookie("username");
+    if (user != "") {
+        alert("Welcome again " + user);
+    } else {
+        user = prompt("Please enter your name:","");
+        if (user != "" && user != null) {
+            setCookie("username", user, 30);
+        }
+    }
+}</pre>
 
         </div>
-        <script src="inc/header.js"></script>
-        <script src="inc/functions.js"></script>
+        <div id="footer"></div>
+        <script src="inc/footer.js"></script>
     </body>
 </html>

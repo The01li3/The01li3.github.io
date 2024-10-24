@@ -1,18 +1,41 @@
 <!doctype html>
 <html>
     <head>
-        <meta charset="utf-8">
-        <title>Examples</title>
-        <link rel="stylesheet" href="inc/styles.css">
+        <title>AJAX</title>
         <script src="inc/meta.js"></script>	
-    </head>
-    <body>        
-        <div id="navHeader">
-        </div> 
-        <div> 
-
-        </div>
-        <script src="inc/header.js"></script>
+        <script src="inc/header.js"></script><!-- inline gets loaded top to bottom, inc gets loaded side by side with modern browsers, can be at the top.-->
         <script src="inc/functions.js"></script>
+    </head>
+    <body class="row align-items-start">        
+        <div id="navHeader" class="col col-2">
+        </div> 
+        <div class="col col-9">  
+            <h1>AJAX</h1>
+            <p><b>A</b>synchronous <b>J</b>avascript <b>A</b>nd <b>X</b>ML.<br>
+                RMS used jQuery for this. with <b>$.ajax({url:"",data:"",etc:etc})</b>.<br>
+                But normal JS uses <b>new XMLHttpRequest</b>.<br>
+            </p>
+            <ul>
+                <li>Create the object</li>
+                <li>Define the callback function</li>
+                <li>Open the object</li>
+                <li>Send a request</li>
+            </ul>
+<pre>const myAJAX = new XMLHttpRequest();
+myAJAX.onload = function() {
+    document.getElementById("demo").innerHTML = this.responseText;
+}
+
+myAJAX.open("GET",URL,true); // true/false is async yes/no, default is true
+myAJAX.send();
+</pre>
+            <p>Data can some back as a <b>responseText</b> or <b>responseXML</b><br>
+                Can use that data coming back to display in HTML, template literals are a nice way to do it.
+            </p>
+
+            
+        </div>
+        <div id="footer"></div>
+        <script src="inc/footer.js"></script>
     </body>
 </html>

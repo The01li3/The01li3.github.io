@@ -1,18 +1,69 @@
 <!doctype html>
 <html>
     <head>
-        <meta charset="utf-8">
-        <title>Examples</title>
-        <link rel="stylesheet" href="inc/styles.css">
+        <title>JS vs JQuery</title>
         <script src="inc/meta.js"></script>	
+        <script src="inc/header.js"></script><!-- inline gets loaded top to bottom, inc gets loaded side by side with modern browsers, can be at the top.-->
+        <script src="inc/functions.js"></script>
     </head>
-    <body>        
-        <div id="navHeader">
+    <body class="row align-items-start">        
+        <div id="navHeader" class="col col-2">
         </div> 
-        <div> 
+        <div class="col col-9">  
+            <h1>JS vs JQuery</h1>
+            <table class="table table-striped">
+                <thead class="table-light">
+                    <tr>
+                        <th scope="col">JQuery</th>
+                        <th scope="col">JS</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td scope="row">myElement = $("#id01");</td>
+                        <td>myElement = document.getElementById("id01");</td>
+                    </tr>
+                    <tr>
+                        <td scope="row">myElements = $("p");</td>
+                        <td>myElements = document.getElementsByTagName("p");</td>
+                    </tr>
+                    <tr>
+                        <td scope="row">myElements = $(".intro"); </td>
+                        <td>myElements = document.getElementsByClassName("intro"); </td>
+                    </tr>
+                    <tr>
+                        <td scope="row">myElements = $("p.intro");</td>
+                        <td>myElements = document.querySelectorAll("p.intro");</td>
+                    </tr>
+                    <tr>
+                        <td scope="row">myElement.text("Hello Sweden!");</td>
+                        <td>myElement.textContent = "Hello Sweden!";</td>
+                    </tr>
+                    <tr>
+                        <td scope="row">myElement.html("&ltp&gtHello World&lt/p&gt");</td>
+                        <td>myElement.innerHTML = "&ltp&gtHello World&lt/p&gt";</td>
+                    </tr>
+                    <tr>
+                        <td scope="row">myElement.hide();</td>
+                        <td>myElement.style.display = "none";</td>
+                    </tr>
+                    <tr>
+                        <td scope="row">$("#demo").css("font-size","35px");</td>
+                        <td>document.getElementById("demo").style.fontSize = "35px";</td>
+                    </tr>                                       
+                    <tr>
+                        <td scope="row">$("#id02").remove();</td>
+                        <td>document.getElementById("id02").remove();</td>
+                    </tr>
+                    <tr>
+                        <td scope="row">myParent = $("#02").parent().prop("nodeName");</td>
+                        <td>myParent = document.getElementById("02").parentNode.nodeName;</td>
+                    </tr>
+                </tbody>
+            </table>
 
         </div>
-        <script src="inc/header.js"></script>
-        <script src="inc/functions.js"></script>
+        <div id="footer"></div>
+        <script src="inc/footer.js"></script>
     </body>
 </html>

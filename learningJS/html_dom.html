@@ -1,18 +1,95 @@
 <!doctype html>
 <html>
     <head>
-        <meta charset="utf-8">
-        <title>Examples</title>
-        <link rel="stylesheet" href="inc/styles.css">
+        <title>HTML DOM</title>
         <script src="inc/meta.js"></script>	
+        <script src="inc/header.js"></script><!-- inline gets loaded top to bottom, inc gets loaded side by side with modern browsers, can be at the top.-->
+        <script src="inc/functions.js"></script>
     </head>
-    <body>        
-        <div id="navHeader">
+    <body class="row align-items-start">        
+        <div id="navHeader" class="col col-2">
         </div> 
-        <div> 
+        <div class="col col-9">
+            <h1>HTML DOM</h1>  
+            <h2>Intro</h2>
+            <p>HTML <b>D</b>ocument <b>O</b>bject <b>M</b>odel.<br>
+                  JS is able to change the elements of an HTML format because of this.<br>
+                  The HTML DOM is a standard for how to get, change, add, or delete HTML elements.
+                  <a href="intro.html">Here</a> has a small example of possible changes.
+            </p>
+            <hr>
+            <h3>Examples</h3>
+            <h4>Main</h4>
+            <p>Main one to be used is going to be <b>document.getElementById</b>, you can also do TagName, and ClassName.<br>
+                innerHTML, attribute, style.property, can all be changed.<br>
+                If you need something to happen to any HTML there's probably a way to do it, and very googleable.<br>
+                You can assign a variable the method <b>const x = document.getElementById("main");</b> to find all the elements that have a main id, then <b>const y = x.getElementsByTagName("p");</b> to find all p tags inside that main.<br>
+                <b>const x = document.querySelectorAll("p.intro");</b> will find all p tags that have a class of "intro".<br>
+                <b>x.src = image.jpg</b> can be used to change the image.<br>
+
+            </p>
+
+            <h4>Forms</h4>
+            <p>
+                <b>onsubmit="validateForm()"</b> for when a form is submitted... shock!<br>
+                <b>required</b> will make the form input have to be filled in.<br>
+                You can also add validation, min/max numbers etc.
+            </p>
+
+            <h4>CSS</h4>
+            <p>
+                <b>document.getElementById("p2").style.color = "blue";</b> self explanatory.<br>
+                Can be done on click and such.<br>
+                <b>document.getElementById("animate").style.top</b>, you get the idea.<br>
+                <b>id = setInterval(&ltfnMyFunction&gt,delay)</b> will run the function every X milliseconds, until it reaches <b>clearInterval(id)</b>.<br>
+                Which means the above can be used for animations to move things across the screen.
+            </p>
+            <h4>Event Listener</h4>
+            <p>
+                <b>.addEventListener("click",fnMyFunction)</b> it doesn't use "onclick" like previous.<br>
+                You can remove these with <b>.removeEventListener()</b>.<br>
+                Means you can add multiple events to a single DOM Object. Doesn't have to be HTML i.e. the window object.<br>
+                Takes it out of the HTML, makes it just a little easier to read.<br>
+            </p>
+            <p>
+                There's a third input parameter available to us for event bubbling/event capturing.<br>
+                Imagine a p element inside a div element, the user then clicks on the p, both having an "onclick".<br>
+                <b>Bubbling</b> will do inner out.<br>
+                <b>Capturing</b> will out outer in.<br>
+                <b>FALSE</b> is default, uses "bubbling". <b>TRUE</b> will then use "capturing".<br>
+            </p>
+            <h4>Navigation</h4>
+            <p>You can move around HTML nodes with some properties.</p>
+            <ul>
+                <li>parentNode</li>
+                <li>childNodes[nodeNumber]</li>
+                <li>first/lastChild</li>
+                <li>next/previousSibling</li>
+            </ul>
+            <p><b>innerHTML</b> is the same as <b>nodeValue</b></p>
+<pre>myTitle = document.getElementById("demo").innerHTML;
+myTitle = document.getElementById("demo").firstChild.nodeValue;
+myTitle = document.getElementById("demo").childNodes[0].nodeValue;</pre>
+            <p>Will all do the same thing.</p>
+            <p>You can cycle through element tags as they get saved in and look like arrays, but are not. Accessible with <b>examplePTag[x]</b>.<br>
+                Means examplePTag.length is a property you can cycle through a for loop to change them all.    
+            </p>
+            <h4>Node Manipulation</h4>
+            <p>You can add new elements with:</p>
+<pre>const para = document.createElement("p");
+const node = document.createTextNode("This is new.");
+para.appendChild(node);
+
+const element = document.getElementById("demo");
+element.appendChild(para);</pre>
+            <p>Creating the element and calling it "para", creating a text node, then adding it to para. Para can then get appended to the end of the demo div.<br>
+                Can also do <b>element.insertBefore(para,&ltelement to insert before&gt)</b>
+                <b>element.remove()</b> can also be used to remove the element.
+                <b>mainDiv.replaceChild(new,old)</b> will replace, where mainDiv is the div that the nodes are under.
+            </p>
 
         </div>
-        <script src="inc/header.js"></script>
-        <script src="inc/functions.js"></script>
+        <div id="footer"></div>
+        <script src="inc/footer.js"></script>
     </body>
 </html>

@@ -9,4 +9,4 @@ function fnArrSearch() {
 
 function myFunction(value, index, array) {
     return value > 7;
-  } 
+} 

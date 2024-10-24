@@ -1,18 +1,49 @@
 <!doctype html>
 <html>
     <head>
-        <meta charset="utf-8">
-        <title>Examples</title>
-        <link rel="stylesheet" href="inc/styles.css">
+        <title>JSON</title>
         <script src="inc/meta.js"></script>	
+        <script src="inc/header.js"></script><!-- inline gets loaded top to bottom, inc gets loaded side by side with modern browsers, can be at the top.-->
+        <script src="inc/functions.js"></script>
     </head>
-    <body>        
-        <div id="navHeader">
+    <body class="row align-items-start">        
+        <div id="navHeader" class="col col-2">
         </div> 
-        <div> 
+        <div class="col col-9">  
+            <h1>JSON</h1>
+            <h2>Intro</h2>
+            <p><b>J</b>ava<b>S</b>cript <b>O</b>bject <b>N</b>otation</p>
+            <p>We know JSON, it is what Ajax normally returns.</p>
+            <pre>'{"name":"John", "age":30, "car":null}'</pre>
+            <p>Defines an object with 3 properties: Name, Age and Car.<br>
+                Can then use <b>obj.name</b> or <b>ob["name"]</b> to access it, reassign it.
+            </p>
+            <p>Values must be strings, numbers, objects, arrays, boolean or null.<br>
+                Values cannot be functions, dates, undefined.
+            </p>
+            <p>You can use <b>JSON.parse(jsonInHere)</b> to make the JSON a JS Object.<br>
+                Since dates are not allowed in JSON, you write it as a string, then can convert it as needed.
+            </p>
+            <p><b>JSON.stringify(objInHere)</b> will convert the obj to a string in order to send it to the webserver if needed.<br>
+                It will also convert dates to strings, so they can be used in JSONs
+            </p>
+            <pre>myObj = {"name":"John", "age":30, "car":null}; //JSON literal
+
+const myJSON = '{"name":"John", "age":30, "car":null}';
+const myObj = JSON.parse(myJSON); //JSON string, apparently this is the normal way
+
+let text = "";
+for (const x in myObj) {
+    text += x + ", "; //Name
+    text += myObj[x] + ", "; //Value
+}</pre>
+            <p>You can use it with a PHP server, but its fairly damn niche and can be googled if need be.<br>
+                Data can be added into HTML as needed, template literals work well, or can just assign to innerHTML.<br>
+                JSONP is a method for sending JSON data without worrying about cross-domain issues.
+            </p>
 
         </div>
-        <script src="inc/header.js"></script>
-        <script src="inc/functions.js"></script>
+        <div id="footer"></div>
+        <script src="inc/footer.js"></script>
     </body>
 </html>
