@@ -70,16 +70,9 @@
 		</div>
 		<div id="footer"></div>				
 		<script src="templates/footer.js"></script>
+		<script src="templates/searchDoc.js"></script>
 		<script>
-			const arrIngredients = [
-				"135g plain flour",
-				"1 tsp baking powder",
-				"1&frasl;2 tsp salt",
-				"2 tbsp caster sugar",
-				"1 large egg",
-				"130ml milk",
-				"2 Tbsp olive oil"
-			]
+			const arrIngredients = fnFindIngredients(location.href.split("/").slice(-1)[0]);
 			widget_addLoadEvent(fnPopulateIngredients("ingredients",arrIngredients));
 		</script>
     </body>

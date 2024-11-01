@@ -288,40 +288,63 @@ var varrRecipes = [
 	}
 ];
 
-var vRecipesIndex = lunr(function () {
-	this.ref("id")
-    this.field('title')
-    this.field('description')
-	this.field('ingredients')
-	this.field('utensils')
-  
-    varrRecipes.forEach(function (doc) {
-      this.add(doc)
-    }, this)
-  });
-
-var vSearchResultsTemplate = Handlebars.compile(`
-	<hr>
-	{{#each this}}
-<a href = "{{id}}"><h2>{{title}}</h2></a>
-<p>Ingredients: {{helperSortAlpha ingredients}}</p>
-<hr>
-{{/each}}`);
-
-Handlebars.registerHelper('helperSortAlpha', function (pSortArray) {	
-	return pSortArray.sort().join(', ');
-});
-
-
 function fnSearch(vSearchParam) {
-	vSearchlist = "";
-    vResult = vRecipesIndex.search(vSearchParam);	
+
+	var vRecipesIndex = lunr(function () {
+		this.ref("id")
+		this.field('title')
+		this.field('description')
+		this.field('ingredients')
+		this.field('utensils')
+	  
+		varrRecipes.forEach(function (doc) {
+		  this.add(doc)
+		}, this)
+	});
+	
+    vResult = vRecipesIndex.search(vSearchParam);
+
+	Handlebars.registerHelper('helperSortAlpha', function (pSortArray) {	
+		return pSortArray.sort().join(', ');
+	});
+
+	var vSearchResultsTemplate = Handlebars.compile(`
+		<hr>
+		{{#each this}}
+			<a href = "{{id}}"><h2>{{title}}</h2></a>
+			<p>Ingredients: {{helperSortAlpha ingredients}}</p>
+			<hr>
+		{{/each}}`);
+
 
 	varrResult = vResult.map(function(item) {
 		return varrRecipes.find(function(vRecipe) {
 			return item.ref === vRecipe.id;
 		});
 	});
+
 	document.getElementById("resultList").innerHTML = vSearchResultsTemplate(varrResult);
 	document.getElementById("resultsHeader").innerHTML = 'Results - "' + vSearchParam + '"';
+}
+
+function fnFindIngredients(pPageId){
+
+	var vIngreIndex = lunr(function () {
+		this.field("id")
+		this.field('ingredients')
+	  
+		varrRecipes.forEach(function (doc) {
+		  this.add(doc)
+		}, this)
+	});
+
+	arrIngredientsList = vIngreIndex.search(pPageId);	
+
+	varrResult = arrIngredientsList.map(function(item) {
+		return varrRecipes.find(function(vRecipe) {
+			return item.ref === vRecipe.id;
+		});
+	});
+
+	return varrResult[0].ingredients;
 }
