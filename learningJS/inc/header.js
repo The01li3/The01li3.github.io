@@ -53,11 +53,7 @@ function fnAddHeader() {
         {
         return parseInt(value) + 1;
     });
-
-    header= '<a href="contents.html">Home</a><hr class="m-0">';
-    for (let i = 0; i < arrModNames.length; i++){
-        header+='<a href="'+ arrModNames[i][1] +'" class="left-list">'+ (i+1) + '. ' + arrModNames[i][0] + '</a><hr class="m-0">'
-    }
+    
     document.getElementById('navHeader').innerHTML = vNavList(objModNames);
 };
 

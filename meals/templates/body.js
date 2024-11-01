@@ -26,3 +26,38 @@ function fnGotoSearch(){
     window.location.href = "searchResults.html?searchValue=" + vSearchParam;
     event.preventDefault();
 }
+
+function widget_addLoadEvent(pFunction)
+{
+    var vfnOldOnLoad = window.onload;
+    if (typeof window.onload != 'function')
+    {
+        window.onload = pFunction;
+    }
+    else
+    {
+        window.onload = function()
+        {
+            vfnOldOnLoad();
+            pFunction();
+        }
+    }
+};
+
+function fnPopulateIngredients(pDivId,pArrIngredients){
+
+    Handlebars.registerHelper("inc", function(value, options) {
+        return parseInt(value) + 1;
+    });
+
+    var vIngList = Handlebars.compile(`{{#each pArrIngredients}}
+            <div class="form-check form-switch">
+                <input class="form-check-input " type="checkbox" role="switch" value="" id="ingre{{inc @index}}">
+                <label class="form-check-label" for="ingre{{inc @index}}">{{{this}}}</label>
+            </div>
+        {{/each}}`);
+
+    const data = { pArrIngredients: pArrIngredients };
+
+    document.getElementById(pDivId).innerHTML = vIngList(data);
+}

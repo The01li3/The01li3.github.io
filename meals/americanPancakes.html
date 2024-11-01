@@ -15,35 +15,37 @@
 		</div>
 		<div id="bodyDiv" class="row g-0 justify-content-center">	
 			<div class="col col-8">
-				<h2>Ingredients</h2>				
-				<div class="form-check form-switch">
-					<input class="form-check-input " type="checkbox" role="switch" value="" id="ingreOne">
-					<label class="form-check-label" for="ingreOne">135g Plain Flour</label>
-				</div>
-				<div class="form-check form-switch">
-					<input class="form-check-input " type="checkbox" role="switch" value="" id="ingreTwo">
-					<label class="form-check-label" for="ingreTwo">1 tsp Baking Powder</label>
-				</div>
-				<div class="form-check form-switch">
-					<input class="form-check-input " type="checkbox" role="switch" value="" id="ingreThree">
-					<label class="form-check-label" for="ingreThree">1&frasl;2 tsp Salt</label>
-				</div>
-				<div class="form-check form-switch">
-					<input class="form-check-input " type="checkbox" role="switch" value="" id="ingreFour">
-					<label class="form-check-label" for="ingreFour">2 tbsp Caster Sugar</label>
-				</div>
-				<div class="form-check form-switch">
-					<input class="form-check-input " type="checkbox" role="switch" value="" id="ingreFive">
-					<label class="form-check-label" for="ingreFive">1 Large Egg</label>
-				</div>	
-                <div class="form-check form-switch">
-					<input class="form-check-input " type="checkbox" role="switch" value="" id="ingreSix">
-					<label class="form-check-label" for="ingreSix">130ml milk</label>
-				</div>	
-                <div class="form-check form-switch">
-					<input class="form-check-input " type="checkbox" role="switch" value="" id="ingreSeven">
-					<label class="form-check-label" for="ingreSeven">2 tbsp olive oil</label>
-				</div>				
+				<h2>Ingredients</h2>
+				<div id="ingredients">				
+					<div class="form-check form-switch">
+						<input class="form-check-input " type="checkbox" role="switch" value="" id="ingreOne">
+						<label class="form-check-label" for="ingreOne">135g Plain Flour</label>
+					</div>
+					<div class="form-check form-switch">
+						<input class="form-check-input " type="checkbox" role="switch" value="" id="ingreTwo">
+						<label class="form-check-label" for="ingreTwo">1 tsp Baking Powder</label>
+					</div>
+					<div class="form-check form-switch">
+						<input class="form-check-input " type="checkbox" role="switch" value="" id="ingreThree">
+						<label class="form-check-label" for="ingreThree">1&frasl;2 tsp Salt</label>
+					</div>
+					<div class="form-check form-switch">
+						<input class="form-check-input " type="checkbox" role="switch" value="" id="ingreFour">
+						<label class="form-check-label" for="ingreFour">2 tbsp Caster Sugar</label>
+					</div>
+					<div class="form-check form-switch">
+						<input class="form-check-input " type="checkbox" role="switch" value="" id="ingreFive">
+						<label class="form-check-label" for="ingreFive">1 Large Egg</label>
+					</div>	
+					<div class="form-check form-switch">
+						<input class="form-check-input " type="checkbox" role="switch" value="" id="ingreSix">
+						<label class="form-check-label" for="ingreSix">130ml milk</label>
+					</div>	
+					<div class="form-check form-switch">
+						<input class="form-check-input " type="checkbox" role="switch" value="" id="ingreSeven">
+						<label class="form-check-label" for="ingreSeven">2 tbsp olive oil</label>
+					</div>	
+				</div>			
 				<h2>Instructions</h2>
 				<ul>
 					<li>
@@ -52,7 +54,7 @@
 					</li>
 					<li>
 						<h3>Step 2</h3>
-						<p>Whisk <b>1 Large Egg</b> into <b>130ml milk</b> with <b>2 tbsp olive oil</b>. Pour into the flour mixture and beat until smooth. Leave for a few minutes.</p>						
+						<p>Whisk <b>1 Large Egg</b> into <b>130ml milk</b> with <b>2 Tbsp olive oil</b>. Pour into the flour mixture and beat until smooth. Leave for a few minutes.</p>						
 					</li>
 					<li>
 						<h3>Step 3</h3>
@@ -68,5 +70,17 @@
 		</div>
 		<div id="footer"></div>				
 		<script src="templates/footer.js"></script>
+		<script>
+			const arrIngredients = [
+				"135g plain flour",
+				"1 tsp baking powder",
+				"1&frasl;2 tsp salt",
+				"2 tbsp caster sugar",
+				"1 large egg",
+				"130ml milk",
+				"2 Tbsp olive oil"
+			]
+			widget_addLoadEvent(fnPopulateIngredients("ingredients",arrIngredients));
+		</script>
     </body>
 </html>
