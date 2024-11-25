@@ -15,23 +15,9 @@
 		</div>
 		<div id="bodyDiv" class="row g-0 justify-content-center">	
 			<div class="col col-8">
-				<h2>Ingredients</h2>				
-				<div class="form-check form-switch">
-					<input class="form-check-input " type="checkbox" role="switch" value="" id="ingreOne">
-					<label class="form-check-label" for="ingreOne">100g plain flour</label>
-				</div>
-				<div class="form-check form-switch">
-					<input class="form-check-input " type="checkbox" role="switch" value="" id="ingreTwo">
-					<label class="form-check-label" for="ingreTwo">2 large eggs</label>
-				</div>
-				<div class="form-check form-switch">
-					<input class="form-check-input " type="checkbox" role="switch" value="" id="ingreThree">
-					<label class="form-check-label" for="ingreThree">300ml milk</label>
-				</div>
-				<div class="form-check form-switch">
-					<input class="form-check-input " type="checkbox" role="switch" value="" id="ingreFour">
-					<label class="form-check-label" for="ingreFour">Any toppings</label>
-				</div>				
+				<h2>Ingredients</h2>
+				<div id="ingredients">				
+				</div>			
 				<h2>Instructions</h2>
 				<ul>
 					<li>
@@ -55,5 +41,10 @@
 		</div>
 		<div id="footer"></div>				
 		<script src="templates/footer.js"></script>
+		<script src="templates/searchDoc.js"></script>
+		<script>
+			const arrIngredients = fnFindIngredients(location.href.split("/").slice(-1)[0]);//gets the list using Lunr and the screenname
+			widget_addLoadEvent(fnPopulateIngredients("ingredients",arrIngredients));//uses previous list to populate screen
+		</script>
     </body>
 </html>

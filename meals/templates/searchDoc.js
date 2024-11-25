@@ -1,8 +1,8 @@
 var varRecipes = [
 	{
 		"id": "americanPancakes",
-		"title": "American Pancakes ",
-		"ingredients": ["135g plain flour", "1 tsp baking powder", "1/2 tsp salt", "2 tbsp caster sugar", "1 large egg", "130ml milk", "2 tbsp olive oil", "Optional toppings: pecans|maple syrup|fruit|peanut butter|chocolate spread."],
+		"title": "American Pancakes",
+		"ingredients": ["135g plain flour", "1 tsp baking powder", "1/2 tsp salt", "2 tbsp caster sugar", "1 large egg", "130ml milk", "2 tbsp olive oil", "~Optional toppings: pecans|maple syrup|fruit|peanut butter|chocolate spread."],
 		"description": "",
 		"mealType": "dessert",
 		"appliance": "hob",
@@ -24,7 +24,7 @@ var varRecipes = [
 	},{
 		"id": "buffaloCauliflowerCasserole",
 		"title": "Buffalo Cauliflower Casserole",
-		"ingredients": ["470ml vegetable stock", "118ml buffalo sauce", "22g nutritional yeast", "1 tsp onion powder", "374g chickpeas (1 can works)", "200g cauliflower", "182 uncooked brown rice", "3 garlic cloves", "ranch"],
+		"ingredients": ["470ml vegetable stock", "118ml buffalo sauce", "22g nutritional yeast", "1 tsp onion powder", "374g chickpeas (1 can works)", "200g cauliflower", "182g uncooked brown rice", "3 garlic cloves", "ranch"],
 		"description": "easy, dump and cook",
 		"mealType": "main",
 		"appliance": "oven",
@@ -134,7 +134,7 @@ var varRecipes = [
 	},{
 		"id": "crepePancakes",
 		"title": "Pancakes",
-		"ingredients": ["100g plain flour", "2 large eggs", "300ml milk", "Optional Toppings: lemon|sugar|whipped cream|strawberries."],
+		"ingredients": ["100g plain flour", "2 large eggs", "300ml milk", "~Optional Toppings: lemon|sugar|whipped cream|strawberries."],
 		"description": "",
 		"mealType": "dessert",
 		"appliance": "hob",
@@ -222,7 +222,7 @@ var varRecipes = [
 	},{
 		"id": "misoSoup",
 		"title": "Miso Soup",
-		"ingredients": ["500ml water", "4 tbsp miso paste", "MSG", "Optional Toppings|Tofu|Spring Onions|Egg|1 Sheet of Nori"],
+		"ingredients": ["500ml water", "4 tbsp miso paste", "MSG", "~Optional Toppings|Tofu|Spring Onions|Egg|1 Sheet of Nori"],
 		"description": "easy, one pot",
 		"mealType": "main",
 		"appliance": "hob",
@@ -277,7 +277,7 @@ var varRecipes = [
 	},{
 		"id": "ramenBase",
 		"title": "Ramen Base",
-		"ingredients": ["2 tsp ginger", "1 tbsp garlic", "3 tbsp soy sauce", "2 tbsp mirin", "1l stock", "Optional Extras: Eggs|Mushrooms|Chicken|Bok Choi|Noodles|Bean Sprouts|Tofu|Gyoza"],
+		"ingredients": ["2 tsp ginger", "1 tbsp garlic", "3 tbsp soy sauce", "2 tbsp mirin", "1l stock", "~Optional Extras: Eggs|Mushrooms|Chicken|Bok Choi|Noodles|Bean Sprouts|Tofu|Gyoza"],
 		"description": "easy, one pot",
 		"mealType": "main",
 		"appliance": "hob",
@@ -288,7 +288,7 @@ var varRecipes = [
 	},{
 		"id": "risottoBasics",
 		"title": "Risotto Basics",
-		"ingredients": ["175g risotto rice", "1l stock or liquid", "1 onion", "1 garlic clove", "30g parmesan", "Optional Flavours", "Tomato & mascarpone (1 x 400ml can of chopped tomato|-400ml stock|30g mascarpone)", "Black Garlic (4 black garlic cloves)", "Butternut squash and sage(500g butternut squash|bunch of sage|1/2 glass white white)"],
+		"ingredients": ["175g risotto rice", "1l stock or liquid", "1 onion", "1 garlic clove", "30g parmesan", "~Optional Flavours", "Tomato & mascarpone (1 x 400ml can of chopped tomato|-400ml stock|30g mascarpone)", "Black Garlic (4 black garlic cloves)", "Butternut squash and sage(500g butternut squash|bunch of sage|1/2 glass white white)"],
 		"description": "easy, one pot",
 		"mealType": "main",
 		"appliance": "hob",
@@ -409,7 +409,7 @@ var varRecipes = [
 	},{
 		"id": "tempehTacos",
 		"title": "Tempeh Tacos",
-		"ingredients": ["tempeh", "corn tortillas", "sauce", "Optional Toppings"],
+		"ingredients": ["tempeh", "corn tortillas", "sauce", "~Optional Toppings"],
 		"description": "easy",
 		"mealType": "main",
 		"appliance": "oven",
@@ -458,10 +458,15 @@ function fnSearch(vSearchParam) {
 	var vRecipesIndex = lunr(function () {
 		this.ref("id")
 		this.field('title')
-		this.field('description')
 		this.field('ingredients')
+		this.field('description')		
+		this.field('mealType')
+		this.field('appliance')
+		this.field('diet')
+		this.field('origin')		
 		this.field('utensils')
-	  
+	  	this.field('source')
+
 		varRecipes.forEach(function (doc) {
 		  this.add(doc)
 		}, this)
@@ -476,19 +481,19 @@ function fnSearch(vSearchParam) {
 	var vSearchResultsTemplate = Handlebars.compile(`
 		<hr>
 		{{#each this}}
-			<a href = "{{id}}"><h2>{{title}}</h2></a>
+			<a href = "{{id}}.html"><h2>{{title}}</h2></a>
 			<p>Ingredients: {{helperSortAlpha ingredients}}</p>
 			<hr>
 		{{/each}}`);
 
 
-	varrResult = vResult.map(function(item) {
+	varResult = vResult.map(function(item) {
 		return varRecipes.find(function(vRecipe) {
 			return item.ref === vRecipe.id;
 		});
 	});
 
-	document.getElementById("resultList").innerHTML = vSearchResultsTemplate(varrResult);
+	document.getElementById("resultList").innerHTML = vSearchResultsTemplate(varResult);
 	document.getElementById("resultsHeader").innerHTML = 'Results - "' + vSearchParam + '"';
 }
 
@@ -503,13 +508,13 @@ function fnFindIngredients(pPageId){
 		}, this)
 	});
 
-	arrIngredientsList = vIngreIndex.search(pPageId);	
+	arrIngredientsList = vIngreIndex.search(pPageId.slice(0,-5));//Removes .html from filename.
 
-	varrResult = arrIngredientsList.map(function(item) {
+	varResult = arrIngredientsList.map(function(item) {
 		return varRecipes.find(function(vRecipe) {
 			return item.ref === vRecipe.id;
 		});
 	});
 
-	return varrResult[0].ingredients;
+	return varResult[0].ingredients;
 }
