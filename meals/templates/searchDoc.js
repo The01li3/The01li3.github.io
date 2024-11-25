@@ -1,290 +1,455 @@
-var varrRecipes = [
+var varRecipes = [
 	{
-		"id":"americanPancakes.html",
-		"title":"American Pancakes",
-		"description":"American, pancake, dessert, vegetarian, pan",
-		"ingredients":["milk", "plain flour", "baking powder", "sugar", "egg", "oil", "butter", "salt", "pecans", "maple syrup"],
-		"utensils":"cast iron"
-	},
-	{
-		"id":"bananaCake.html",
-		"title":"Banana Cake",
-		"description":"1,2",
-		"ingredients":["1", "2", "3", "4", "5", "6", "7"],
-		"utensils":"Loose Bottom Cake Tin"
-	},
-	{
-		"id":"buffaloCauliflowerCasserole.html",
-		"title":"Buffalo Cauliflower Casserole",
-		"description":"1,2",
-		"ingredients":["1", "2", "3", "4", "5", "6", "7"],
-		"utensils":"Casserole Dish"
-	},
-	{
-		"id":"buffaloRanchPasta.html",
-		"title":"Buffalo Ranch Pasta",
-		"description":"1,2",
-		"ingredients":["1", "2", "3", "4", "5", "6", "7"],
-		"utensils":""
-	},
-	{
-		"id":"buffaloSauce.html",
-		"title":"Buffalo Sauce",
-		"description":"1,2",
-		"ingredients":["1", "2", "3", "4", "5", "6", "7"],
-		"utensils":""
-	},
-	{
-		"id":"carrotCake.html",
-		"title":"Carrot Cake",
-		"description":"1,2",
-		"ingredients":["1", "2", "3", "4", "5", "6", "7"],
-		"utensils":"Loose Bottom Cake Tin"
-	},
-	{
-		"id":"castIronNaan.html",
-		"title":"Cast Iron Naan",
-		"description":"1,2",
-		"ingredients":["1", "2", "3", "4", "5", "6", "7"],
-		"utensils":"Cast Iron"
-	},
-	{
-		"id":"chanaMasala.html",
-		"title":"Chana Masala",
-		"description":"1,2",
-		"ingredients":["1", "2", "3", "4", "5", "6", "7"],
-		"utensils":"Slow Cooker"
-	},
-	{
-		"id":"cheeseAndMarmiteSwirls.html",
-		"title":"Cheese And Marmite Swirls",
-		"description":"1,2",
-		"ingredients":["1", "2", "3", "4", "5", "6", "7"],
-		"utensils":""
-	},
-	{
-		"id":"chickenAlfredo.html",
-		"title":"Chicken Alfredo",
-		"description":"1,2",
-		"ingredients":["1", "2", "3", "4", "5", "6", "7"],
-		"utensils":""
-	},
-	{
-		"id":"coconutRice.html",
-		"title":"Coconut Rice",
-		"description":"1,2",
-		"ingredients":["1", "2", "3", "4", "5", "6", "7"],
-		"utensils":""
-	},
-	{
-		"id":"creamCheeseFrosting.html",
-		"title":"Cream Cheese Frosting",
-		"description":"1,2",
-		"ingredients":["1", "2", "3", "4", "5", "6", "7"],
-		"utensils":""
-	},
-	{
-		"id":"crepePancakes.html",
-		"title":"Pancakes",
-		"description":"pancake, dessert, vegetarian, pan",
-		"ingredients":["milk", "plain flour", "sugar", "egg", "oil", "lemon", "butter"],
-		"utensils":""
-	},
-	{
-		"id":"garlicAndGingerCurry.html",
-		"title":"Garlic And Ginger Curry",
-		"description":"1,2",
-		"ingredients":["1", "2", "3", "4", "5", "6", "7"],
-		"utensils":""
-	},
-	{
-		"id":"greekStyleBeans.html",
-		"title":"Greek Style Beans",
-		"description":"1,2",
-		"ingredients":["1", "2", "3", "4", "5", "6", "7"],
-		"utensils":"Casserole Dish"
-	},
-	{
-		"id":"hoisinCashewTofu.html",
-		"title":"Hoisin Cashew Tofu",
-		"description":"1,2",
-		"ingredients":["1", "2", "3", "4", "5", "6", "7"],
-		"utensils":""
-	},
-	{
-		"id":"kasespatzle.html",
-		"title":"Kasespatzle",
-		"description":"1,2",
-		"ingredients":["1", "2", "3", "4", "5", "6", "7"],
-		"utensils":""
-	},
-	{
-		"id":"lemonPosset.html",
-		"title":"Lemon Posset",
-		"description":"1,2",
-		"ingredients":["1", "2", "3", "4", "5", "6", "7"],
-		"utensils":"Ramekin"
-	},
-	{
-		"id":"lemonStirFry.html",
-		"title":"Lemon Stir Fry",
-		"description":"1,2",
-		"ingredients":["1", "2", "3", "4", "5", "6", "7"],
-		"utensils":""
-	},
-	{
-		"id":"meadBasics.html",
-		"title":"Mead Basics",
-		"description":"1,2",
-		"ingredients":["1", "2", "3", "4", "5", "6", "7"],
-		"utensils":"…TBD"
-	},
-	{
-		"id":"misoSoup.html",
-		"title":"Miso Soup",
-		"description":"1,2",
-		"ingredients":["1", "2", "3", "4", "5", "6", "7"],
-		"utensils":""
-	},
-	{
-		"id":"nachoCasserole.html",
-		"title":"Nacho Casserole",
-		"description":"1,2",
-		"ingredients":["1", "2", "3", "4", "5", "6", "7"],
-		"utensils":"Casserole Dish"
-	},
-	{
-		"id":"noKneadFocaccia.html",
-		"title":"No Knead Focaccia",
-		"description":"1,2",
-		"ingredients":["1", "2", "3", "4", "5", "6", "7"],
-		"utensils":"Cast Iron"
-	},
-	{
-		"id":"pecanTassies.html",
-		"title":"Pecan Tassies",
-		"description":"1,2",
-		"ingredients":["1", "2", "3", "4", "5", "6", "7"],
-		"utensils":"Mini Muffin Tray, Stamper, Rolling Pin"
-	},
-	{
-		"id":"pineappleColeslaw.html",
-		"title":"Pineapple Coleslaw",
-		"description":"1,2",
-		"ingredients":["1", "2", "3", "4", "5", "6", "7"],
-		"utensils":""
-	},
-	{
-		"id":"ramenBase.html",
-		"title":"Ramen Base",
-		"description":"1,2",
-		"ingredients":["1", "2", "3", "4", "5", "6", "7"],
-		"utensils":""
-	},
-	{
-		"id":"risottoBasics.html",
-		"title":"Risotto Basics",
-		"description":"1,2",
-		"ingredients":["1", "2", "3", "4", "5", "6", "7"],
-		"utensils":""
-	},
-	{
-		"id":"sataySauce.html",
-		"title":"Satay Sauce",
-		"description":"1,2",
-		"ingredients":["1", "2", "3", "4", "5", "6", "7"],
-		"utensils":""
-	},
-	{
-		"id":"slowCookedButterChicken.html",
-		"title":"Slow Cooked Butter Chicken",
-		"description":"1,2",
-		"ingredients":["1", "2", "3", "4", "5", "6", "7"],
-		"utensils":"Slow Cooker"
-	},
-	{
-		"id":"slowCookedVegetarianRedThaiCurry.html",
-		"title":"Slow Cooked Vegetarian Red Thai Curry",
-		"description":"1,2",
-		"ingredients":["1", "2", "3", "4", "5", "6", "7"],
-		"utensils":"Slow Cooker"
-	},
-	{
-		"id":"spicedAppleCake.html",
-		"title":"Spiced Apple Cake",
-		"description":"1,2",
-		"ingredients":["1", "2", "3", "4", "5", "6", "7"],
-		"utensils":"Square Cake Tin"
-	},
-	{
-		"id":"spinacheRicottaCannelloni.html",
-		"title":"Spinache Ricotta Cannelloni",
-		"description":"1,2",
-		"ingredients":["1", "2", "3", "4", "5", "6", "7"],
-		"utensils":"Piping Bag"
-	},
-	{
-		"id":"springRolls.html",
-		"title":"Spring Rolls",
-		"description":"1,2",
-		"ingredients":["1", "2", "3", "4", "5", "6", "7"],
-		"utensils":""
-	},
-	{
-		"id":"stickyLemonTofu.html",
-		"title":"Sticky Lemon Tofu",
-		"description":"1,2",
-		"ingredients":["1", "2", "3", "4", "5", "6", "7"],
-		"utensils":""
-	},
-	{
-		"id":"stickyMangoRice.html",
-		"title":"Sticky Mango Rice",
-		"description":"1,2",
-		"ingredients":["1", "2", "3", "4", "5", "6", "7"],
-		"utensils":""
-	},
-	{
-		"id":"sushiBasics.html",
-		"title":"Sushi Basics",
-		"description":"1,2",
-		"ingredients":["1", "2", "3", "4", "5", "6", "7"],
-		"utensils":"Rolling Mat"
-	},
-	{
-		"id":"tamarindFishCurry.html",
-		"title":"Tamarind Fish Curry",
-		"description":"1,2",
-		"ingredients":["1", "2", "3", "4", "5", "6", "7"],
-		"utensils":""
-	},
-	{
-		"id":"tempehTacos.html",
-		"title":"Tempeh Tacos",
-		"description":"1,2",
-		"ingredients":["1", "2", "3", "4", "5", "6", "7"],
-		"utensils":""
-	},
-	{
-		"id":"tikkaMasalaSalmon.html",
-		"title":"Tikka Masala Salmon",
-		"description":"1,2",
-		"ingredients":["1", "2", "3", "4", "5", "6", "7"],
-		"utensils":""
-	},
-	{
-		"id":"tiramisu.html",
-		"title":"Tiramisu",
-		"description":"1,2",
-		"ingredients":["1", "2", "3", "4", "5", "6", "7"],
-		"utensils":""
-	},
-	{
-		"id":"uniBaguette.html",
-		"title":"Uni Baguette",
-		"description":"1,2",
-		"ingredients":["1", "2", "3", "4", "5", "6", "7"],
-		"utensils":""
+		"id": "americanPancakes",
+		"title": "American Pancakes ",
+		"ingredients": ["135g plain flour", "1 tsp baking powder", "1/2 tsp salt", "2 tbsp caster sugar", "1 large egg", "130ml milk", "2 tbsp olive oil", "Optional toppings: pecans|maple syrup|fruit|peanut butter|chocolate spread."],
+		"description": "",
+		"mealType": "dessert",
+		"appliance": "hob",
+		"diet": "vegetarian, pescatarian",
+		"origin": "American",
+		"utensils": "Cast Iron",
+		"source": "DISCORD"
+	},{
+		"id": "bananaCake",
+		"title": "Banana Cake",
+		"ingredients": ["125g butter", "200g caster sugar", "2 eggs", "3 very ripe bananas", "1 tsp vanilla", "85g chocolate chips", "90g self raising flour", "90g plain flour", "1 tsp bicarbonate of soda"],
+		"description": "Ann Cochius",
+		"mealType": "dessert",
+		"appliance": "oven",
+		"diet": "vegetarian, pescatarian",
+		"origin": "",
+		"utensils": "Loose Bottom Cake Tin",
+		"source": "DISCORD"
+	},{
+		"id": "buffaloCauliflowerCasserole",
+		"title": "Buffalo Cauliflower Casserole",
+		"ingredients": ["470ml vegetable stock", "118ml buffalo sauce", "22g nutritional yeast", "1 tsp onion powder", "374g chickpeas (1 can works)", "200g cauliflower", "182 uncooked brown rice", "3 garlic cloves", "ranch"],
+		"description": "easy, dump and cook",
+		"mealType": "main",
+		"appliance": "oven",
+		"diet": "vegetarian, pescatarian",
+		"origin": "American",
+		"utensils": "Casserole Dish",
+		"source": "https://frommybowl.com/buffalo-cauliflower-chickpea-casserole/"
+	},{
+		"id": "buffaloRanchPasta",
+		"title": "Buffalo Ranch Pasta",
+		"ingredients": ["3 garlic cloves", "1 tbsp nutritional yeast", "2 tsp dried parsley", "1 tsp dried dill", "1/2 tsp onion powder", "225g dry pasta", "770ml water", "60ml buffalo sauce", "2 tbsp cream cheese", "2 tsp cornstarch"],
+		"description": "easy, one pot",
+		"mealType": "main",
+		"appliance": "hob",
+		"diet": "vegetarian, pescatarian",
+		"origin": "American",
+		"utensils": "Saucepan, Frying Pan",
+		"source": "https://frommybowl.com/vegan-buffalo-ranch-pasta-one-pot/"
+	},{
+		"id": "buffaloSauce",
+		"title": "Buffalo Sauce",
+		"ingredients": ["4 tbsp butter/low fat spread", "1 tbsp buffalo", "1/2 tbsp ketchup"],
+		"description": "",
+		"mealType": "dip, sauce",
+		"appliance": "microwave",
+		"diet": "vegetarian, pescatarian",
+		"origin": "American",
+		"utensils": "Bowl",
+		"source": "DISCORD"
+	},{
+		"id": "carrotCake",
+		"title": "Carrot Cake",
+		"ingredients": ["115ml sunflower oil", "230g self raising flour", "1 tsp baking powder", "1 1/2 tsp ground cinnamon", "1/2 tsp mixed spice", "1/2 tsp ground ginger", "230g light brown muscovado sugar", "100g pecans", "260g grated carrots", "2 medium eggs"],
+		"description": "",
+		"mealType": "dessert",
+		"appliance": "oven",
+		"diet": "vegetarian, pescatarian",
+		"origin": "",
+		"utensils": "Loose Bottom Cake Tin",
+		"source": "https://www.deliciousmagazine.co.uk/recipes/paul-hollywoods-ultimate-carrot-cake/"
+	},{
+		"id": "castIronNaan",
+		"title": "Cast Iron Naan",
+		"ingredients": ["1 tsp sugar", "113ml warm water", "10g active dry yeast", "281g plain flour", "125g yoghurt", "1/2 tsp salt", "1 tbsp oil"],
+		"description": "",
+		"mealType": "side",
+		"appliance": "hob",
+		"diet": "vegetarian, pescatarian",
+		"origin": "Indian",
+		"utensils": "Cast Iron",
+		"source": "https://rasamalaysia.com/naan/#wprm-recipe-container-746558 and discord"
+	},{
+		"id": "chanaMasala",
+		"title": "Chana Masala",
+		"ingredients": ["2 tsp garam masala", "1 tsp paprika", "1 tsp turmeric", "1 tsp ground coriander", "4 garlic cloves", "1 onion", "1 x 400g can chopped tomato", "1 tbsp lemon juice", "2 x 400g cans of chickpeas", "1 tbsp tomato puree"],
+		"description": "easy, dump and cook",
+		"mealType": "main",
+		"appliance": "slow cook, hob",
+		"diet": "vegetarian, pescatarian",
+		"origin": "Indian",
+		"utensils": "Slow Cooker, Saucepan, Ninja",
+		"source": "PoN 45"
+	},{
+		"id": "cheeseAndMarmiteSwirls",
+		"title": "Cheese And Marmite Swirls",
+		"ingredients": ["320g ready rolled light puff pasty", "40g reduced fat cheddar cheese", "1 tbsp marmite", "2 tsp boiling water"],
+		"description": "",
+		"mealType": "snack",
+		"appliance": "over",
+		"diet": "vegetarian, pescatarian",
+		"origin": "",
+		"utensils": "",
+		"source": "PoN p210"
+	},{
+		"id": "chickenAlfredo",
+		"title": "Chicken Alfredo",
+		"ingredients": ["chicken breasts 680g", "1 tsp oregano", "1 tsp dried basil", "1 tsp salt", "455g pasta", "10g fresh parsley", "1 tsp black pepper", "80g parmesan", "2 tbsp butter", "4 garlic cloves", "3 tbsp plain flour", "480ml milk"],
+		"description": "easy",
+		"mealType": "main",
+		"appliance": "hob",
+		"diet": "",
+		"origin": "American",
+		"utensils": "Saucepan, Frying Pan",
+		"source": "https://tasty.co/recipe/easy-chicken-alfredo-penne"
+	},{
+		"id": "coconutRice",
+		"title": "Coconut Rice",
+		"ingredients": ["400g jasmine rice", "340ml water", "1 x 400g can of coconut milk", "1 tsp salt", "1 tsp sugar"],
+		"description": "",
+		"mealType": "side",
+		"appliance": "hob",
+		"diet": "vegetarian, pescatarian",
+		"origin": "",
+		"utensils": "Saucepan",
+		"source": "https://www.aheadofthyme.com/2016/04/easy-coconut-rice/"
+	},{
+		"id": "creamCheeseFrosting",
+		"title": "Cream Cheese Frosting",
+		"ingredients": ["50g butter", "200g cream cheese", "100g icing sugar", "some vanilla"],
+		"description": "",
+		"mealType": "decoration, frosting",
+		"appliance": "",
+		"diet": "vegetarian, pescatarian",
+		"origin": "",
+		"utensils": "Bowl",
+		"source": "https://www.deliciousmagazine.co.uk/recipes/paul-hollywoods-ultimate-carrot-cake/"
+	},{
+		"id": "crepePancakes",
+		"title": "Pancakes",
+		"ingredients": ["100g plain flour", "2 large eggs", "300ml milk", "Optional Toppings: lemon|sugar|whipped cream|strawberries."],
+		"description": "",
+		"mealType": "dessert",
+		"appliance": "hob",
+		"diet": "vegetarian, pescatarian",
+		"origin": "France",
+		"utensils": "Frying Pan",
+		"source": "BBC"
+	},{
+		"id": "garlicAndGingerCurry",
+		"title": "Garlic And Ginger Curry",
+		"ingredients": ["350ml stock", "2 tsp fenugreek seeds", "1 onion", "4 garlic cloves", "3cm ginger", "1 green chilli", "1 1/2 tsp garam masala", "1 1/2 tsp ground cumin", "1 tsp turmeric", "1/2 tsp chilli powder", "2 tbsp tomato puree", "1 x 400g can of chopped tomato", "1 tbsp mango chutney"],
+		"description": "fish, easy",
+		"mealType": "main",
+		"appliance": "hob",
+		"diet": "pescatarian",
+		"origin": "Indian",
+		"utensils": "Frying Pan",
+		"source": "PoN 82"
+	},{
+		"id": "greekStyleBeans",
+		"title": "Greek Style Beans",
+		"ingredients": ["2 onions", "2 garlic cloves", "2 x 400g cans of chopped tomato", "2 tbsp tomato puree", "2 tbsp fresh oregano leaves", "2 x 400g cans of butter beans", "90g reduced fat feta cheese"],
+		"description": "easy, dump and cook",
+		"mealType": "main",
+		"appliance": "oven",
+		"diet": "vegetarian, pescatarian",
+		"origin": "Greek",
+		"utensils": "Casserole Dish",
+		"source": "PoN 192"
+	},{
+		"id": "hoisinCashewTofu",
+		"title": "Hoisin Cashew Tofu",
+		"ingredients": ["marinated tofu", "8 spring onions", "4 garlic cloves", "60ml hoisin sauce", "60ml water", "2 tbsp rice vinegar", "1 tbsp soy sauce", "2 tsp cornstarch", "107g cashews"],
+		"description": "easy",
+		"mealType": "main",
+		"appliance": "hob",
+		"diet": "vegetarian, pescatarian",
+		"origin": "Chinese",
+		"utensils": "Saucepan",
+		"source": "https://frommybowl.com/vegan-cashew-chicken-tofu/"
+	},{
+		"id": "kasespatzle",
+		"title": "Kasespatzle",
+		"ingredients": ["250g dried spaetzle cooked", "6 tbsp butter", "3 large onions", "1/2 tsp salt", "1/2 tsp sugar", "cheeses various (emmental|gruyere etc.)"],
+		"description": "easy",
+		"mealType": "main",
+		"appliance": "oven",
+		"diet": "vegetarian, pescatarian",
+		"origin": "Austrian",
+		"utensils": "Casserole Dish",
+		"source": "https://www.daringgourmet.com/kasespatzle-swabian-german-macaroni-and-cheese/"
+	},{
+		"id": "lemonPosset",
+		"title": "Lemon Posset",
+		"ingredients": ["600ml double cream", "200g caster sugar", "3 lemon zest", "75ml lemon juice"],
+		"description": "",
+		"mealType": "dessert",
+		"appliance": "fridge",
+		"diet": "vegetarian, pescatarian",
+		"origin": "British",
+		"utensils": "Ramekin",
+		"source": "https://www.bbcgoodfood.com/recipes/lemon-posset-sugared-almond-shortbread"
+	},{
+		"id": "lemonStirFry",
+		"title": "Lemon Stir Fry",
+		"ingredients": ["2 tsp honey", "2 lemons", "150ml chicken stock", "2 tbsp soy sauce", "4 chicken breasts", "1 tbsp cornflour", "2 carrots", "1 red pepper", "140g sugar snap peas"],
+		"description": "easy, one pot",
+		"mealType": "main",
+		"appliance": "hob",
+		"diet": "vegetarian, pescatarian",
+		"origin": "Chinese",
+		"utensils": "Frying Pan",
+		"source": "https://www.bbcgoodfood.com/recipes/sticky-lemon-chicken"
+	},{
+		"id": "meadBasics",
+		"title": "Mead Basics",
+		"ingredients": [""],
+		"description": "",
+		"mealType": "",
+		"appliance": "",
+		"diet": "",
+		"origin": "",
+		"utensils": "…TBD",
+		"source": "FuckKnows, delay it"
+	},{
+		"id": "misoSoup",
+		"title": "Miso Soup",
+		"ingredients": ["500ml water", "4 tbsp miso paste", "MSG", "Optional Toppings|Tofu|Spring Onions|Egg|1 Sheet of Nori"],
+		"description": "easy, one pot",
+		"mealType": "main",
+		"appliance": "hob",
+		"diet": "vegetarian, pescatarian",
+		"origin": "Japanese",
+		"utensils": "Saucepan",
+		"source": "All recipes"
+	},{
+		"id": "nachoCasserole ",
+		"title": "Nacho Casserole",
+		"ingredients": ["300g enchilada sauce", "1 x 400g can of black beans", "175g sweetcorn", "120g olives", "bag of tortilla chips", "120g ~ cheddar or other cheese"],
+		"description": "easy, dump and cook",
+		"mealType": "main",
+		"appliance": "oven",
+		"diet": "vegetarian, pescatarian",
+		"origin": "American",
+		"utensils": "Casserole Dish",
+		"source": "One Pan something or other?"
+	},{
+		"id": "noKneadFocaccia",
+		"title": "No Knead Focaccia",
+		"ingredients": ["500g bread/plain flour", "10g kosher/table salt", "4g instant dry yeast", "400g warm water", "68g extra-virgin olive oil"],
+		"description": "pizza",
+		"mealType": "main, side",
+		"appliance": "oven",
+		"diet": "vegetarian, pescatarian",
+		"origin": "Italian",
+		"utensils": "Cast Iron",
+		"source": "https://www.seriouseats.com/easy-no-knead-focaccia"
+	},{
+		"id": "pecanTassies",
+		"title": "Pecan Tassies",
+		"ingredients": ["130g butter", "100g soft cheese", "140g plain flour", "175g light brown sugar", "1 egg", "1 tsp vanilla", "115g pecans chopped"],
+		"description": "",
+		"mealType": "dessert",
+		"appliance": "oven",
+		"diet": "vegetarian, pescatarian",
+		"origin": "",
+		"utensils": "Mini Muffin Tray, Stamper, Rolling Pin",
+		"source": "DISCORD"
+	},{
+		"id": "pineappleColeslaw",
+		"title": "Pineapple Coleslaw",
+		"ingredients": ["250g cabbage", "1/2 red onion", "1 jalapeno", "1 carrot", "158g pineapple", "1/2 lime juice", "1 1/2 tbsp distilled white vinegar", "1/2 tsp salt"],
+		"description": "",
+		"mealType": "side",
+		"appliance": "bowl",
+		"diet": "vegetarian, pescatarian",
+		"origin": "",
+		"utensils": "",
+		"source": "https://frommybowl.com/bbq-tempeh-tacos-pineapple-coleslaw/#tasty-recipes-6125-jump-target"
+	},{
+		"id": "ramenBase",
+		"title": "Ramen Base",
+		"ingredients": ["2 tsp ginger", "1 tbsp garlic", "3 tbsp soy sauce", "2 tbsp mirin", "1l stock", "Optional Extras: Eggs|Mushrooms|Chicken|Bok Choi|Noodles|Bean Sprouts|Tofu|Gyoza"],
+		"description": "easy, one pot",
+		"mealType": "main",
+		"appliance": "hob",
+		"diet": "vegetarian, pescatarian",
+		"origin": "Japanese",
+		"utensils": "Saucepan",
+		"source": "https://www.forkknifeswoon.com/simple-homemade-chicken-ramen/"
+	},{
+		"id": "risottoBasics",
+		"title": "Risotto Basics",
+		"ingredients": ["175g risotto rice", "1l stock or liquid", "1 onion", "1 garlic clove", "30g parmesan", "Optional Flavours", "Tomato & mascarpone (1 x 400ml can of chopped tomato|-400ml stock|30g mascarpone)", "Black Garlic (4 black garlic cloves)", "Butternut squash and sage(500g butternut squash|bunch of sage|1/2 glass white white)"],
+		"description": "easy, one pot",
+		"mealType": "main",
+		"appliance": "hob",
+		"diet": "",
+		"origin": "Italian",
+		"utensils": "Frying Pan",
+		"source": "BBC and Brain"
+	},{
+		"id": "satay",
+		"title": "Satay Sauce",
+		"ingredients": ["120g peanut butter", "30g sambal", "100g ketjap manis", "2 tsp sugar", "100ml water", "1 x 400g can of coconut milk", "lime juice"],
+		"description": "",
+		"mealType": "sauce, dip",
+		"appliance": "hob",
+		"diet": "vegetarian, pescatarian",
+		"origin": "Indonesian",
+		"utensils": "Saucepan",
+		"source": "HelloFresh"
+	},{
+		"id": "slowCookedButterChicken",
+		"title": "Slow Cooked Butter Chicken",
+		"ingredients": ["900g chicken", "1/2 onions", "3 garlic cloves", "1 tbsp red curry paste", "2 tsp curry powder", "1 tsp salt", "1 tsp turmeric", "1/2 tsp ground ginger", "1 x 400g can of coconut milk", "small can tomato paste", "2 tbsp butter", "60g double cream"],
+		"description": "easy, dump and cook",
+		"mealType": "main",
+		"appliance": "slow cook",
+		"diet": "",
+		"origin": "Indian",
+		"utensils": "Slow Cooker, Ninja",
+		"source": "https://slowcookergourmet.net/slow-cooker-butter-chicken/"
+	},{
+		"id": "slowCookedVegetarianRedThaiCurry",
+		"title": "Slow Cooked Vegetarian Red Thai Curry",
+		"ingredients": ["1 x 400g can of coconut milk", "1 x 400g can of chopped tomatoes", "1 x 400g can of chickpeas", "1 x 400g can of kidney beans in chilli sauce", "100g peanut butter", "1kg sweet potatoes", "1 lime juice", "80g Thai red curry paste", "4 tbsp soy sauce"],
+		"description": "easy, dump and cook",
+		"mealType": "main",
+		"appliance": "slow cook",
+		"diet": "vegetarian, pescatarian",
+		"origin": "Thai",
+		"utensils": "Slow Cooker, Ninja",
+		"source": "https://applytofaceblog.com/easy-slow-cooker-thai-red-vegetarian-curry/"
+	},{
+		"id": "spicedAppleCake",
+		"title": "Spiced Apple Cake",
+		"ingredients": ["280g plain flour", "1 tsp bicarb", "1 tsp cinnamon", "1/2 tsp ground allspice", "1/2 tsp nutmeg", "1/4 tsp ground cloves", "1/2 tsp salt", "112g butter", "200g sugar", "3 large eggs", "1/2 tsp vanilla", "255g apple sauce", "60g buttermilk/yoghurt  &milk", "60g chopped walnuts"],
+		"description": "",
+		"mealType": "dessert",
+		"appliance": "oven",
+		"diet": "vegetarian, pescatarian",
+		"origin": "",
+		"utensils": "Square Cake Tin",
+		"source": "https://www.simplyrecipes.com/recipes/applesauce_spice_cake/"
+	},{
+		"id": "spinachRicottaCannelloni",
+		"title": "Spinach Ricotta Cannelloni",
+		"ingredients": ["300g spinach", "180g ricotta", "15g parmesan", "8 cannelloni tubes", "500g passata", "1/2 tsp garlic granules", "1/2 tsp dried Italian herbs", "70g mozzarella", "20g cheddar"],
+		"description": "",
+		"mealType": "main",
+		"appliance": "oven",
+		"diet": "vegetarian, pescatarian",
+		"origin": "Italian",
+		"utensils": "Piping Bag",
+		"source": "https://www.dailymail.co.uk/home/you/article-7063769/PINCH-NOM-Spinach-ricotta-cannelloni.html"
+	},{
+		"id": "springRolls",
+		"title": "Spring Rolls",
+		"ingredients": ["6 spring onions", "2 garlic cloves", "2cm ginger", "1 small red chilli", "1 carrot", "1/2 small red pepper", "70g beansprouts", "1 tbsp dark soy sauce", "24 squares filo 12 x 12 cm", "1 small egg"],
+		"description": "",
+		"mealType": "side, snack",
+		"appliance": "oven, air fry",
+		"diet": "vegetarian, pescatarian",
+		"origin": "Chinese",
+		"utensils": "Ninja",
+		"source": "PoN 196"
+	},{
+		"id": "stickyLemonTofu",
+		"title": "Sticky Lemon Tofu",
+		"ingredients": ["4 garlic cloves", "3cm ginger", "60ml water", "1/4 stock cube", "60ml lemon juice", "1 lemon zest", "1 tbsp soy sauce", "50g sugar", "2 tsp cornstarch"],
+		"description": "",
+		"mealType": "main",
+		"appliance": "hob",
+		"diet": "vegetarian, pescatarian",
+		"origin": "Chinese",
+		"utensils": "Saucepan",
+		"source": "https://veganonboard.com/sticky-lemon-tofu/"
+	},{
+		"id": "stickyMangoRice",
+		"title": "Sticky Mango Rice",
+		"ingredients": ["200g sticky rice", "1 x 400g can of coconut milk", "100g sugar", "2 tsp cornstarch", "Ataulfo mango"],
+		"description": "",
+		"mealType": "dessert",
+		"appliance": "hob",
+		"diet": "vegetarian, pescatarian",
+		"origin": "Thai",
+		"utensils": "Saucepan",
+		"source": "https://www.seriouseats.com/thai-coconut-sticky-rice-mango-recipe"
+	},{
+		"id": "sushiBasics",
+		"title": "Sushi Basics",
+		"ingredients": ["250g sushi rice", "330ml water", "3 tbsp rice vinegar", "2 tbsp sugar", "1 tsp salt"],
+		"description": "",
+		"mealType": "main, side",
+		"appliance": "hob",
+		"diet": "pescatarian",
+		"origin": "Japanese",
+		"utensils": "Rolling Mat, Saucepan",
+		"source": "SUSHI PACKET"
+	},{
+		"id": "tamarindFishCurry ",
+		"title": "Tamarind Fish Curry",
+		"ingredients": ["6 garlic cloves", "1 red chilli", "thumb sized ginger", "1 tsp turmeric", "1 tbsp ground coriander", "2 tsp cumin seeds", "2 x 400g cans of chopped tomatoes", "200g green beans", "1 tbsp tamarind", "4 white fish fillets"],
+		"description": "fish, easy",
+		"mealType": "main",
+		"appliance": "hob",
+		"diet": "pescatarian",
+		"origin": "Indian",
+		"utensils": "Frying Pan",
+		"source": "https://www.bbcgoodfood.com/recipes/tomato-tamarind-fish-curry"
+	},{
+		"id": "tempehTacos",
+		"title": "Tempeh Tacos",
+		"ingredients": ["tempeh", "corn tortillas", "sauce", "Optional Toppings"],
+		"description": "easy",
+		"mealType": "main",
+		"appliance": "oven",
+		"diet": "vegetarian, pescatarian",
+		"origin": "",
+		"utensils": "",
+		"source": "https://frommybowl.com/bbq-tempeh-tacos-pineapple-coleslaw/#tasty-recipes-6125-jump-target"
+	},{
+		"id": "tikkaMasalaSalmon",
+		"title": "Tikka Masala Salmon",
+		"ingredients": ["50g fat free Greek yoghurt", "4 salmon fillets", "1/2 tsp turmeric", "1 1/2 tsp garam masala", "1 1/2 tsp ground coriander", "1/2 tsp paprika", "1 tsp cumin", "1 tsp chilli powder", "1 onion", "1 yellow pepper", "100g courgette", "2 garlic cloves", "5cm ginger", "1 x 400g can of chopped tomato", "100g passata", "1 tbsp tomato puree", "50ml vegetable stock"],
+		"description": "fish,easy, one pot",
+		"mealType": "main",
+		"appliance": "hob",
+		"diet": "pescatarian",
+		"origin": "Indian",
+		"utensils": "Saucepan",
+		"source": "49 PoN"
+	},{
+		"id": "tiramisu",
+		"title": "Tiramisu",
+		"ingredients": [""],
+		"description": "",
+		"mealType": "dessert",
+		"appliance": "fridge",
+		"diet": "vegetarian, pescatarian",
+		"origin": "Italian",
+		"utensils": "",
+		"source": "https://www.bbcgoodfood.com/recipes/best-ever-tiramisu and https://sallysbakingaddiction.com/tiramisu/"
+	},{
+		"id": "uniBaguette",
+		"title": "Uni Baguette",
+		"ingredients": ["part cooked baguettes", "pepper", "onion", "meat", "kidney beans", "sauce", "herbs"],
+		"description": "easy",
+		"mealType": "main",
+		"appliance": "oven, grill",
+		"diet": "",
+		"origin": "British",
+		"utensils": "",
+		"source": "My Brain"
 	}
 ];
 
@@ -297,7 +462,7 @@ function fnSearch(vSearchParam) {
 		this.field('ingredients')
 		this.field('utensils')
 	  
-		varrRecipes.forEach(function (doc) {
+		varRecipes.forEach(function (doc) {
 		  this.add(doc)
 		}, this)
 	});
@@ -318,7 +483,7 @@ function fnSearch(vSearchParam) {
 
 
 	varrResult = vResult.map(function(item) {
-		return varrRecipes.find(function(vRecipe) {
+		return varRecipes.find(function(vRecipe) {
 			return item.ref === vRecipe.id;
 		});
 	});
@@ -333,7 +498,7 @@ function fnFindIngredients(pPageId){
 		this.field("id")
 		this.field('ingredients')
 	  
-		varrRecipes.forEach(function (doc) {
+		varRecipes.forEach(function (doc) {
 		  this.add(doc)
 		}, this)
 	});
@@ -341,7 +506,7 @@ function fnFindIngredients(pPageId){
 	arrIngredientsList = vIngreIndex.search(pPageId);	
 
 	varrResult = arrIngredientsList.map(function(item) {
-		return varrRecipes.find(function(vRecipe) {
+		return varRecipes.find(function(vRecipe) {
 			return item.ref === vRecipe.id;
 		});
 	});

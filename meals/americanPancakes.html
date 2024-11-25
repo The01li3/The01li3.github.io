@@ -17,34 +17,6 @@
 			<div class="col col-8">
 				<h2>Ingredients</h2>
 				<div id="ingredients">				
-					<div class="form-check form-switch">
-						<input class="form-check-input " type="checkbox" role="switch" value="" id="ingreOne">
-						<label class="form-check-label" for="ingreOne">135g Plain Flour</label>
-					</div>
-					<div class="form-check form-switch">
-						<input class="form-check-input " type="checkbox" role="switch" value="" id="ingreTwo">
-						<label class="form-check-label" for="ingreTwo">1 tsp Baking Powder</label>
-					</div>
-					<div class="form-check form-switch">
-						<input class="form-check-input " type="checkbox" role="switch" value="" id="ingreThree">
-						<label class="form-check-label" for="ingreThree">1&frasl;2 tsp Salt</label>
-					</div>
-					<div class="form-check form-switch">
-						<input class="form-check-input " type="checkbox" role="switch" value="" id="ingreFour">
-						<label class="form-check-label" for="ingreFour">2 tbsp Caster Sugar</label>
-					</div>
-					<div class="form-check form-switch">
-						<input class="form-check-input " type="checkbox" role="switch" value="" id="ingreFive">
-						<label class="form-check-label" for="ingreFive">1 Large Egg</label>
-					</div>	
-					<div class="form-check form-switch">
-						<input class="form-check-input " type="checkbox" role="switch" value="" id="ingreSix">
-						<label class="form-check-label" for="ingreSix">130ml milk</label>
-					</div>	
-					<div class="form-check form-switch">
-						<input class="form-check-input " type="checkbox" role="switch" value="" id="ingreSeven">
-						<label class="form-check-label" for="ingreSeven">2 tbsp olive oil</label>
-					</div>	
 				</div>			
 				<h2>Instructions</h2>
 				<ul>
@@ -72,8 +44,8 @@
 		<script src="templates/footer.js"></script>
 		<script src="templates/searchDoc.js"></script>
 		<script>
-			const arrIngredients = fnFindIngredients(location.href.split("/").slice(-1)[0]);
-			widget_addLoadEvent(fnPopulateIngredients("ingredients",arrIngredients));
+			const arrIngredients = fnFindIngredients(location.href.split("/").slice(-1)[0]);//gets the list using Lunr and the screenname
+			widget_addLoadEvent(fnPopulateIngredients("ingredients",arrIngredients));//uses previous list to populate screen
 		</script>
     </body>
 </html>
