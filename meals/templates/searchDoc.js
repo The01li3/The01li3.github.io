@@ -112,7 +112,7 @@ var varRecipes = [
 	},{
 		"id": "coconutRice",
 		"title": "Coconut Rice",
-		"ingredients": ["400g jasmine rice", "340ml water", "1 x 400g can of coconut milk", "1 tsp salt", "1 tsp sugar"],
+		"ingredients": ["400g jasmine rice", "340ml water", "1 x 400ml can of coconut milk", "1 tsp salt", "1 tsp sugar"],
 		"description": "",
 		"mealType": "side",
 		"appliance": "hob",
@@ -222,7 +222,7 @@ var varRecipes = [
 	},{
 		"id": "misoSoup",
 		"title": "Miso Soup",
-		"ingredients": ["500ml water", "4 tbsp miso paste", "MSG", "~Optional Toppings|Tofu|Spring Onions|Egg|1 Sheet of Nori"],
+		"ingredients": ["500ml dashi stock", "3 tbsp miso paste", "~Optional Toppings|1 tbsp Dried Wakame|Tofu|Spring Onions|Egg"],
 		"description": "easy, one pot",
 		"mealType": "main",
 		"appliance": "hob",
@@ -231,16 +231,16 @@ var varRecipes = [
 		"utensils": "Saucepan",
 		"source": "All recipes"
 	},{
-		"id": "nachoCasserole ",
+		"id": "nachoCasserole",
 		"title": "Nacho Casserole",
-		"ingredients": ["300g enchilada sauce", "1 x 400g can of black beans", "175g sweetcorn", "120g olives", "bag of tortilla chips", "120g ~ cheddar or other cheese"],
+		"ingredients": ["300g enchilada sauce", "1 x 400g can of black beans", "175g sweetcorn", "120g sliced olives", "bag of tortilla chips", "120g ish cheddar or other cheese","~Optional Toppings|Sliced Jalapeno"],
 		"description": "easy, dump and cook",
 		"mealType": "main",
 		"appliance": "oven",
 		"diet": "vegetarian, pescatarian",
 		"origin": "American",
 		"utensils": "Casserole Dish",
-		"source": "One Pan something or other?"
+		"source": "One Pan Cookbook for Men, p73"
 	},{
 		"id": "noKneadFocaccia",
 		"title": "No Knead Focaccia",
@@ -297,9 +297,9 @@ var varRecipes = [
 		"utensils": "Frying Pan",
 		"source": "BBC and Brain"
 	},{
-		"id": "satay",
+		"id": "sataySauce",
 		"title": "Satay Sauce",
-		"ingredients": ["120g peanut butter", "30g sambal", "100g ketjap manis", "2 tsp sugar", "100ml water", "1 x 400g can of coconut milk", "lime juice"],
+		"ingredients": ["120g peanut butter", "30g sambal", "100g ketjap manis", "2 tsp sugar", "100ml water", "1 x 400ml can of coconut milk", "3.5g Indonesian spice mix", "lime juice"],
 		"description": "",
 		"mealType": "sauce, dip",
 		"appliance": "hob",
@@ -310,7 +310,7 @@ var varRecipes = [
 	},{
 		"id": "slowCookedButterChicken",
 		"title": "Slow Cooked Butter Chicken",
-		"ingredients": ["900g chicken", "1/2 onions", "3 garlic cloves", "1 tbsp red curry paste", "2 tsp curry powder", "1 tsp salt", "1 tsp turmeric", "1/2 tsp ground ginger", "1 x 400g can of coconut milk", "small can tomato paste", "2 tbsp butter", "60g double cream"],
+		"ingredients": ["900g chicken", "1/2 onions", "3 garlic cloves", "1 tbsp red curry paste", "2 tsp curry powder", "1 tsp salt", "1 tsp turmeric", "1/2 tsp ground ginger", "1 x 400ml can of coconut milk", "small can tomato paste", "2 tbsp butter", "60g double cream"],
 		"description": "easy, dump and cook",
 		"mealType": "main",
 		"appliance": "slow cook",
@@ -321,7 +321,7 @@ var varRecipes = [
 	},{
 		"id": "slowCookedVegetarianRedThaiCurry",
 		"title": "Slow Cooked Vegetarian Red Thai Curry",
-		"ingredients": ["1 x 400g can of coconut milk", "1 x 400g can of chopped tomatoes", "1 x 400g can of chickpeas", "1 x 400g can of kidney beans in chilli sauce", "100g peanut butter", "1kg sweet potatoes", "1 lime juice", "80g Thai red curry paste", "4 tbsp soy sauce"],
+		"ingredients": ["1 x 400ml can of coconut milk", "1 x 400g can of chopped tomatoes", "1 x 400g can of chickpeas", "1 x 400g can of kidney beans in chilli sauce", "100g peanut butter", "1kg sweet potatoes", "1 lime juice", "80g Thai red curry paste", "4 tbsp soy sauce"],
 		"description": "easy, dump and cook",
 		"mealType": "main",
 		"appliance": "slow cook",
@@ -376,7 +376,7 @@ var varRecipes = [
 	},{
 		"id": "stickyMangoRice",
 		"title": "Sticky Mango Rice",
-		"ingredients": ["200g sticky rice", "1 x 400g can of coconut milk", "100g sugar", "2 tsp cornstarch", "Ataulfo mango"],
+		"ingredients": ["200g sticky rice", "1 x 400ml can of coconut milk", "100g sugar", "2 tsp cornstarch", "Ataulfo mango"],
 		"description": "",
 		"mealType": "dessert",
 		"appliance": "hob",
