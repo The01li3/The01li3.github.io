@@ -13,7 +13,7 @@ var varRecipes = [
 	},{
 		"id": "bananaCake",
 		"title": "Banana Cake",
-		"ingredients": ["125g butter", "200g caster sugar", "2 eggs", "3 very ripe bananas", "1 tsp vanilla", "85g chocolate chips", "90g self raising flour", "90g plain flour", "1 tsp bicarbonate of soda"],
+		"ingredients": ["125g butter", "150g caster sugar", "2 eggs", "3 very ripe bananas", "1 tsp vanilla", "85g chocolate chips", "90g self raising flour", "90g plain flour", "1 tsp bicarbonate of soda"],
 		"description": "Ann Cochius",
 		"mealType": "dessert",
 		"appliance": "oven",
@@ -24,7 +24,7 @@ var varRecipes = [
 	},{
 		"id": "buffaloCauliflowerCasserole",
 		"title": "Buffalo Cauliflower Casserole",
-		"ingredients": ["470ml vegetable stock", "118ml buffalo sauce", "22g nutritional yeast", "1 tsp onion powder", "374g chickpeas (1 can works)", "200g cauliflower", "182g uncooked brown rice", "3 garlic cloves", "ranch"],
+		"ingredients": ["470ml vegetable stock", "118ml buffalo sauce", "22g nutritional yeast", "1 tsp onion powder", "374g chickpeas (2 cans work)", "200g cauliflower (bite sized chunks)", "182g uncooked brown rice", "3 garlic cloves (minced)", "ranch"],
 		"description": "easy, dump and cook",
 		"mealType": "main",
 		"appliance": "oven",
@@ -35,7 +35,7 @@ var varRecipes = [
 	},{
 		"id": "buffaloRanchPasta",
 		"title": "Buffalo Ranch Pasta",
-		"ingredients": ["3 garlic cloves", "1 tbsp nutritional yeast", "2 tsp dried parsley", "1 tsp dried dill", "1/2 tsp onion powder", "225g dry pasta", "770ml water", "60ml buffalo sauce", "2 tbsp cream cheese", "2 tsp cornstarch"],
+		"ingredients": ["3 garlic cloves (minced)", "1 tbsp nutritional yeast", "2 tsp dried parsley", "1 tsp dried dill", "1/2 tsp onion powder", "225g dry pasta", "770ml water", "60ml buffalo sauce", "2 tbsp cream cheese", "2 tsp cornstarch"],
 		"description": "easy, one pot",
 		"mealType": "main",
 		"appliance": "hob",
@@ -46,7 +46,7 @@ var varRecipes = [
 	},{
 		"id": "buffaloSauce",
 		"title": "Buffalo Sauce",
-		"ingredients": ["4 tbsp butter/low fat spread", "1 tbsp buffalo", "1/2 tbsp ketchup"],
+		"ingredients": ["4 tbsp butter/low fat spread", "1 tbsp hot chilli sauce", "1/2 tbsp ketchup"],
 		"description": "",
 		"mealType": "dip, sauce",
 		"appliance": "microwave",
@@ -57,7 +57,7 @@ var varRecipes = [
 	},{
 		"id": "carrotCake",
 		"title": "Carrot Cake",
-		"ingredients": ["115ml sunflower oil", "230g self raising flour", "1 tsp baking powder", "1 1/2 tsp ground cinnamon", "1/2 tsp mixed spice", "1/2 tsp ground ginger", "230g light brown muscovado sugar", "100g pecans", "260g grated carrots", "2 medium eggs"],
+		"ingredients": ["115ml sunflower oil", "230g self raising flour", "1 tsp baking powder", "1 1/2 tsp ground cinnamon", "1/2 tsp mixed spice", "1/2 tsp ground ginger", "230g light brown muscovado sugar", "100g pecans (halved)", "260g carrots (grated)", "3 medium eggs (beaten)"],
 		"description": "",
 		"mealType": "dessert",
 		"appliance": "oven",
@@ -79,7 +79,7 @@ var varRecipes = [
 	},{
 		"id": "chanaMasala",
 		"title": "Chana Masala",
-		"ingredients": ["2 tsp garam masala", "1 tsp paprika", "1 tsp turmeric", "1 tsp ground coriander", "4 garlic cloves", "1 onion", "1 x 400g can chopped tomato", "1 tbsp lemon juice", "2 x 400g cans of chickpeas", "1 tbsp tomato puree"],
+		"ingredients": ["2 tsp garam masala", "1 tsp paprika", "1 tsp turmeric", "1 tsp ground coriander", "4 garlic cloves (minced)", "1 onion (finely diced)", "1 x 400g can chopped tomato", "1 tbsp lemon juice", "2 x 400g cans of chickpeas", "1 tbsp tomato puree"],
 		"description": "easy, dump and cook",
 		"mealType": "main",
 		"appliance": "slow cook, hob",
@@ -90,7 +90,7 @@ var varRecipes = [
 	},{
 		"id": "cheeseAndMarmiteSwirls",
 		"title": "Cheese And Marmite Swirls",
-		"ingredients": ["320g ready rolled light puff pasty", "40g reduced fat cheddar cheese", "1 tbsp marmite", "2 tsp boiling water"],
+		"ingredients": ["320g ready rolled light puff pastry", "40g reduced fat cheddar cheese", "1 tbsp marmite", "2 tsp boiling water"],
 		"description": "",
 		"mealType": "snack",
 		"appliance": "over",
@@ -101,7 +101,7 @@ var varRecipes = [
 	},{
 		"id": "chickenAlfredo",
 		"title": "Chicken Alfredo",
-		"ingredients": ["chicken breasts 680g", "1 tsp oregano", "1 tsp dried basil", "1 tsp salt", "455g pasta", "10g fresh parsley", "1 tsp black pepper", "80g parmesan", "2 tbsp butter", "4 garlic cloves", "3 tbsp plain flour", "480ml milk"],
+		"ingredients": ["680g chicken breasts", "1 tsp oregano", "1 tsp dried basil", "455g pasta", "10g fresh parsley", "80g parmesan", "2 tbsp butter", "4 garlic cloves (minced)", "3 tbsp plain flour", "480ml milk"],
 		"description": "easy",
 		"mealType": "main",
 		"appliance": "hob",
@@ -135,7 +135,7 @@ var varRecipes = [
 		"id": "crepePancakes",
 		"title": "Pancakes",
 		"ingredients": ["100g plain flour", "2 large eggs", "300ml milk", "~Optional Toppings: lemon|sugar|whipped cream|strawberries."],
-		"description": "",
+		"description": "crepe",
 		"mealType": "dessert",
 		"appliance": "hob",
 		"diet": "vegetarian, pescatarian",
@@ -145,7 +145,7 @@ var varRecipes = [
 	},{
 		"id": "garlicAndGingerCurry",
 		"title": "Garlic And Ginger Curry",
-		"ingredients": ["350ml stock", "2 tsp fenugreek seeds", "1 onion", "4 garlic cloves", "3cm ginger", "1 green chilli", "1 1/2 tsp garam masala", "1 1/2 tsp ground cumin", "1 tsp turmeric", "1/2 tsp chilli powder", "2 tbsp tomato puree", "1 x 400g can of chopped tomato", "1 tbsp mango chutney"],
+		"ingredients": ["350ml stock", "2 tsp fenugreek seeds", "1 onion (diced)", "4 garlic cloves (minced)", "3cm ginger", "1 green chilli (finely chopped)", "1 1/2 tsp garam masala", "1 1/2 tsp ground cumin", "1 tsp turmeric", "1/2 tsp chilli powder", "2 tbsp tomato puree", "1 x 400g can of chopped tomato", "1 tbsp mango chutney","2 white fish fillet"],
 		"description": "fish, easy",
 		"mealType": "main",
 		"appliance": "hob",
@@ -156,7 +156,7 @@ var varRecipes = [
 	},{
 		"id": "greekStyleBeans",
 		"title": "Greek Style Beans",
-		"ingredients": ["2 onions", "2 garlic cloves", "2 x 400g cans of chopped tomato", "2 tbsp tomato puree", "2 tbsp fresh oregano leaves", "2 x 400g cans of butter beans", "90g reduced fat feta cheese"],
+		"ingredients": ["2 onions (finely chopped)", "2 garlic cloves (minced)", "2 x 400g cans of chopped tomato", "2 tbsp tomato puree", "2 tbsp fresh oregano leaves", "2 x 400g cans of butter beans", "90g reduced fat feta cheese"],
 		"description": "easy, dump and cook",
 		"mealType": "main",
 		"appliance": "oven",
@@ -167,7 +167,7 @@ var varRecipes = [
 	},{
 		"id": "hoisinCashewTofu",
 		"title": "Hoisin Cashew Tofu",
-		"ingredients": ["marinated tofu", "8 spring onions", "4 garlic cloves", "60ml hoisin sauce", "60ml water", "2 tbsp rice vinegar", "1 tbsp soy sauce", "2 tsp cornstarch", "107g cashews"],
+		"ingredients": ["marinated tofu", "8 spring onions (1 inch pieces white and green separate)", "4 garlic cloves (minced)", "60ml hoisin sauce", "60ml water", "2 tbsp rice vinegar", "1 tbsp soy sauce", "2 tsp cornstarch", "107g cashews"],
 		"description": "easy",
 		"mealType": "main",
 		"appliance": "hob",
@@ -178,7 +178,7 @@ var varRecipes = [
 	},{
 		"id": "kasespatzle",
 		"title": "Kasespatzle",
-		"ingredients": ["250g dried spaetzle cooked", "6 tbsp butter", "3 large onions", "1/2 tsp salt", "1/2 tsp sugar", "cheeses various (emmental|gruyere etc.)"],
+		"ingredients": ["250g dried spaetzle cooked", "6 tbsp butter", "3 large onions (sliced)", "1/2 tsp salt", "1/2 tsp sugar", "cheeses various (emmental|gruyere etc.)"],
 		"description": "easy",
 		"mealType": "main",
 		"appliance": "oven",
@@ -200,7 +200,7 @@ var varRecipes = [
 	},{
 		"id": "lemonStirFry",
 		"title": "Lemon Stir Fry",
-		"ingredients": ["2 tsp honey", "2 lemons", "150ml chicken stock", "2 tbsp soy sauce", "4 chicken breasts", "1 tbsp cornflour", "2 carrots", "1 red pepper", "140g sugar snap peas"],
+		"ingredients": ["2 tsp honey", "2 lemons (juiced)", "150ml chicken stock", "2 tbsp soy sauce", "4 chicken breasts (chunks)", "1 tbsp cornflour", "2 carrots (finely sliced)", "1 red pepper (sliced)", "140g sugar snap peas"],
 		"description": "easy, one pot",
 		"mealType": "main",
 		"appliance": "hob",
@@ -255,7 +255,7 @@ var varRecipes = [
 	},{
 		"id": "pecanTassies",
 		"title": "Pecan Tassies",
-		"ingredients": ["130g butter", "100g soft cheese", "140g plain flour", "175g light brown sugar", "1 egg", "1 tsp vanilla", "115g pecans chopped"],
+		"ingredients": ["130g butter", "100g soft cheese", "140g plain flour", "175g light brown sugar", "1 egg", "1 tsp vanilla", "115g pecans (chopped)"],
 		"description": "",
 		"mealType": "dessert",
 		"appliance": "oven",
@@ -266,7 +266,7 @@ var varRecipes = [
 	},{
 		"id": "pineappleColeslaw",
 		"title": "Pineapple Coleslaw",
-		"ingredients": ["250g cabbage", "1/2 red onion", "1 jalapeno", "1 carrot", "158g pineapple", "1/2 lime juice", "1 1/2 tbsp distilled white vinegar", "1/2 tsp salt"],
+		"ingredients": ["250g cabbage (shredded)", "1/2 red onion (thinly sliced)", "1 jalapeno (diced)", "1 carrot (shredded)", "158g pineapple (1/4 inch cubes)", "1/2 lime juice", "1 1/2 tbsp distilled white vinegar", "1/2 tsp salt"],
 		"description": "",
 		"mealType": "side",
 		"appliance": "bowl",
@@ -277,7 +277,7 @@ var varRecipes = [
 	},{
 		"id": "ramenBase",
 		"title": "Ramen Base",
-		"ingredients": ["2 tsp ginger", "1 tbsp garlic", "3 tbsp soy sauce", "2 tbsp mirin", "1l stock", "~Optional Extras: Eggs|Mushrooms|Chicken|Bok Choi|Noodles|Bean Sprouts|Tofu|Gyoza"],
+		"ingredients": ["2 tsp ginger (minced)", "1 tbsp garlic (minced)", "3 tbsp soy sauce", "2 tbsp mirin", "1l stock", "~Optional Extras: Eggs|Mushrooms|Chicken|Bok Choi|Noodles|Bean Sprouts|Tofu|Gyoza"],
 		"description": "easy, one pot",
 		"mealType": "main",
 		"appliance": "hob",
