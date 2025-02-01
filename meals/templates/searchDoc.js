@@ -1,3 +1,18 @@
+/*
+	{
+		"id": "id",
+		"title": "title",
+		"ingredients": ["1 x 400g can of","1 garlic clove ()", "~Optional toppings: x|y|z."],
+		"description": "easy, one pot, dump and cook, fish",
+		"mealType": "sauce, dip, snack, main, dessert",
+		"appliance": "hob, oven, slow cook, air fry",
+		"diet": "vegetarian, pescatarian",
+		"origin": "",
+		"utensils": "Cast Iron, Cake Tin, Saucepan, Frying Pan, Ninja",
+		"source": "https://the01li3.github.io/"
+	},
+*/
+
 var varRecipes = [
 	{
 		"id": "americanPancakes",
@@ -21,6 +36,17 @@ var varRecipes = [
 		"origin": "",
 		"utensils": "Loose Bottom Cake Tin",
 		"source": "DISCORD"
+	},{
+		"id": "blackBeanAndSeitanStirFry",
+		"title": "Black Bean And Seitan Stir Fry",
+		"ingredients": ["1 x 400g can of black beans","30g dark brown soft sugar","3 garlic cloves (peeled)","2 tbsp soy sauce","1 tsp Chinese five spice","2 tbsp rice vinegar","1 tbsp peanut butter","1 red chill", "~Optional Toppings: seitan|red pepper|pak choi|spring onions."],
+		"description": "",
+		"mealType": "main",
+		"appliance": "hob",
+		"diet": "vegetarian, pescatarian",
+		"origin": "Chinese",
+		"utensils": "Frying Pan, Blender, Sauce Pan",
+		"source": "https://www.bbcgoodfood.com/recipes/seitan-black-bean-stir-fry"
 	},{
 		"id": "buffaloCauliflowerCasserole",
 		"title": "Buffalo Cauliflower Casserole",
@@ -274,6 +300,17 @@ var varRecipes = [
 		"origin": "",
 		"utensils": "",
 		"source": "https://frommybowl.com/bbq-tempeh-tacos-pineapple-coleslaw/#tasty-recipes-6125-jump-target"
+	},{
+		"id": "lowCaloriePizza",
+		"title": "Low Calorie Pizza",
+		"ingredients": ["1.33 cups of self raising flour","1.33 cups of Greek yoghurt","1/2 tsp salt","2 tsp mixed herbs", "~Optional toppings: Cheese|Meats|Pineapple|Sweetcorn|Onions etc."],
+		"description": "",
+		"mealType": "snack, main",
+		"appliance": "oven",
+		"diet": "vegetarian, pescatarian",
+		"origin": "",
+		"utensils": "Baking Tray",
+		"source": "https://thebigmansworld.com/low-calorie-pizza/"
 	},{
 		"id": "ramenBase",
 		"title": "Ramen Base",

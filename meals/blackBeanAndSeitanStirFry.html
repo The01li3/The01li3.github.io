@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="templates/meta.js"></script>	
+		<title>Black Bean and Seitan Stir Fry</title>
+	</head>
+	<body class = "bodyClass">
+		<div id="headerBanner" class="row g-0 justify-content-center">
+			<script src="templates/body.js"></script>
+		</div>
+		<div id="titleBanner" class="row g-0 justify-content-center">
+			<div class="col col-8 no-wrap">
+				<h1>Black Bean and Seitan Stir Fry</h1>	
+			</div>
+		</div>
+		<div id="bodyDiv" class="row g-0 justify-content-center">	
+			<div class="col col-8">
+				<h2>Ingredients</h2>
+				<div id="ingredients">				
+				</div>			
+				<h2>Instructions</h2>
+				<ul>
+					<li>
+						<h3>Sauce</h3>
+						<p>For the sauce, mix in <b>half of the can of black beans</b>, <b>30g dark brown sugar</b>, <b>3 peeled garlic cloves</b>, <b>2 tbsp soy sauce</b>, <b>1 tsp Chinese 5 spice</b>, <b>2 tbsp rice vinegar</b>, <b>1 tbsp peanut butter</b>, <b>1 red chilli</b> and <b>50ml water</b>. Gently heat in saucepan for 5 mins.</p>
+					</li>
+					<li>
+						<h3>Seitan</h3>
+						<p>Treat similar to tofu. Cut, dry, marinate, toss in cornflour and fry.</p>
+					</li>
+					<li>
+						<h3>Final</h3>
+						<p>Fry any toppings in a frying pan, add in seitan, stir in sauce, serve.</p>
+					</li>
+				</ul>	
+			</div>
+		</div>
+		<div id="footer"></div>				
+		<script src="templates/footer.js"></script>
+		<script src="templates/searchDoc.js"></script>
+		<script>
+			const arrIngredients = fnFindIngredients(location.href.split("/").slice(-1)[0]);//gets the list using Lunr and the screenname
+			widget_addLoadEvent(fnPopulateIngredients("ingredients",arrIngredients));//uses previous list to populate screen
+		</script>
+    </body>
+</html>
