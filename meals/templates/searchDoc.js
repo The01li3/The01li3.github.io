@@ -379,7 +379,7 @@ var varRecipes = [
 		"source": "https://www.simplyrecipes.com/recipes/applesauce_spice_cake/"
 	},{
 		"id": "spinachRicottaCannelloni",
-		"title": "Spinach Ricotta Cannelloni",
+		"title": "Spinach & Ricotta Cannelloni",
 		"ingredients": ["300g spinach", "180g ricotta", "15g parmesan", "8 cannelloni tubes", "500g passata", "1/2 tsp garlic granules", "1/2 tsp dried Italian herbs", "70g mozzarella", "20g cheddar"],
 		"description": "",
 		"mealType": "main",
@@ -391,7 +391,7 @@ var varRecipes = [
 	},{
 		"id": "springRolls",
 		"title": "Spring Rolls",
-		"ingredients": ["6 spring onions", "2 garlic cloves", "2cm ginger", "1 small red chilli", "1 carrot", "1/2 small red pepper", "70g beansprouts", "1 tbsp dark soy sauce", "24 squares filo 12 x 12 cm", "1 small egg"],
+		"ingredients": ["6 spring onions (matchsticked)", "2 garlic cloves (minced)", "2cm ginger (grated)", "1 small red chilli (finely chopped)", "1 carrot (matchsticked)", "1/2 small red pepper (matchsticked)", "70g beansprouts", "1 tbsp dark soy sauce", "pinch of Chinese 5 spice","24 squares filo 12 x 12 cm", "1 small egg"],
 		"description": "",
 		"mealType": "side, snack",
 		"appliance": "oven, air fry",
@@ -402,7 +402,7 @@ var varRecipes = [
 	},{
 		"id": "stickyLemonTofu",
 		"title": "Sticky Lemon Tofu",
-		"ingredients": ["4 garlic cloves", "3cm ginger", "60ml water", "1/4 stock cube", "60ml lemon juice", "1 lemon zest", "1 tbsp soy sauce", "50g sugar", "2 tsp cornstarch"],
+		"ingredients": ["4 garlic cloves (minced)", "3cm ginger (grated)", "60ml water", "1/4 stock cube", "60ml lemon juice", "1 lemon zest", "1 tbsp soy sauce", "50g sugar", "2 tsp cornstarch"],
 		"description": "",
 		"mealType": "main",
 		"appliance": "hob",
@@ -433,7 +433,7 @@ var varRecipes = [
 		"utensils": "Rolling Mat, Saucepan",
 		"source": "SUSHI PACKET"
 	},{
-		"id": "tamarindFishCurry ",
+		"id": "tamarindFishCurry",
 		"title": "Tamarind Fish Curry",
 		"ingredients": ["6 garlic cloves", "1 red chilli", "thumb sized ginger", "1 tsp turmeric", "1 tbsp ground coriander", "2 tsp cumin seeds", "2 x 400g cans of chopped tomatoes", "200g green beans", "1 tbsp tamarind", "4 white fish fillets"],
 		"description": "fish, easy",
@@ -457,7 +457,7 @@ var varRecipes = [
 	},{
 		"id": "tikkaMasalaSalmon",
 		"title": "Tikka Masala Salmon",
-		"ingredients": ["50g fat free Greek yoghurt", "4 salmon fillets", "1/2 tsp turmeric", "1 1/2 tsp garam masala", "1 1/2 tsp ground coriander", "1/2 tsp paprika", "1 tsp cumin", "1 tsp chilli powder", "1 onion", "1 yellow pepper", "100g courgette", "2 garlic cloves", "5cm ginger", "1 x 400g can of chopped tomato", "100g passata", "1 tbsp tomato puree", "50ml vegetable stock"],
+		"ingredients": ["50g fat free Greek yoghurt", "4 salmon fillets", "1/2 tsp turmeric", "1 1/2 tsp garam masala", "1 1/2 tsp ground coriander", "1/2 tsp paprika", "1 tsp cumin", "1 tsp chilli powder", "1 onion (diced)", "1 yellow pepper (diced)", "100g courgette (grated)", "2 garlic cloves (minced)", "5cm ginger (grated)", "1 x 400g can of chopped tomato", "100g passata", "1 tbsp tomato puree", "50ml vegetable stock"],
 		"description": "fish,easy, one pot",
 		"mealType": "main",
 		"appliance": "hob",
