@@ -301,7 +301,7 @@ var varRecipes = [
 		"utensils": "",
 		"source": "https://frommybowl.com/bbq-tempeh-tacos-pineapple-coleslaw/#tasty-recipes-6125-jump-target"
 	},{
-		"id": "lowCaloriePizza",
+		"id": "lowCaloriePizza", // make the flour and yoghurt grams
 		"title": "Low Calorie Pizza",
 		"ingredients": ["1.33 cups of self raising flour","1.33 cups of Greek yoghurt","1/2 tsp salt","2 tsp mixed herbs", "~Optional toppings: Cheese|Meats|Pineapple|Sweetcorn|Onions etc."],
 		"description": "",
@@ -347,7 +347,7 @@ var varRecipes = [
 	},{
 		"id": "slowCookedButterChicken",
 		"title": "Slow Cooked Butter Chicken",
-		"ingredients": ["900g chicken", "1/2 onions", "3 garlic cloves", "1 tbsp red curry paste", "2 tsp curry powder", "1 tsp salt", "1 tsp turmeric", "1/2 tsp ground ginger", "1 x 400ml can of coconut milk", "small can tomato paste", "2 tbsp butter", "60g double cream"],
+		"ingredients": ["900g chicken", "1/2 onion", "3 garlic cloves (minced)", "1 tbsp red curry paste", "2 tsp curry powder", "1 tsp salt", "1 tsp turmeric", "1/2 tsp ground ginger", "1 x 400ml can of coconut milk", "small can tomato paste", "2 tbsp butter", "60g double cream"],
 		"description": "easy, dump and cook",
 		"mealType": "main",
 		"appliance": "slow cook",
@@ -359,7 +359,7 @@ var varRecipes = [
 		"id": "slowCookedVegetarianRedThaiCurry",
 		"title": "Slow Cooked Vegetarian Red Thai Curry",
 		"ingredients": ["1 x 400ml can of coconut milk", "1 x 400g can of chopped tomatoes", "1 x 400g can of chickpeas", "1 x 400g can of kidney beans in chilli sauce", "100g peanut butter", "1kg sweet potatoes", "1 lime juice", "80g Thai red curry paste", "4 tbsp soy sauce"],
-		"description": "easy, dump and cook",
+		"description": "easy, dump and cook, sweet potato",
 		"mealType": "main",
 		"appliance": "slow cook",
 		"diet": "vegetarian, pescatarian",
@@ -504,9 +504,25 @@ function fnSearch(vSearchParam) {
 		this.field('utensils')
 	  	this.field('source')
 
-		varRecipes.forEach(function (doc) {
+		/*varRecipes.forEach(function (doc) {
 		  this.add(doc)
-		}, this)
+		}, this) */
+
+
+		varRecipes.forEach(function (doc) {
+			this.add({
+				id: doc.id,
+				title: doc.title,
+				ingredients: doc.ingredients.join(" "), // Convert array to space-separated string
+				description: doc.description,
+				mealType: doc.mealType,
+				appliance: doc.appliance,
+				diet: doc.diet,
+				origin: doc.origin,
+				utensils: doc.utensils,
+				source: doc.source
+			});
+		}, this); // Pass `this` to keep the correct context
 	});
 	
     vResult = vRecipesIndex.search(vSearchParam);
