@@ -435,7 +435,7 @@ var varRecipes = [
 	},{
 		"id": "tamarindFishCurry",
 		"title": "Tamarind Fish Curry",
-		"ingredients": ["6 garlic cloves", "1 red chilli", "thumb sized ginger", "1 tsp turmeric", "1 tbsp ground coriander", "2 tsp cumin seeds", "2 x 400g cans of chopped tomatoes", "200g green beans", "1 tbsp tamarind", "4 white fish fillets"],
+		"ingredients": ["6 garlic cloves (peeled)", "1 red chilli", "thumb sized ginger", "1 tsp turmeric", "1 tbsp ground coriander", "2 tsp cumin seeds","1 tsp fennel seeds", "2 x 400g cans of chopped tomatoes", "200g green beans (trimmed and halved)", "1 tbsp tamarind paste", "4 white fish fillets"],
 		"description": "fish, easy",
 		"mealType": "main",
 		"appliance": "hob",
@@ -446,7 +446,7 @@ var varRecipes = [
 	},{
 		"id": "tempehTacos",
 		"title": "Tempeh Tacos",
-		"ingredients": ["tempeh", "corn tortillas", "sauce", "~Optional Toppings"],
+		"ingredients": ["227g block of tempeh", "237ml stock", "sauce", "~Optional Toppings"],
 		"description": "easy",
 		"mealType": "main",
 		"appliance": "oven",
@@ -479,7 +479,7 @@ var varRecipes = [
 	},{
 		"id": "uniBaguette",
 		"title": "Uni Baguette",
-		"ingredients": ["part cooked baguettes", "pepper", "onion", "meat", "kidney beans", "sauce", "herbs"],
+		"ingredients": ["part cooked baguettes", "~Optional Fillings|Pepper|Onion|Meat|Kidney beans|Sauce|Herbs"],
 		"description": "easy",
 		"mealType": "main",
 		"appliance": "oven, grill",
