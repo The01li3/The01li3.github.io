@@ -237,7 +237,7 @@ var varRecipes = [
 	},{
 		"id": "meadBasics",
 		"title": "Mead Basics",
-		"ingredients": [""],
+		"ingredients": [],
 		"description": "",
 		"mealType": "",
 		"appliance": "",
@@ -325,7 +325,51 @@ var varRecipes = [
 	},{
 		"id": "risottoBasics",
 		"title": "Risotto Basics",
-		"ingredients": ["175g risotto rice", "1l stock or liquid", "1 onion", "1 garlic clove", "30g parmesan", "~Optional Flavours", "Tomato & mascarpone (1 x 400ml can of chopped tomato|-400ml stock|30g mascarpone)", "Black Garlic (4 black garlic cloves)", "Butternut squash and sage(500g butternut squash|bunch of sage|1/2 glass white white)"],
+		"ingredients": ["175g risotto rice", "1l stock or liquid", "1 onion (diced)", "1 garlic clove (minced)", "30g parmesan", "~Optional Flavours", "Tomato & mascarpone (1 x 400ml can of chopped tomato|-400ml stock|30g mascarpone)", "Black Garlic (4 black garlic cloves|30g cold butter)", "Butternut squash and sage(500g butternut squash|bunch of sage|1/2 glass white white)"],
+		"description": "easy, one pot",
+		"mealType": "main",
+		"appliance": "hob",
+		"diet": "",
+		"origin": "Italian",
+		"utensils": "Frying Pan",
+		"source": "BBC and Brain"
+	},{
+		"id": "risottoBlackGarlic",
+		"title": "Black Garlic Risotto",
+		"ingredients": ["175g risotto rice", "1l stock or liquid", "180g spring onion (diced)", "4 black garlic cloves (minced)", "30g parmesan", "30g cold butter"],
+		"description": "easy, one pot",
+		"mealType": "main",
+		"appliance": "hob",
+		"diet": "",
+		"origin": "Italian",
+		"utensils": "Frying Pan",
+		"source": "BBC and Brain"
+	},{
+		"id": "risottoButternutSquashAndSage",
+		"title": "Butternut Squash & Sage Risotto",
+		"ingredients": ["150g risotto rice", "750mll stock or liquid", "1 onion (diced)", "1 garlic clove (minced)", "25g parmesan", "500g butternut squash (bite size chunks)", "bunch of sage", "1/2 glass white white)"],
+		"description": "easy, one pot",
+		"mealType": "main",
+		"appliance": "hob",
+		"diet": "",
+		"origin": "Italian",
+		"utensils": "Frying Pan",
+		"source": "BBC and Brain"
+	},{
+		"id": "risottoPea",
+		"title": "Pea Risotto",
+		"ingredients": ["175g risotto rice", "1l stock or liquid", "1 onion (diced)", "1 garlic clove (minced)", "25g parmesan", "100ml white wine", "150g frozen peas", "handful of pea shoots"],
+		"description": "easy, one pot",
+		"mealType": "main",
+		"appliance": "hob",
+		"diet": "",
+		"origin": "Italian",
+		"utensils": "Frying Pan",
+		"source": "BBC and Brain"
+	},{
+		"id": "risottoTomatoAndMascarpone",
+		"title": "Tomato & Mascarpone Risotto",
+		"ingredients": ["175g risotto rice", "600ml stock or liquid", "1 onion (diced)", "1 garlic clove (minced)", "30g parmesan", "1 x 400ml can of chopped tomato", "30g mascarpone/cream cheese", "small bunch of chopped basil"],
 		"description": "easy, one pot",
 		"mealType": "main",
 		"appliance": "hob",
@@ -424,7 +468,7 @@ var varRecipes = [
 	},{
 		"id": "sushiBasics",
 		"title": "Sushi Basics",
-		"ingredients": ["250g sushi rice", "330ml water", "3 tbsp rice vinegar", "2 tbsp sugar", "1 tsp salt"],
+		"ingredients": ["250g sushi rice", "330ml water", "3 tbsp rice vinegar", "2 tbsp sugar", "1 tsp salt", "~Optional: Nori|Fried Onions|Cucumber|Tuna|Fish Sticks|Avocado|Carrot|Chicken|Pepper"],
 		"description": "",
 		"mealType": "main, side",
 		"appliance": "hob",
