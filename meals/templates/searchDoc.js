@@ -402,7 +402,7 @@ var varRecipes = [
 	},{
 		"id": "slowCookedVegetarianRedThaiCurry",
 		"title": "Slow Cooked Vegetarian Red Thai Curry",
-		"ingredients": ["1 x 400ml can of coconut milk", "1 x 400g can of chopped tomatoes", "1 x 400g can of chickpeas", "1 x 400g can of kidney beans in chilli sauce", "100g peanut butter", "1kg sweet potatoes", "1 lime juice", "80g Thai red curry paste", "4 tbsp soy sauce"],
+		"ingredients": ["1 x 400ml can of coconut milk", "1 x 400g can of chopped tomatoes", "1 x 400g can of chickpeas", "1 x 400g can of kidney beans in chilli sauce", "100g peanut butter", "1kg sweet potatoes", "1 lime juice", "50g Thai red curry paste", "4 tbsp soy sauce"],
 		"description": "easy, dump and cook, sweet potato",
 		"mealType": "main",
 		"appliance": "slow cook",
