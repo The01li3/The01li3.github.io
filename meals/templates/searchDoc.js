@@ -347,7 +347,7 @@ var varRecipes = [
 	},{
 		"id": "risottoButternutSquashAndSage",
 		"title": "Butternut Squash & Sage Risotto",
-		"ingredients": ["150g risotto rice", "750mll stock or liquid", "1 onion (diced)", "1 garlic clove (minced)", "25g parmesan", "500g butternut squash (bite size chunks)", "bunch of sage", "1/2 glass white white)"],
+		"ingredients": ["150g risotto rice", "750ml stock or liquid", "1 onion (diced)", "1 garlic clove (minced)", "25g parmesan", "500g butternut squash (bite size chunks)", "bunch of sage", "1/2 glass white white)"],
 		"description": "easy, one pot",
 		"mealType": "main",
 		"appliance": "hob",
@@ -358,7 +358,7 @@ var varRecipes = [
 	},{
 		"id": "risottoPea",
 		"title": "Pea Risotto",
-		"ingredients": ["175g risotto rice", "1l stock or liquid", "1 onion (diced)", "1 garlic clove (minced)", "25g parmesan", "100ml white wine", "150g frozen peas", "handful of pea shoots"],
+		"ingredients": ["175g risotto rice", "1l stock or liquid", "1 onion (diced)", "1 garlic clove (minced)", "25g parmesan", "100ml white wine", "200g frozen peas", "handful of pea shoots"],
 		"description": "easy, one pot",
 		"mealType": "main",
 		"appliance": "hob",
@@ -369,7 +369,7 @@ var varRecipes = [
 	},{
 		"id": "risottoTomatoAndMascarpone",
 		"title": "Tomato & Mascarpone Risotto",
-		"ingredients": ["175g risotto rice", "600ml stock or liquid", "1 onion (diced)", "1 garlic clove (minced)", "30g parmesan", "1 x 400ml can of chopped tomato", "30g mascarpone/cream cheese", "small bunch of chopped basil"],
+		"ingredients": ["175g risotto rice", "600ml stock or liquid", "1 onion (diced)", "1 garlic clove (minced)", "30g parmesan", "1 x 400ml can of cherry tomato", "30g mascarpone/cream cheese", "small bunch of chopped basil"],
 		"description": "easy, one pot",
 		"mealType": "main",
 		"appliance": "hob",
