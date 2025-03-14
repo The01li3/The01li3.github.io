@@ -279,6 +279,17 @@ var varRecipes = [
 		"utensils": "Cast Iron",
 		"source": "https://www.seriouseats.com/easy-no-knead-focaccia"
 	},{
+		"id": "pastaSalad",
+		"title": "Pasta Salad",
+		"ingredients": ["250g Pasta","~Optional Sauces: Pesto|Lemon|Mayo", "~Optional toppings: Chickpeas|Mixed Beans|Sweetcorn|Onion|Pepper|Tuna|Pine Nuts|Cucumber|Olives|Radish."],
+		"description": "easy, one pot",
+		"mealType": "lunch, snack",
+		"appliance": "hob",
+		"diet": "vegetarian, pescatarian",
+		"origin": "",
+		"utensils": "Saucepan",
+		"source": "https://the01li3.github.io/"
+	},{
 		"id": "pecanTassies",
 		"title": "Pecan Tassies",
 		"ingredients": ["130g butter", "100g soft cheese", "140g plain flour", "175g light brown sugar", "1 egg", "1 tsp vanilla", "115g pecans (chopped)"],
