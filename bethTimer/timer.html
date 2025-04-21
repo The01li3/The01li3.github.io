@@ -10,7 +10,7 @@
       <link type="text/css" href="template/style.css" rel="stylesheet"/>	
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
-    <body id="body-id" class="body-class col-6"> 
+    <body id="body-id" class="body-class col-12"> 
       <audio id="audRest">
         <source src="template/rest.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
@@ -20,68 +20,75 @@
         Your browser does not support the audio element.
       </audio>
       <h3>Warmup</h3>         
-      <div class="row">   
-        <div class="col-md-4">
-          <label for="1reps">Reps: </label>
-          <input type="number" id="1reps" name="1reps" class="time-input col-8" value = 2>
+      <form class="container">
+        <div class="row mb-3">
+          <div class="col-4">
+            <label for="1reps" class="form-label">Reps:</label>
+            <input type="number" id="1reps" name="1reps" class="form-control" value="2">
+          </div>
+          <div class="col-4">
+            <label for="1time" class="form-label">Time:</label>
+            <input type="number" id="1time" name="1time" class="form-control" value="30">
+          </div>
+          <div class="col-4">
+            <label for="1rest" class="form-label">Rest:</label>
+            <input type="number" id="1rest" name="1rest" class="form-control" value="10">
+          </div>
         </div>
-        <div class="col-md-4">
-          <label for="1time">Time: </label>
-          <input type="number" id="1time" name="1time" class="time-input col-8" value = 30>
-        </div>
-        <div class="col-md-4">
-          <label for="1rest">Rest: </label>
-          <input type="number" id="1rest" name="1rest" class="time-input col-8" value = 10>
-        </div>
-      </div>
+      </form>
 
       <h3>Round 1</h3> 
-      <div class="row">   
-        <div class="col-md-4">
-          <label for="2reps">Reps: </label>
-          <input type="number" id="2reps" name="2reps" class="time-input col-8" value = 6>
+      <form class="container">
+        <div class="row mb-3">
+          <div class="col-4">
+            <label for="2reps" class="form-label">Reps:</label>
+            <input type="number" id="2reps" name="2reps" class="form-control" value="2">
+          </div>
+          <div class="col-4">
+            <label for="2time" class="form-label">Time:</label>
+            <input type="number" id="2time" name="2time" class="form-control" value="30">
+          </div>
+          <div class="col-4">
+            <label for="2rest" class="form-label">Rest:</label>
+            <input type="number" id="2rest" name="2rest" class="form-control" value="10">
+          </div>
         </div>
-        <div class="col-md-4">
-          <label for="2time">Time: </label>
-          <input type="number" id="2time" name="2time" class="time-input col-8" value = 30>
-        </div>
-        <div class="col-md-4">
-          <label for="2rest">Rest: </label>
-          <input type="number" id="2rest" name="2rest" class="time-input col-8" value = 0>
-        </div>
-      </div>
-
+      </form>
       <h3>Round 2</h3> 
-      <div class="row">   
-        <div class="col-md-4">
-          <label for="3reps">Reps: </label>
-          <input type="number" id="3reps" name="3reps" class="time-input col-8" value = 2>
+      <form class="container">
+        <div class="row mb-3">
+          <div class="col-4">
+            <label for="3reps" class="form-label">Reps:</label>
+            <input type="number" id="3reps" name="3reps" class="form-control" value="2">
+          </div>
+          <div class="col-4">
+            <label for="3time" class="form-label">Time:</label>
+            <input type="number" id="3time" name="3time" class="form-control" value="30">
+          </div>
+          <div class="col-4">
+            <label for="3rest" class="form-label">Rest:</label>
+            <input type="number" id="3rest" name="3rest" class="form-control" value="10">
+          </div>
         </div>
-        <div class="col-md-4">
-          <label for="3time">Time: </label>
-          <input type="number" id="3time" name="3time" class="time-input col-8" value = 30>
-        </div>
-        <div class="col-md-4">
-          <label for="3rest">Rest: </label>
-          <input type="number" id="3rest" name="3rest" class="time-input col-8" value = 10>
-        </div>
-      </div>
+      </form>
 
       <h3>Round 3</h3> 
-      <div class="row">   
-        <div class="col-md-4">
-          <label for="4reps">Reps: </label>
-          <input type="number" id="4reps" name="4reps" class="time-input col-8" value = 2>
+      <form class="container">
+        <div class="row mb-3">
+          <div class="col-4">
+            <label for="4reps" class="form-label">Reps:</label>
+            <input type="number" id="4reps" name="4reps" class="form-control" value="2">
+          </div>
+          <div class="col-4">
+            <label for="4time" class="form-label">Time:</label>
+            <input type="number" id="4time" name="4time" class="form-control" value="30">
+          </div>
+          <div class="col-4">
+            <label for="4rest" class="form-label">Rest:</label>
+            <input type="number" id="4rest" name="4rest" class="form-control" value="10">
+          </div>
         </div>
-        <div class="col-md-4">
-          <label for="4time">Time: </label>
-          <input type="number" id="4time" name="4time" class="time-input col-8" value = 30>
-        </div>
-        <div class="col-md-4">
-          <label for="4rest">Rest: </label>
-          <input type="number" id="4rest" name="4rest" class="time-input col-8" value = 10>
-        </div>
-      </div>
+      </form>
       <h3>Lock In Times</h3>
       <button type="button" id="btn-lockTimes" class="btn btn-warning btn-lg"><i id="icnLock" class="bi bi-unlock-fill"></i></button>
 
