@@ -18,6 +18,7 @@ function widget_addLoadEvent(pFunction)
 var vCount = 0;
 var vSeconds = 0;
 var vArrTimings = [];
+var vArrHeadings = [];
 var vTimer = document.getElementById("timer");
 var vBtnLockTimes = document.getElementById("btn-lockTimes");
 var vIconlock = document.getElementById("icnLock");
@@ -29,7 +30,8 @@ var vGoAudio = document.getElementById("audGo");
 
 vBtnLockTimes.addEventListener("click", function () {
     var inputs = document.querySelectorAll(".time-input");
-
+    vArrTimings = [];
+    vArrHeadings = [];
     var rep1 = document.getElementById("1reps").value;
     var time1 = document.getElementById("1time").value;
     var rest1 = document.getElementById("1rest").value;
@@ -48,19 +50,23 @@ vBtnLockTimes.addEventListener("click", function () {
         vIconlock.classList.add('bi-lock-fill');
         vBtnStart.disabled = false; 
         for (var i = 0; i < inputs.length; i++) {
-            inputs[i].readOnly = true;
+            inputs[i].disabled = true;
         }
         for (let i = 0; i < rep1; i++) { 
-            vArrTimings.push(time1,rest1);                  
+            vArrTimings.push(time1,rest1);
+            vArrHeadings.push("Time","Rest");                  
         }
         for (let i = 0; i < rep2; i++) { 
-            vArrTimings.push(time2,rest2);        
+            vArrTimings.push(time2,rest2); 
+            vArrHeadings.push("Time","Rest");       
         }
         for (let i = 0; i < rep3; i++) { 
-            vArrTimings.push(time3,rest3);        
+            vArrTimings.push(time3,rest3); 
+            vArrHeadings.push("Time","Rest");       
         }
         for (let i = 0; i < rep4; i++) { 
-            vArrTimings.push(time4,rest4);        
+            vArrTimings.push(time4,rest4); 
+            vArrHeadings.push("Time","Rest");       
         }
     } else {
         vIconlock.classList.add('bi-unlock-fill');
@@ -68,7 +74,7 @@ vBtnLockTimes.addEventListener("click", function () {
         vBtnStart.disabled = true; 
         vBtnReset.disabled = true;
         for (var i = 0; i < inputs.length; i++) {
-            inputs[i].readOnly = false;
+            inputs[i].disabled = false;
         }
     }
 });
@@ -105,8 +111,15 @@ function startTimer() {
         //document.getElementById('body-id').style.backgroundColor = "red";
         //vRestAudio.play();
         if (vSeconds == vArrTimings[0]) {
-            vArrTimings.shift();  
-            vGoAudio.play();
+            if (vArrHeadings[1] == "Rest") {
+                vRestAudio.play();
+            } else if (vArrHeadings[1] == "Time")
+            {
+                vGoAudio.play();
+            }
+            
+            vArrTimings.shift(); 
+            vArrHeadings.shift();            
             vSeconds = 0;
         }        
         setTimeout(startTimer,1000);
