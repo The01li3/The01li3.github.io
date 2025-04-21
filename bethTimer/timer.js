@@ -21,6 +21,8 @@ var vTimer = document.getElementById("timer");
 var vBtnStart = document.getElementById('btn-start');
 var vBtnStop = document.getElementById('btn-pause');
 var vBtnReset = document.getElementById('btn-refresh');
+var vRestAudio = document.getElementById("audRest"); 
+var vGoAudio = document.getElementById("audGo");
 
 vBtnStart.addEventListener("click", function () {
     timer = true;
@@ -48,6 +50,9 @@ function startTimer() {
     if(timer){
         vSeconds++;
         vTimer.innerHTML = vSeconds;
+        //document.getElementById('body-id').style.backgroundColor = "red";
+        //vRestAudio.play();
+        vGoAudio.play();
         setTimeout(startTimer,1000);
     }
 }
