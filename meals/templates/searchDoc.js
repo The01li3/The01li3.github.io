@@ -618,7 +618,7 @@ function fnFindIngredients(pPageId){
 
 	arrIngredientsList = vIngreIndex.search(pPageId.slice(0,-5));//Removes .html from filename.
 
-	varResult = arrIngredientsList.map(function(item) {
+	varResult = arrIngredientsList.map(function(item) {  
 		return varRecipes.find(function(vRecipe) {
 			return item.ref === vRecipe.id;
 		});

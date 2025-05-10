@@ -27,23 +27,64 @@ var vBtnStop = document.getElementById('btn-pause');
 var vBtnReset = document.getElementById('btn-refresh');
 var vRestAudio = document.getElementById("audRest"); 
 var vGoAudio = document.getElementById("audGo");
+var vBreakAudio = document.getElementById("audBreak");
+
+var viRounds = 3;
+var vArrAllTimes = [["Warmup",30,6,1,5,30]]; //time,moves,reps,rest,break
+
+for(let i=1; i<=viRounds; i++){
+    vArrAllTimes.push(["Round " + i,45,5,2,10,30]);
+}
+
+// Convert array to object structure
+var varResult = { rounds: [] };
+for (var i = 0; i < vArrAllTimes.length; i++) {
+    var row = vArrAllTimes[i];
+    varResult.rounds.push({
+        vcName: row[0],
+        viTime: row[1],
+        viMoves:row[2],
+        viReps: row[3],        
+        viRest: row[4],
+        viBreak: row[5],
+        id: i  // useful for setting unique input IDs
+    });
+}
+
+function fnPopulateTimer() {
+    var vScreenTemplate = Handlebars.compile(`
+      {{#each rounds}}
+        <h3 class="mt-4">{{vcName}}</h3> 
+        <form class="container">
+          <div class="row g-3">
+            <div class="col-3">
+              <label for="{{id}}time" class="form-label">Time:</label>
+              <input type="number" id="{{id}}time" name="{{id}}time" class="form-control time-input" value="{{viTime}}">
+            </div>
+            <div class="col-3">
+              <label for="{{id}}moves" class="form-label">Moves:</label>
+              <input type="number" id="{{id}}moves" name="{{id}}moves" class="form-control time-input" value="{{viMoves}}">
+            </div>
+            <div class="col-3">
+              <label for="{{id}}reps" class="form-label">Reps:</label>
+              <input type="number" id="{{id}}reps" name="{{id}}reps" class="form-control time-input" value="{{viReps}}">
+            </div>
+            <div class="col-3">
+              <label for="{{id}}rest" class="form-label">Rest:</label>
+              <input type="number" id="{{id}}rest" name="{{id}}rest" class="form-control time-input" value="{{viRest}}">
+            </div>
+          </div>
+        </form>
+      {{/each}}
+    `);
+    document.getElementById("timerDiv").innerHTML = vScreenTemplate(varResult);
+}
 
 vBtnLockTimes.addEventListener("click", function () {
     var inputs = document.querySelectorAll(".time-input");
+    var updatedArr = [];
     vArrTimings = [];
-    vArrHeadings = [];
-    var rep1 = document.getElementById("1reps").value;
-    var time1 = document.getElementById("1time").value;
-    var rest1 = document.getElementById("1rest").value;
-    var rep2 = document.getElementById("2reps").value;
-    var time2 = document.getElementById("2time").value;
-    var rest2 = document.getElementById("2rest").value;
-    var rep3 = document.getElementById("3reps").value;
-    var time3 = document.getElementById("3time").value;
-    var rest3 = document.getElementById("3rest").value;
-    var rep4 = document.getElementById("4reps").value;
-    var time4 = document.getElementById("4time").value;
-    var rest4 = document.getElementById("4rest").value;
+    vArrHeadings = []; 
 
     if (vIconlock.classList.contains('bi-unlock-fill')) {
         vIconlock.classList.remove('bi-unlock-fill');
@@ -51,23 +92,35 @@ vBtnLockTimes.addEventListener("click", function () {
         vBtnStart.disabled = false; 
         for (var i = 0; i < inputs.length; i++) {
             inputs[i].disabled = true;
+        }   
+        for (var i = 0; i < vArrAllTimes.length; i++) {
+            var vcName = document.querySelectorAll('h3')[i].textContent;     
+            var viTime = parseInt(document.getElementById(i + 'time').value); 
+            var viMoves = parseInt(document.getElementById(i + 'moves').value);  
+            var viReps = parseInt(document.getElementById(i + 'reps').value);            
+            var viRest = parseInt(document.getElementById(i + 'rest').value);            
+            var viBreak = parseInt(vArrAllTimes[i][4]); // keep original break value if not editable
+
+            // If you also want to read "break" from an input, you'd add:
+            // var breakVal = document.getElementById(i + 'break').value;
+        
+            updatedArr.push([vcName,viTime, viMoves, viReps, viRest, viBreak]);
+          }        
+          vArrAllTimes = updatedArr;
+
+          for (var i = 0; i < vArrAllTimes.length; i++) {
+            for (var j = 1; j <= vArrAllTimes[i][1];j++) {
+                if (j != vArrAllTimes[i][1]) {
+                    vArrTimings.push(parseInt(vArrAllTimes[i][2], 10),parseInt(vArrAllTimes[i][3], 10));
+                    vArrHeadings.push("Time","Rest");
+                } else {
+                    vArrTimings.push(parseInt(vArrAllTimes[i][2], 10),parseInt(vArrAllTimes[i][4], 10));
+                    vArrHeadings.push("Time","Break - " + vArrAllTimes[i][0]);
+                }
+            }           
         }
-        for (let i = 0; i < rep1; i++) { 
-            vArrTimings.push(time1,rest1);
-            vArrHeadings.push("Time","Rest");                  
-        }
-        for (let i = 0; i < rep2; i++) { 
-            vArrTimings.push(time2,rest2); 
-            vArrHeadings.push("Time","Rest");       
-        }
-        for (let i = 0; i < rep3; i++) { 
-            vArrTimings.push(time3,rest3); 
-            vArrHeadings.push("Time","Rest");       
-        }
-        for (let i = 0; i < rep4; i++) { 
-            vArrTimings.push(time4,rest4); 
-            vArrHeadings.push("Time","Rest");       
-        }
+        console.log(vArrTimings);
+        console.log(vArrHeadings);
     } else {
         vIconlock.classList.add('bi-unlock-fill');
         vIconlock.classList.remove('bi-lock-fill');
@@ -107,20 +160,24 @@ vBtnReset.addEventListener("click", function() {
 function startTimer() {
     if(timer){
         vSeconds++;
-        vTimer.innerHTML = vSeconds;
+        vTimer.innerHTML = vArrTimings[0] - vSeconds;
+        
         //document.getElementById('body-id').style.backgroundColor = "red";
         //vRestAudio.play();
         if (vSeconds == vArrTimings[0]) {
             if (vArrHeadings[1] == "Rest") {
                 vRestAudio.play();
-            } else if (vArrHeadings[1] == "Time")
-            {
+            } else if (vArrHeadings[1] == "Time") {
                 vGoAudio.play();
+            } else if (vArrHeadings[1].startsWith("Break")) {
+                vBreakAudio.play();
             }
             
             vArrTimings.shift(); 
             vArrHeadings.shift();            
             vSeconds = 0;
+            document.getElementById("currentDiv").innerHTML = vArrHeadings[0];
+            
         }        
         setTimeout(startTimer,1000);
     }
