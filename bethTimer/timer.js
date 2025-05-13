@@ -95,7 +95,7 @@ vBtnLockTimes.addEventListener("click", function () {
         for (var i = 0; i < inputs.length; i++) {
             inputs[i].disabled = true;
         }   
-        for (var i = 0; i < viRounds; i++) {
+        for (var i = 0; i <= viRounds; i++) {
             console.log(document.getElementById(i + 'time').value);
             var vcName = document.querySelectorAll('h3')[i].textContent;     
             var viTime = parseInt(document.getElementById(i + 'time').value); 
@@ -114,16 +114,19 @@ vBtnLockTimes.addEventListener("click", function () {
         vArrAllTimes.push(["Finished",0,0,0,0,0,0]);
 
         for(var i = 0; i < vArrAllTimes.length; i++) { //each line
+            console.log(i);
             for(var j = 1; j <= vArrAllTimes[i][3];j++) { //cycle reps
                 for(var k=1; k <= vArrAllTimes[i][2];k++){//cycle moves
                     vArrTimings.push([vArrAllTimes[i][1],"Time",vArrAllTimes[i][0] + " Rep: " + j + " Exercise: " + k]);
-                    if (j == vArrAllTimes[i][3] && k == vArrAllTimes[i][2]) { //end of reps and moves                     
+                    if(vArrAllTimes[i + 1][0] == "Finished" && j == vArrAllTimes[i][3] && k == vArrAllTimes[i][2]) {
+                        vArrTimings.push([999,"Finished","Done-zo"]);
+                    } else if (j == vArrAllTimes[i][3] && k == vArrAllTimes[i][2]) { //end of reps and moves                     
                         vArrTimings.push([vArrAllTimes[i][5],"Break","Next: " + vArrAllTimes[i + 1][0] + " Rep: 1 Exercise: 1"]);
                     } else if (k == vArrAllTimes[i][2]) { //end of moves
                         vArrTimings.push([vArrAllTimes[i][4],"Rest","Next: " + vArrAllTimes[i][0] + " Rep: " + (j + 1) + " Exercise: 1"])
                     } else if (j == vArrAllTimes[i][3]){ //end of reps
                         vArrTimings.push([vArrAllTimes[i][6],"Rest","Next: " + vArrAllTimes[i][0] + " Rep: " + (j) + " Exercise: " + (k + 1)])
-                    } else{
+                    } else {
                         vArrTimings.push([vArrAllTimes[i][6],"Rest","Next: " + vArrAllTimes[i][0] + " Rep: " + (j) + " Exercise: " + (k + 1)])
                     }
                 }
@@ -183,6 +186,8 @@ function startTimer() {
                 vGoAudio.play();
             } else if (vArrTimings[1][1].startsWith("Break")) {
                 vBreakAudio.play();
+            } else if (vArrTimings[1][1].startsWith("Finished")) {
+                timer = false;
             }
             
             vArrTimings.shift(); 
