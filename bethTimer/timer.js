@@ -15,10 +15,13 @@ function widget_addLoadEvent(pFunction)
     }
 };
 
-var vCount = 0;
+/*DEFAULT TIMINGS */
+var vBreak =  parseInt(document.getElementById("RoundBreak").value);
+var vPause = parseInt(document.getElementById("RepositionTime").value);;
+
+
 var vSeconds = 0;
 var vArrTimings = [];
-var vArrHeadings = [];
 var vTimer = document.getElementById("timer");
 var vBtnLockTimes = document.getElementById("btn-lockTimes");
 var vIconlock = document.getElementById("icnLock");
@@ -30,10 +33,10 @@ var vGoAudio = document.getElementById("audGo");
 var vBreakAudio = document.getElementById("audBreak");
 
 var viRounds = 3;
-var vArrAllTimes = [["Warmup",30,6,1,5,30]]; //time,moves,reps,rest,break
+var vArrAllTimes = [["Warmup",30,6,1,5,vBreak]]; //time,moves,reps,rest,break,pause
 
 for(let i=1; i<=viRounds; i++){
-    vArrAllTimes.push(["Round " + i,45,5,2,10,30]);
+    vArrAllTimes.push(["Round " + i,45,5,2,10,vBreak]);
 }
 
 // Convert array to object structure
@@ -84,7 +87,6 @@ vBtnLockTimes.addEventListener("click", function () {
     var inputs = document.querySelectorAll(".time-input");
     var updatedArr = [];
     vArrTimings = [];
-    vArrHeadings = []; 
 
     if (vIconlock.classList.contains('bi-unlock-fill')) {
         vIconlock.classList.remove('bi-unlock-fill');
@@ -93,34 +95,44 @@ vBtnLockTimes.addEventListener("click", function () {
         for (var i = 0; i < inputs.length; i++) {
             inputs[i].disabled = true;
         }   
-        for (var i = 0; i < vArrAllTimes.length; i++) {
+        for (var i = 0; i < viRounds; i++) {
+            console.log(document.getElementById(i + 'time').value);
             var vcName = document.querySelectorAll('h3')[i].textContent;     
             var viTime = parseInt(document.getElementById(i + 'time').value); 
             var viMoves = parseInt(document.getElementById(i + 'moves').value);  
             var viReps = parseInt(document.getElementById(i + 'reps').value);            
             var viRest = parseInt(document.getElementById(i + 'rest').value);            
-            var viBreak = parseInt(vArrAllTimes[i][4]); // keep original break value if not editable
+            var viBreak = parseInt(document.getElementById("RoundBreak").value);; // keep original break value if not editable
+            var viPause = parseInt(document.getElementById("RepositionTime").value);
 
             // If you also want to read "break" from an input, you'd add:
             // var breakVal = document.getElementById(i + 'break').value;
-        
-            updatedArr.push([vcName,viTime, viMoves, viReps, viRest, viBreak]);
-          }        
-          vArrAllTimes = updatedArr;
+    
+        updatedArr.push([vcName,viTime, viMoves, viReps, viRest, viBreak, viPause]);
+        }        
+        vArrAllTimes = updatedArr;
+        vArrAllTimes.push(["Finished",0,0,0,0,0,0]);
 
-          for (var i = 0; i < vArrAllTimes.length; i++) {
-            for (var j = 1; j <= vArrAllTimes[i][1];j++) {
-                if (j != vArrAllTimes[i][1]) {
-                    vArrTimings.push(parseInt(vArrAllTimes[i][2], 10),parseInt(vArrAllTimes[i][3], 10));
-                    vArrHeadings.push("Time","Rest");
-                } else {
-                    vArrTimings.push(parseInt(vArrAllTimes[i][2], 10),parseInt(vArrAllTimes[i][4], 10));
-                    vArrHeadings.push("Time","Break - " + vArrAllTimes[i][0]);
+        for(var i = 0; i < vArrAllTimes.length; i++) { //each line
+            for(var j = 1; j <= vArrAllTimes[i][3];j++) { //cycle reps
+                for(var k=1; k <= vArrAllTimes[i][2];k++){//cycle moves
+                    vArrTimings.push([vArrAllTimes[i][1],"Time",vArrAllTimes[i][0] + " Rep: " + j + " Exercise: " + k]);
+                    if (j == vArrAllTimes[i][3] && k == vArrAllTimes[i][2]) { //end of reps and moves                     
+                        vArrTimings.push([vArrAllTimes[i][5],"Break","Next: " + vArrAllTimes[i + 1][0] + " Rep: 1 Exercise: 1"]);
+                    } else if (k == vArrAllTimes[i][2]) { //end of moves
+                        vArrTimings.push([vArrAllTimes[i][4],"Rest","Next: " + vArrAllTimes[i][0] + " Rep: " + (j + 1) + " Exercise: 1"])
+                    } else if (j == vArrAllTimes[i][3]){ //end of reps
+                        vArrTimings.push([vArrAllTimes[i][6],"Rest","Next: " + vArrAllTimes[i][0] + " Rep: " + (j) + " Exercise: " + (k + 1)])
+                    } else{
+                        vArrTimings.push([vArrAllTimes[i][6],"Rest","Next: " + vArrAllTimes[i][0] + " Rep: " + (j) + " Exercise: " + (k + 1)])
+                    }
                 }
             }           
         }
+        console.log("All");
+        console.log(vArrAllTimes);
+        console.log("Time");
         console.log(vArrTimings);
-        console.log(vArrHeadings);
     } else {
         vIconlock.classList.add('bi-unlock-fill');
         vIconlock.classList.remove('bi-lock-fill');
@@ -160,25 +172,25 @@ vBtnReset.addEventListener("click", function() {
 function startTimer() {
     if(timer){
         vSeconds++;
-        vTimer.innerHTML = vArrTimings[0] - vSeconds;
+        vTimer.innerHTML = vArrTimings[0][0] - vSeconds;
         
         //document.getElementById('body-id').style.backgroundColor = "red";
         //vRestAudio.play();
-        if (vSeconds == vArrTimings[0]) {
-            if (vArrHeadings[1] == "Rest") {
+        if (vSeconds >= vArrTimings[0][0]) {
+            if (vArrTimings[1][1] == "Rest") {
                 vRestAudio.play();
-            } else if (vArrHeadings[1] == "Time") {
+            } else if (vArrTimings[1][1] == "Time") {
                 vGoAudio.play();
-            } else if (vArrHeadings[1].startsWith("Break")) {
+            } else if (vArrTimings[1][1].startsWith("Break")) {
                 vBreakAudio.play();
             }
             
             vArrTimings.shift(); 
-            vArrHeadings.shift();            
+            
             vSeconds = 0;
-            document.getElementById("currentDiv").innerHTML = vArrHeadings[0];
+            document.getElementById("currentDiv").innerHTML = vArrTimings[0][2];
             
         }        
-        setTimeout(startTimer,1000);
+        setTimeout(startTimer,500);
     }
 }
