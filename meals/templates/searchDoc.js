@@ -171,7 +171,7 @@ var varRecipes = [
 	},{
 		"id": "garlicAndGingerCurry",
 		"title": "Garlic And Ginger Curry",
-		"ingredients": ["350ml stock", "2 tsp fenugreek seeds", "1 onion (diced)", "4 garlic cloves (minced)", "3cm ginger", "1 green chilli (finely chopped)", "1 1/2 tsp garam masala", "1 1/2 tsp ground cumin", "1 tsp turmeric", "1/2 tsp chilli powder", "2 tbsp tomato puree", "1 x 400g can of chopped tomato", "1 tbsp mango chutney","2 white fish fillet"],
+		"ingredients": ["350ml stock", "1/4 tsp fenugreek seeds", "1 onion (diced)", "4 garlic cloves (minced)", "3cm ginger", "1 green chilli (finely chopped)", "1 1/2 tsp garam masala", "1 1/2 tsp ground cumin", "1 tsp turmeric", "1/2 tsp chilli powder", "2 tbsp tomato puree", "1 x 400g can of chopped tomato", "1 tbsp mango chutney","2 white fish fillet"],
 		"description": "fish, easy",
 		"mealType": "main",
 		"appliance": "hob",
@@ -237,7 +237,7 @@ var varRecipes = [
 	},{
 		"id": "meadBasics",
 		"title": "Mead Basics",
-		"ingredients": [],
+		"ingredients": ["Water","Honey","Yeast","Camden Tablets","Yeast Nutrients"],
 		"description": "",
 		"mealType": "",
 		"appliance": "",
@@ -310,6 +310,17 @@ var varRecipes = [
 		"diet": "vegetarian, pescatarian",
 		"origin": "",
 		"utensils": "",
+		"source": "https://frommybowl.com/bbq-tempeh-tacos-pineapple-coleslaw/#tasty-recipes-6125-jump-target"
+	},{
+		"id": "pineappleFriedRice",
+		"title": "Pineapple Fried Rice",
+		"ingredients": ["2 eggs", "2 garlic cloves (crushed)", "4 spring onions (chopped)", "300g~ cooked rice", "100g frozen peas", "1 tsp sesame oil", "1tbsp light soy sauce", "200g~ pineapple (large chunks)"],
+		"description": "easy, one pot,",
+		"mealType": "side, main",
+		"appliance": "hob",
+		"diet": "vegetarian, pescatarian",
+		"origin": "",
+		"utensils": "frying pan",
 		"source": "https://frommybowl.com/bbq-tempeh-tacos-pineapple-coleslaw/#tasty-recipes-6125-jump-target"
 	},{
 		"id": "lowCaloriePizza", // make the flour and yoghurt grams
@@ -388,6 +399,17 @@ var varRecipes = [
 		"origin": "Italian",
 		"utensils": "Frying Pan",
 		"source": "BBC and Brain"
+	},{
+		"id": "riceNoodleSalad",
+		"title": "Rice Noodle Salad",
+		"ingredients": ["90g rice noodles","100g edamame","1/2 pointy red pepper (cut into circles)","1/2 red bell pepper (cut into batons)","3 inch of cucumber (deseeded and cut into batons)","1 carrot","1 tbsp peanut butter","1 tbsp lime juice","1 tsp lemon juice","1 tbsp light soy sauce","1 tsp dark soy sauce","1/4 tsp sesame oil","1 tbsp rice vinegar","1/2 tsp white sugar","1/2 tsp honey","1/4 tsp chilli flakes","1 tsp Sesame Seeds"],
+		"description": "easy, one pot",
+		"mealType": "main",
+		"appliance": "hob",
+		"diet": "vegetarian, pescatarian",
+		"origin": "Asian",
+		"utensils": "Saucepan",
+		"source": "Various, and experimenting."
 	},{
 		"id": "sataySauce",
 		"title": "Satay Sauce",
@@ -499,9 +521,20 @@ var varRecipes = [
 		"utensils": "Frying Pan",
 		"source": "https://www.bbcgoodfood.com/recipes/tomato-tamarind-fish-curry"
 	},{
-		"id": "tempehTacos",
-		"title": "Tempeh Tacos",
-		"ingredients": ["227g block of tempeh", "237ml stock", "sauce", "~Optional Toppings"],
+		"id": "tamarindGlaze",
+		"title": "Tamarind Glaze",
+		"ingredients": ["1 tbsp tamarind paste","2 tbsp soy sauce","5ml sesame oil","1 grated garlic clove","30ml lime juice","1 tbsp light brown soft sugar"],
+		"description": "",
+		"mealType": "dip, sauce",
+		"appliance": "grill",
+		"diet": "vegetarian, pescatarian",
+		"origin": "Asia",
+		"utensils": "Bowl",
+		"source": "https://www.bbcgoodfood.com/recipes/tamarind-squash-halloumi-skewers"
+	},{
+		"id": "tempehKebabs",
+		"title": "Tempeh Kebabs",
+		"ingredients": ["227g block of tempeh", "237ml stock", "sauce", "~Optional Toppings: Pepper|Onion|Halloumi|Pineapple|Mushroom"],
 		"description": "easy",
 		"mealType": "main",
 		"appliance": "oven",

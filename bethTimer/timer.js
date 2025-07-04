@@ -17,7 +17,6 @@ function widget_addLoadEvent(pFunction)
 
 /*DEFAULT TIMINGS */
 var vBreak =  parseInt(document.getElementById("RoundBreak").value);
-var vPause = parseInt(document.getElementById("RepositionTime").value);;
 
 
 var vSeconds = 0;
@@ -33,7 +32,7 @@ var vGoAudio = document.getElementById("audGo");
 var vBreakAudio = document.getElementById("audBreak");
 
 var viRounds = 3;
-var vArrAllTimes = [["Warmup",30,6,1,5,vBreak]]; //time,moves,reps,rest,break,pause
+var vArrAllTimes = [["Warmup",30,6,1,5,vBreak]]; //time,moves,reps,rest,break
 
 for(let i=1; i<=viRounds; i++){
     vArrAllTimes.push(["Round " + i,45,5,2,10,vBreak]);
@@ -96,25 +95,22 @@ vBtnLockTimes.addEventListener("click", function () {
             inputs[i].disabled = true;
         }   
         for (var i = 0; i <= viRounds; i++) {
-            console.log(document.getElementById(i + 'time').value);
             var vcName = document.querySelectorAll('h3')[i].textContent;     
             var viTime = parseInt(document.getElementById(i + 'time').value); 
             var viMoves = parseInt(document.getElementById(i + 'moves').value);  
             var viReps = parseInt(document.getElementById(i + 'reps').value);            
             var viRest = parseInt(document.getElementById(i + 'rest').value);            
             var viBreak = parseInt(document.getElementById("RoundBreak").value);; // keep original break value if not editable
-            var viPause = parseInt(document.getElementById("RepositionTime").value);
 
             // If you also want to read "break" from an input, you'd add:
             // var breakVal = document.getElementById(i + 'break').value;
     
-        updatedArr.push([vcName,viTime, viMoves, viReps, viRest, viBreak, viPause]);
+        updatedArr.push([vcName, viTime, viMoves, viReps, viRest, viBreak]);
         }        
         vArrAllTimes = updatedArr;
         vArrAllTimes.push(["Finished",0,0,0,0,0,0]);
 
         for(var i = 0; i < vArrAllTimes.length; i++) { //each line
-            console.log(i);
             for(var j = 1; j <= vArrAllTimes[i][3];j++) { //cycle reps
                 for(var k=1; k <= vArrAllTimes[i][2];k++){//cycle moves
                     vArrTimings.push([vArrAllTimes[i][1],"Time",vArrAllTimes[i][0] + " Rep: " + j + " Exercise: " + k]);
@@ -123,19 +119,15 @@ vBtnLockTimes.addEventListener("click", function () {
                     } else if (j == vArrAllTimes[i][3] && k == vArrAllTimes[i][2]) { //end of reps and moves                     
                         vArrTimings.push([vArrAllTimes[i][5],"Break","Next: " + vArrAllTimes[i + 1][0] + " Rep: 1 Exercise: 1"]);
                     } else if (k == vArrAllTimes[i][2]) { //end of moves
-                        vArrTimings.push([vArrAllTimes[i][4],"Rest","Next: " + vArrAllTimes[i][0] + " Rep: " + (j + 1) + " Exercise: 1"])
+                        vArrTimings.push([vArrAllTimes[i][5],"Rest","Next: " + vArrAllTimes[i][0] + " Rep: " + (j + 1) + " Exercise: 1"])
                     } else if (j == vArrAllTimes[i][3]){ //end of reps
-                        vArrTimings.push([vArrAllTimes[i][6],"Rest","Next: " + vArrAllTimes[i][0] + " Rep: " + (j) + " Exercise: " + (k + 1)])
+                        vArrTimings.push([vArrAllTimes[i][4],"Rest","Next: " + vArrAllTimes[i][0] + " Rep: " + (j) + " Exercise: " + (k + 1)])
                     } else {
-                        vArrTimings.push([vArrAllTimes[i][6],"Rest","Next: " + vArrAllTimes[i][0] + " Rep: " + (j) + " Exercise: " + (k + 1)])
+                        vArrTimings.push([vArrAllTimes[i][4],"Rest","Next: " + vArrAllTimes[i][0] + " Rep: " + (j) + " Exercise: " + (k + 1)])
                     }
                 }
             }           
         }
-        console.log("All");
-        console.log(vArrAllTimes);
-        console.log("Time");
-        console.log(vArrTimings);
     } else {
         vIconlock.classList.add('bi-unlock-fill');
         vIconlock.classList.remove('bi-lock-fill');
@@ -174,28 +166,26 @@ vBtnReset.addEventListener("click", function() {
 
 function startTimer() {
     if(timer){
-        vSeconds++;
-        vTimer.innerHTML = vArrTimings[0][0] - vSeconds;
-        
-        //document.getElementById('body-id').style.backgroundColor = "red";
-        //vRestAudio.play();
+        vTimer.innerHTML = vArrTimings[0][0] - vSeconds; 
+         
         if (vSeconds >= vArrTimings[0][0]) {
-            if (vArrTimings[1][1] == "Rest") {
-                vRestAudio.play();
-            } else if (vArrTimings[1][1] == "Time") {
-                vGoAudio.play();
-            } else if (vArrTimings[1][1].startsWith("Break")) {
-                vBreakAudio.play();
-            } else if (vArrTimings[1][1].startsWith("Finished")) {
-                timer = false;
-            }
-            
             vArrTimings.shift(); 
-            
-            vSeconds = 0;
-            document.getElementById("currentDiv").innerHTML = vArrTimings[0][2];
-            
-        }        
-        setTimeout(startTimer,500);
+            if (vArrTimings[0][1] == "Rest") {
+                vRestAudio.play();
+                document.getElementById("currentDiv").innerHTML = vArrTimings[0][2];  
+            } else if (vArrTimings[0][1] == "Time") {
+                vGoAudio.play();
+                document.getElementById("currentDiv").innerHTML = vArrTimings[0][2];  
+            } else if (vArrTimings[0][1].startsWith("Break")) {
+                vBreakAudio.play();
+                document.getElementById("currentDiv").innerHTML = vArrTimings[0][2]; 
+            } else if (vArrTimings[0][1].startsWith("Finished")) {
+                timer = false;
+                document.getElementById("currentDiv").innerHTML = vArrTimings[0][2];  
+            } 
+            vSeconds = 0;                       
+        }
+        vSeconds++;
+        setTimeout(startTimer,1000);
     }
 }
