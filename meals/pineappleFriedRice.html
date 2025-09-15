@@ -17,7 +17,8 @@
 			<div class="col col-8">
 				<h2>Ingredients</h2>
 				<div id="ingredients">				
-				</div>			
+				</div>		
+						
 				<h2>Instructions</h2>
 				<ul>
 					<li>
@@ -41,10 +42,13 @@
 		</div>
 		<div id="footer"></div>				
 		<script src="templates/footer.js"></script>
+		
 		<script src="templates/searchDoc.js"></script>
+		<script> </script>
 		<script>
-			const arrIngredients = fnFindIngredients(location.href.split("/").slice(-1)[0]);//gets the list using Lunr and the screenname
+			const arrIngredients = fnFindIngredients(location.href.split("/").slice(-1)[0]);//gets the list using Lunr and the screenname			
 			widget_addLoadEvent(fnPopulateIngredients("ingredients",arrIngredients));//uses previous list to populate screen
+			document.getElementById("copyIngredientsBtn").addEventListener("click", copyIngredients);
 		</script>
     </body>
 </html>

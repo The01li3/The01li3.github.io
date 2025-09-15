@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="templates/meta.js"></script>	
+		<title>Cod In Romesco Sauce</title>
+	</head>
+	<body class = "bodyClass">
+		<div id="headerBanner" class="row g-0 justify-content-center">
+			<script src="templates/body.js"></script>
+		</div>
+		<div id="titleBanner" class="row g-0 justify-content-center">
+			<div class="col col-8 no-wrap">
+				<h1>Cod In Romesco Sauce</h1>	
+			</div>
+		</div>
+		<div id="bodyDiv" class="row g-0 justify-content-center">	
+			<div class="col col-8">
+				<h2>Ingredients</h2>
+				<div id="ingredients">				
+				</div>			
+				<h2>Instructions</h2>
+				<ul>
+					<li>
+						<h3>Oven</h3>
+						<p>Preheat fan oven/ air fryer to 180c.</p>
+					</li>
+					<li>
+						<h3>Sauce Step 1</h3>
+						<p>Add <b>5 roughly chopped tomatoes</b>, <b>1 roughly chopped red onion</b>, <b>1 roughly chopped red bell pepper</b>, <b>1 red chilli</b> and <b>5 garlic cloves</b> to a baking tray drizzle in olive oil and bake for 15 mins at 180.</p>
+					</li>
+					<li>
+						<h3>Sauce Step 2</h3>
+						<p>Add the bread, then bake for another 10 mins.</p>
+					</li>
+					<li>
+						<h3>Potatoes</h3>
+						<p>Bring a pan of salted water to the boil and add <b>500g of new potatoes (halved ish)</b> boiling for 15 mins. Drain and set aside when done.</p>
+					</li>
+                    <li>
+						<h3>Fish</h3>
+						<p>Add a little oil to a frying pan and fry <b>2 code fillets</b> skin side down for 4 mins. Flip and add to oven for 5 (or flip and keep frying until done).</p>
+					</li>
+                    <li>
+						<h3>Sauce Step 3</h3>
+						<p>When vegetables are done remove, and add to a processor, add in <b>2 tbsp red wine vinegar</b> and a pinch of salt, then blend until smooth.</p>
+					</li>
+                    <li>
+						<h3>Assembly</h3>
+						<p>Sauce can go over potatoes and fish, top with basil leaves if you have any, side of veg/salad/broccoli etc.</p>
+					</li>
+				</ul>	
+			</div>
+		</div>
+		<div id="footer"></div>				
+		<script src="templates/footer.js"></script>
+		<script src="templates/searchDoc.js"></script>
+		<script>
+			const arrIngredients = fnFindIngredients(location.href.split("/").slice(-1)[0]);//gets the list using Lunr and the screenname
+			widget_addLoadEvent(fnPopulateIngredients("ingredients",arrIngredients));//uses previous list to populate screen
+			document.getElementById("copyIngredientsBtn").addEventListener("click", copyIngredients);
+		</script>
+    </body>
+</html>

@@ -51,6 +51,13 @@
     background-color:var(--background-colour);
     border-color:var(--text-primary);
 }
+
+.btn-outline-copy{
+    color:var(--text-primary);
+    background-color:var(--background-colour);
+    border-color:var(--text-primary);
+}
+
 .form-switch-ingredients{
     background-color: transparent;
     color: var(--text-primary);

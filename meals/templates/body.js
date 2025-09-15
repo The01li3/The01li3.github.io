@@ -60,4 +60,26 @@ function fnPopulateIngredients(pDivId,pArrIngredients){
     const data = { pArrIngredients: pArrIngredients };
 
     document.getElementById(pDivId).innerHTML = vIngList(data);
+    document.getElementById(pDivId).outerHTML += '<button class="btn btn-outline-copy" id="copyIngredientsBtn">Copy Ingredients</button>'
 }
+
+function copyIngredients() {
+      var ingredientsDiv = document.getElementById("ingredients");
+      if (!ingredientsDiv) {
+        alert("Ingredients section not found.");
+        return;
+      }
+
+      var textToCopy = ingredientsDiv.innerText.trim();
+      if (!textToCopy) {
+        alert("No ingredients to copy.");
+        return;
+      }
+
+      navigator.clipboard.writeText(textToCopy).then(function () {
+        alert("Ingredients copied to clipboard!");
+      }).catch(function (err) {
+        console.error("Clipboard API failed:", err);
+        alert("Could not copy ingredients.");
+      });
+    }

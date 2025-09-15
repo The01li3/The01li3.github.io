@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="templates/meta.js"></script>	
+		<title>Bourguignon Pie</title>
+	</head>
+	<body class = "bodyClass">
+		<div id="headerBanner" class="row g-0 justify-content-center">
+			<script src="templates/body.js"></script>
+		</div>
+		<div id="titleBanner" class="row g-0 justify-content-center">
+			<div class="col col-8 no-wrap">
+				<h1>Bourguignon Pie</h1>	
+			</div>
+		</div>
+		<div id="bodyDiv" class="row g-0 justify-content-center">	
+			<div class="col col-8">
+				<h2>Ingredients</h2>
+				<div id="ingredients">				
+				</div>			
+				<h2>Instructions</h2>
+				<ul>
+					<li>
+						<h3>Notes:</h3>
+						<p>Since I make it in 2 sections for meat and vegetarian, this recipe will use half the mushrooms and half the meat, splitting everything else in 2 for 2 different pots with vegetarian in a frying pan, and meat in a cast iron.</p>
+					</li>
+					<li>
+						<h3>Oven and Dish:</h3>
+						<p>Preheat oven to 180c, and prep a 20x28x5cm dish (we have been using one with a split in the middle for vegetarian and meat sides).</p>
+					</li>
+					<li>
+						<h3>Step 1</h3>
+						<p>Add <b>3 chopped portobello mushrooms</b> and <b>150g of quartered chestnut mushrooms</b> to a frying pan and <b>250g of mince</b> to a cast iron letting them brown slightly.</p>
+					</li>
+					<li>
+						<h3>Step 2</h3>
+						<p>Mushrooms will cook first, add <b>1tbsp wine</b> to the pan to deglaze (also add to mince to keep dishes even). Put mushrooms to one side along with any brown bits on the pan. Fry <b>3 large diced shallots</b> and <b>3 sliced medium carrots</b>. Add a little salt and pepper and cook for 6-7 mins on medium or until carrots are a little soft.</p>
+					</li>
+					<li>
+						<h3>Step 3</h3>
+						<p>Add <b>3 minced garlic cloves</b>, <b>1 tbsp minced fresh thyme leaves</b> and <b>2 bay leaves</b> cooking for 1 min before adding <b>2 tbsp tomato paste</b>.</p>
+					</li>
+					<li>
+						<h3>Step 4</h3>
+						<p>Add a splash of wine to deglaze again, mix thoroughly, add half of the mixture to the mince and add the mushrooms to the remains. Half of the remaining wine along with <b>125ml of vegetable stock</b> in each pan and simmer for 25 mins-ish.</p>
+					</li>
+					<li>
+						<h3>Step 5</h3>
+						<p>Stir in <b>1 tbsp of corn flour</b> with a little water and <b>1/2 tbsp soy sauce</b> in each pan, taste, season, remove and throw away bay leaves, then add the filling to the oven tray leaving to cool for 15 mins.</p>
+					</li>
+					<li>
+						<h3>Step 6</h3>
+						<p>Roll out the <b>sheet of puff pastry</b> unless its an inch bigger than the pan, then place over the top cut 3 vent holes with a sharp knife, brush with milk and sprinkle with a little course salt.</p>
+					</li>
+					<li>
+						<h3>Step 7</h3>
+						<p>Bake for 25 mins, or until browned, let sit for a few mins to allow sauce to thicken back up and serve.</p>
+					</li>
+				</ul>	
+			</div>
+		</div>
+		<div id="footer"></div>				
+		<script src="templates/footer.js"></script>
+		<script src="templates/searchDoc.js"></script>
+		<script>
+			const arrIngredients = fnFindIngredients(location.href.split("/").slice(-1)[0]);//gets the list using Lunr and the screenname
+			widget_addLoadEvent(fnPopulateIngredients("ingredients",arrIngredients));//uses previous list to populate screen
+			document.getElementById("copyIngredientsBtn").addEventListener("click", copyIngredients);
+		</script>
+    </body>
+</html>

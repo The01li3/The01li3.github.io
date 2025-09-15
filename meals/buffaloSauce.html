@@ -37,6 +37,7 @@
 		<script>
 			const arrIngredients = fnFindIngredients(location.href.split("/").slice(-1)[0]);//gets the list using Lunr and the screenname
 			widget_addLoadEvent(fnPopulateIngredients("ingredients",arrIngredients));//uses previous list to populate screen
+			document.getElementById("copyIngredientsBtn").addEventListener("click", copyIngredients);
 		</script>
     </body>
 </html>
