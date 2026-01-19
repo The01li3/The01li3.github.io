@@ -50,7 +50,7 @@ var varRecipes = [
     }, {
 		"id": "blackBeanAndSeitanStirFry",
 		"title": "Black Bean And Seitan Stir Fry",
-		"ingredients": ["1 x 400g can of black beans","30g dark brown soft sugar","3 garlic cloves (peeled)","2 tbsp soy sauce","1 tsp Chinese five spice","2 tbsp rice vinegar","1 tbsp peanut butter","1 red chill", "~Optional Toppings: Seitan | Red Pepper | Pak Choi | Spring Onions."],
+		"ingredients": ["1 x 400g can of black beans","20g dark brown soft sugar","3 garlic cloves (peeled)","2 tbsp soy sauce","1 tsp Chinese five spice","2 tbsp rice vinegar","1 tbsp peanut butter","1 red chill", "~Optional Toppings: Seitan | Red Pepper | Pak Choi | Spring Onions."],
 		"description": "",
 		"mealType": "main",
 		"appliance": "hob",
@@ -171,7 +171,7 @@ var varRecipes = [
 	},{
 		"id": "chickenAlfredo",
 		"title": "Chicken Alfredo",
-		"ingredients": ["680g chicken breasts", "1 tsp oregano", "1 tsp dried basil", "455g pasta", "10g fresh parsley", "80g parmesan", "2 tbsp butter", "4 garlic cloves (minced)", "3 tbsp plain flour", "480ml milk"],
+		"ingredients": ["250g chicken breasts", "1 tsp oregano", "1 tsp dried basil", "180g pasta", "10g fresh parsley", "30g parmesan", "18g butter", "4 garlic cloves (minced)", "22g plain flour", "320ml milk"],
 		"description": "easy",
 		"mealType": "main",
 		"appliance": "hob",
@@ -246,6 +246,17 @@ var varRecipes = [
 		"utensils": "Frying Pan",
 		"source": "BBC"
 	},{
+		"id": "currywurst",
+		"title": "Currywurst",
+		"ingredients": ["1 x 400g can of","1 garlic clove ()", "~Optional Sides: Chips | Broccoli"],
+		"description": "easy",
+		"mealType": "sauce, main",
+		"appliance": "hob, air fry",
+		"diet": "vegetarian, pescatarian",
+		"origin": "Germany",
+		"utensils": "Saucepan, Frying Pan, Ninja",
+		"source": "https://pinchofnom.com/recipes/currywurst/"
+	},{
         "id": "dutchBabies",
         "title": "Dutch Babies",
         "ingredients": ["2 large eggs","120ml milk","60g plain flour","pinch of nutmeg","pinch of salt","28g butter","~Optional Toppings: Lemon | Sugar | Whipped Cream | Strawberries | Icing Sugar."],
@@ -303,7 +314,7 @@ var varRecipes = [
 	},{
 		"id": "hoisinCashewTofu",
 		"title": "Hoisin Cashew Tofu",
-		"ingredients": ["marinated tofu", "8 spring onions (1 inch pieces white and green separate)", "4 garlic cloves (minced)", "60ml hoisin sauce", "60ml water", "2 tbsp rice vinegar", "1 tbsp soy sauce", "2 tsp cornstarch", "107g cashews"],
+		"ingredients": ["marinated tofu", "8 spring onions (1 inch pieces white and green separate)", "4 garlic cloves (minced)", "60ml hoisin sauce", "60ml water", "2 tbsp rice vinegar", "1 tbsp soy sauce", "2 tsp cornstarch", "60g cashews"],
 		"description": "easy",
 		"mealType": "main",
 		"appliance": "hob",
@@ -816,11 +827,11 @@ function fnSearch(vSearchParam) {
 
 function fnFindIngredients(pPageId){
 
-	var vIngreIndex = lunr(function () {
+	var vIngreIndex = lunr(function(){
 		this.field("id")
 		this.field('ingredients')
 	  
-		varRecipes.forEach(function (doc) {
+		varRecipes.forEach(function(doc) {
 		  this.add(doc)
 		}, this)
 	});
