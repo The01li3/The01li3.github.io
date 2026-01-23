@@ -248,7 +248,7 @@ var varRecipes = [
 	},{
 		"id": "currywurst",
 		"title": "Currywurst",
-		"ingredients": ["1 x 400g can of","1 garlic clove ()", "~Optional Sides: Chips | Broccoli"],
+		"ingredients": ["18-24 sausages (3-4 per serving)","200g carrots (chopped)","150g onion (diced)","2 x 400g can of tinned tomatoes","4 garlic cloves (minced)", "2 dry stock cubes", "4 tbsp curry powder", "1 tbsp garlic granules", "2 tbsp tomato puree", "1 tbsp garam masala", "tbsp onion granules", "2 tbsp Worcestershire sauce", "400ml water", "~Optional Sides: Chips | Broccoli"],
 		"description": "easy",
 		"mealType": "sauce, main",
 		"appliance": "hob, air fry",

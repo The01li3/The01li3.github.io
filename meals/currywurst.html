@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="templates/meta.js"></script>	
+		<title>Currywurst</title>
+	</head>
+	<body class = "bodyClass">
+		<div id="headerBanner" class="row g-0 justify-content-center">
+			<script src="templates/body.js"></script>
+		</div>
+		<div id="titleBanner" class="row g-0 justify-content-center">
+			<div class="col col-8 no-wrap">
+				<h1>Currywurst</h1>	
+			</div>
+		</div>
+		<div id="bodyDiv" class="row g-0 justify-content-center">	
+			<div class="col col-8">
+				<h2>Ingredients</h2>
+				<div id="ingredients">				
+				</div>			
+				<h2>Instructions</h2>
+				<ul>
+					<li>
+						<h3>Step 1</h3>
+						<p>Toast the spices: <b>4 tbsp of curry powder</b> and <b>1 tbsp garam masala</b> then place to one side with <b>1 tbsp of onion granules</b>, <b>1 tbsp of garlic granules</b> and <b>2 dry stock cubes</b></p>
+					</li>
+					<li>
+						<h3>Step 2</h3>
+						<p>Add <b>150g of chopped onions</b>, <b>4 minced garlic cloves</b>, <b>2 dry stock cubes</b> and <b>4 tbsp balsamic vinegar</b> to a saucepan and fry.</p>
+					</li>
+					<li>
+						<h3>Step 3</h3>
+						<p>Add <b>200g of chopped carrots</b>, <b>2 tins of tomatoes</b> and 400ml of water to te pan simmering for 40 mins.</p>
+					</li>
+					<li>
+						<h3>Step 4</h3>
+						<p>Add in <b>2 tbsp of tomato puree</b> and <b>2 tbsp of Worcestershire sauce</b> then blend, adding salt and pepper as needed. Sauce can be cooked down a little if need be.</p>
+					</li>
+					<li>
+						<h3>Step 5</h3>
+						<p>Cook required <b>sausages</b> as needed (veg,meat,bratwurst etc.). Then cut, plate and pour sauce over the top.</p>
+					</li>
+				</ul>	
+			</div>
+		</div>
+		<div id="footer"></div>				
+		<script src="templates/footer.js"></script> 
+		<script src="templates/searchDoc.js"></script>
+		<script>
+			const arrIngredients = fnFindIngredients(location.href.split("/").slice(-1)[0]);//gets the list using Lunr and the screenname
+			widget_addLoadEvent(fnPopulateIngredients("ingredients",arrIngredients));//uses previous list to populate screen
+			document.getElementById("copyIngredientsBtn").addEventListener("click", copyIngredients);
+		</script>
+    </body>
+</html> 
