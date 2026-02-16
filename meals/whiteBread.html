@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="templates/meta.js"></script>	
+		<title>White Bread</title>
+	</head>
+	<body class = "bodyClass">
+		<div id="headerBanner" class="row g-0 justify-content-center">
+			<script src="templates/body.js"></script>
+		</div>
+		<div id="titleBanner" class="row g-0 justify-content-center">
+			<div class="col col-8 no-wrap">
+				<h1>White Bread</h1>	
+			</div>
+		</div>
+		<div id="bodyDiv" class="row g-0 justify-content-center">	
+			<div class="col col-8">
+				<h2>Ingredients</h2>
+				<div id="ingredients">				
+				</div>			
+				<h2>Instructions</h2>
+				<ul>
+					<li>
+						<h3>Step 1</h3>
+						<p>Add the <b>7g of instant yeast</b> into <b>100ml of warm water</b> and a punch of sugar, adding to a proving drawer for 20-30 mins to test the yeast.</p>
+					</li>
+					<li>
+						<h3>Step 2</h3>
+						<p>Add <b>450g of brea or plain white flour</b>, <b>1 tsp of salt</b> and <b>10g of olive oil</b> into a bowl/mixer adding in the tested yeast.</p>
+					</li>
+					<li>
+						<h3>Step 3</h3>
+						<p>Knead in the mixer adding up to about 250ml of water until a dough forms and knead using the window pain test.</p>
+					</li>
+					<li>
+						<h3>Step 4</h3>
+						<p>Place into a bowl and proof for an hour.</p>
+					</li>
+                    <li>
+                        <h3>Step 5</h3>
+                        <p>Knock back, shape, then place in cooking container covered proofing for another hour before uncovering.</p>
+                    </li>
+                    <li>
+                        <h3>Step 6</h3>
+                        <p>Add ~250ml of water to the ninja, select bread steam, and 170C for 25 mins.</p>
+                    </li>
+				</ul>	
+			</div>
+		</div>
+		<div id="footer"></div>				
+		<script src="templates/footer.js"></script> 
+		<script src="templates/searchDoc.js"></script>
+		<script>
+			const arrIngredients = fnFindIngredients(location.href.split("/").slice(-1)[0]);//gets the list using Lunr and the screenname
+			widget_addLoadEvent(fnPopulateIngredients("ingredients",arrIngredients));//uses previous list to populate screen
+			document.getElementById("copyIngredientsBtn").addEventListener("click", copyIngredients);
+		</script>
+    </body>
+</html> 

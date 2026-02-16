@@ -600,7 +600,7 @@ var varRecipes = [
 	},{
 		"id": "slowCookedVegetarianRedThaiCurry",
 		"title": "Slow Cooked Vegetarian Red Thai Curry",
-		"ingredients": ["1 x 400ml can of coconut milk", "1 x 400g can of chopped tomatoes", "1 x 400g can of chickpeas", "1 x 400g can of kidney beans in chilli sauce", "100g peanut butter", "1kg sweet potatoes", "1 lime juice", "50g Thai red curry paste", "4 tbsp soy sauce"],
+		"ingredients": ["1 x 400ml can of coconut milk", "1 x 400g can of chopped tomatoes", "1 x 400g can of chickpeas", "1 x 400g can of kidney beans in chilli sauce", "100g peanut butter", "1kg sweet potatoes (peeled and chopped)", "1 lime juice", "50g Thai red curry paste", "4 tbsp soy sauce"],
 		"description": "easy, dump and cook, sweet potato",
 		"mealType": "main",
 		"appliance": "slow cook",
@@ -762,6 +762,17 @@ var varRecipes = [
 		"origin": "British",
 		"utensils": "",
 		"source": "My Brain"
+	},{
+		"id": "whiteBread",
+		"title": "title",
+		"ingredients": ["7g instant yeast","450g bread/plain white flour","250ml of water", "1 tsp salt","10g of olive oil"],
+		"description": "",
+		"mealType": "snack",
+		"appliance": "oven",
+		"diet": "vegetarian, pescatarian",
+		"origin": "",
+		"utensils": "Ninja",
+		"source": "https://the01li3.github.io/"
 	}
 ];
 
