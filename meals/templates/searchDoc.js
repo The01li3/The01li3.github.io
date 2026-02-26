@@ -764,7 +764,7 @@ var varRecipes = [
 		"source": "My Brain"
 	},{
 		"id": "whiteBread",
-		"title": "White Bread",
+		"title": "Basic White Bread",
 		"ingredients": ["7g instant yeast","450g bread/plain white flour","250ml of water", "1 tsp salt","10g of olive oil"],
 		"description": "",
 		"mealType": "snack",
