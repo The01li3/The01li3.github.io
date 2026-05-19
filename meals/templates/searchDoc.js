@@ -852,8 +852,8 @@ function fnFindIngredients(pPageId){
 	varResult = arrIngredientsList.map(function(item) {  
 		return varRecipes.find(function(vRecipe) {
 			return item.ref === vRecipe.id;
-		});
-	});
+		}); 
+	}); 
 
-	return varResult[0].ingredients;
+	return varResult[0].ingredients; 
 }
