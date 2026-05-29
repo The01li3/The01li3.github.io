@@ -149,7 +149,7 @@ var varRecipes = [
 	},{
 		"id": "chanaMasala",
 		"title": "Chana Masala",
-		"ingredients": ["2 tsp garam masala", "1 tsp paprika", "1 tsp turmeric", "1 tsp ground coriander", "4 garlic cloves (minced)", "1 onion (finely diced)", "1 x 400g can chopped tomato", "1 tbsp lemon juice", "2 x 400g cans of chickpeas", "1 tbsp tomato puree"],
+		"ingredients": ["2 tsp garam masala", "1 tsp paprika", "1 tsp turmeric", "1 tsp ground coriander", "4 garlic cloves (minced)", "1 onion (finely diced)", "2 x 400g cans chopped tomato", "1 tbsp lemon juice", "2 x 400g cans of chickpeas", "1 tbsp tomato puree"],
 		"description": "easy, dump and cook",
 		"mealType": "main",
 		"appliance": "slow cook, hob",
